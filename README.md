@@ -1,10 +1,10 @@
 # V2.2526_Config
 Repo for the Klipper Config directory of my Voron V2.4 SN 2526, a 350^3 model built by myself in 4Q21.
 
-Printer Details, for thos who may be interested:
-- 7OW/PT1000 Print Head
+Printer Details, for those who may be interested:
+- 7OW/PT1000 AB Print Head housing a Phaetus Dragon HF HE with an Orbiter Extruder fitted thereto.
 - An accelerometerized AB Toolhead PCB was designed, built and installed.
-- The thermistor that is normally on the PCB has been removed, with wires affixed thereto to allow
+- The thermistor that is normally on the TH PCB has been removed, with wires affixed thereto to allow
   for the placement of the PCB Chamber Temp Sens=0805 10K 1% B=3950K(25/50C) in the AB duct by way
   of a JST connector pair.
 - HE0=HE_HTR, HE3=HOUR_METER
