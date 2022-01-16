@@ -23,6 +23,7 @@ With Alex's help (Discord @ALEX#8260), I was able to get an automated construct 
 
 1) On every boot, the config_pull.sh script runs (see _startup_autoexec.cfg) and pulls down changes from the git repo.
   - in case I make changes that are pushed directly to the repo from elsewhere other than the printer config_push.sh script.
+  - If config changes are indeed downloaded as a result of the check, upon completion of the download, Klipper service restarts.
   
 2) On print_end event, the config_push.sh script runs to push a snapshot of the printer's current config out to the git repo.
   - I am still cogitating on what other, if any, events to use to trigger a config backup.
