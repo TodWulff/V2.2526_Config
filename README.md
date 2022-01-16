@@ -2,20 +2,20 @@
 Repo for the Klipper Config directory of my Voron V2.4 SN 2526, a 350^3 model built by myself in 4Q21.
 
 Printer Details, for thos who may be interested:
-# - 7OW/PT1000 Print Head
-# - An accelerometerized AB Toolhead was designed, built and installed.
-# - The thermistor that is normally on the PCB has been removed, with wires affixed thereto to allow
-#   for the placement of the PCB Chamber Temp Sens=0805 10K 1% B=3950K(25/50C) in the AB duct by way
-#   of a JST connector pair.
-# - HE0=HE_HTR, HE3=HOUR_METER
-# - M0=B, M1=A, M2.1=Z0, M3=Z1, M4=Z2, M5=Z3, M6=E
-# - F0=PCF, F1=HEF
-# - DIAG0=XES, DIAG1=YES, DIAG2=ZES, DIAG3=PL-08 Bed Sens (blocking diode on AB PCB)
-# - DIAG4=SFS
-# - RGB LED IO (PB0) unused
-# - TB=BED, T0=HE, T1=AB_PCB(CHAMBER)
-# - Display Aural Xdcr on uC IO PE8
-# - RP2040 installed as MCU2:  ADXL I/F, I/F for 228ea DotStar LEDs for chamber lighting, and Power Switch's RGB Halo Light Control
+- 7OW/PT1000 Print Head
+- An accelerometerized AB Toolhead PCB was designed, built and installed.
+- The thermistor that is normally on the PCB has been removed, with wires affixed thereto to allow
+  for the placement of the PCB Chamber Temp Sens=0805 10K 1% B=3950K(25/50C) in the AB duct by way
+  of a JST connector pair.
+- HE0=HE_HTR, HE3=HOUR_METER
+- M0=B, M1=A, M2.1=Z0, M3=Z1, M4=Z2, M5=Z3, M6=E
+- F0=PCF, F1=HEF
+- DIAG0=XES, DIAG1=YES, DIAG2=ZES, DIAG3=PL-08 Bed Sens (blocking diode on AB PCB)
+- DIAG4=SFS
+- RGB LED IO (PB0) unused
+- TB=BED, T0=HE, T1=AB_PCB(CHAMBER)
+- Display Aural Xdcr on uC IO PE8
+- RP2040 installed as MCU2:  ADXL I/F, I/F for 228ea DotStar LEDs for chamber lighting, and Power Switch's RGB Halo Light Control
  
 See the /V2.2526_Hardware/ folder for further details
 
