@@ -19,7 +19,7 @@ Printer Details, for those who may be interested:
  
 See the /V2.2526_Hardware/ folder for further details
 
-With Alex's help (Discord @ALEX#8260), I was able to get an automated construct setup such that:
+With Alex's help (Discord @ALEX#8260, THANK YOU!), I was able to get an automated construct setup such that:
 
 1) On every boot, the config_pull.sh script runs (see _startup_autoexec.cfg) and pulls down changes from the git repo.
   - in case I make changes that are pushed directly to the repo from elsewhere other than the printer config_push.sh script.
