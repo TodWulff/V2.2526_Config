@@ -32,3 +32,6 @@ With Alex's help (Discord @ALEX#8260), I was able to get an automated construct 
   
 These activities are codified in those scripts and the associated backups of the various .cfgs they impute a backup of, as
 evidenced in the contents herein.
+
+Of note, there is one .cfg I have overtly nix'd from herein - Moonraker's Telegram Bot's .conf.  If an example is desired to look at,
+take a peek at the initial commit's history and you'll see it therein.  The token has since been revoked, so don't spin yer wheels. ;)
