@@ -8,7 +8,7 @@ v4l2-ctl -d2 --set-ctrl=power_line_frequency=2			# (menu) min=0 max=2 default=2 
 #v4l2-ctl -d2 --set-ctrl=white_balance_temperature=2800		# (int)  min=2800 max=6500 step=1 default=2800 flags=inactive
 v4l2-ctl -d2 --set-ctrl=sharpness=6				# (int)  min=0 max=15 step=1 default=6 value=6
 v4l2-ctl -d2 --set-ctrl=backlight_compensation=1		# (int)  min=0 max=1 step=1 default=1 value=1
-v4l2-ctl -d2 --set-ctrl=exposure_auto=3			# (menu) min=0 max=3 default=3 0:???  1:Manual 2:? 3:AperturePriority
+v4l2-ctl -d2 --set-ctrl=exposure_auto=3				# (menu) min=0 max=3 default=3 0:???  1:Manual 2:? 3:AperturePriority
 #v4l2-ctl -d2 --set-ctrl=exposure_absolute=1250			# (int)  min=39 max=5000 step=1 default=1250 flags=inactive
 v4l2-ctl -d2 --set-ctrl=focus_auto=0				# (bool) default=1
 v4l2-ctl -d2 --set-ctrl=focus_absolute=22			# (int)  min=0 max=23 step=1 default=16 flags=inactive
