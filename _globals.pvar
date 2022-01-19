@@ -1,4 +1,5 @@
 [Variables]
+last_ptr_state = 'print_ended'
 printmaxz = 0.0
 sonoff_ipaddr = '10.0.0.25'
 wyzecam_ipaddr = '10.0.0.61'
