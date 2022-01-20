@@ -20,8 +20,8 @@ Printer Details, for those who may be interested:
 See the /V2.2526_Hardware/ folder for further details.
 
 >>> LOOK >>> Also, be advised that this set of configs requires manual installation of two components
-on top of a fresh install of Klipper - Kiauh's shell_commands unofficial extension is required as is
-z_calibration.  Shell_Commands is used herein to facilitate execution of config_blah.sh scripts which
+on top of a fresh install of Klipper - Kiauh's 'shell_commands' unofficial extension is required, as is
+'z_calibration'.  Shell_Commands is used herein to facilitate execution of config_blah.sh scripts which
 enables the automagic push and pull of these config files, as well as my nozzle cam v4l2 settings, and
 some other UI goodness such as macro buttons to kick off curl commands to control external devices such
 as my Wyze Cam day/night modes and smart outlets for the printer and the external enclosure I have.
