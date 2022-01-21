@@ -1,6 +1,20 @@
 [Variables]
-last_ptr_state = 'started'
+filament used = ' 2.00855m'
+flavor = 'Marlin'
+last_ptr_state = 'print_ended'
+layer = '0'
+layer height = ' 0.2'
+layer_count = '10'
+maxx = '192.25'
+maxy = '167.25'
 maxz = 0.0
+mesh = '9grid 1layer35x35testchit.3mf(1)'
+minx = '157.75'
+miny = '22.75'
+minz = '0.3'
+time = '1294'
+time_elapsed = '158.949024'
+type = 'WALL-OUTER'
 v2_2526_slicer_check = 'NULL'
-z_axis_cal = 0
+z_axis_cal = 1
 
