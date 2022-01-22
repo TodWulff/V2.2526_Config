@@ -1,7 +1,7 @@
 [Variables]
 filament used = ' 31.6812m'
 flavor = 'marlin'
-last_ptr_state = 'print_ended'
+last_ptr_state = 'started'
 layer = '146'
 layer height = ' 0.2'
 layer_count = '147'
@@ -16,5 +16,5 @@ time = '26484'
 time_elapsed = '26484.399305'
 type = 'wall-inner'
 v2_2526_slicer_check = 'NULL'
-z_axis_cal = 1
+z_axis_cal = 0
 
