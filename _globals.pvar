@@ -1,5 +1,5 @@
 [Variables]
-filament used = ' 5.29023m'
+filament used = ' 5.13331m'
 flavor = 'marlin'
 last_ptr_state = 'print_ended'
 layer = '146'
@@ -12,9 +12,9 @@ mesh = 'filament_block_xn.stl'
 minx = '152.4'
 miny = '111.761'
 minz = '0.3'
-time = '4710'
-time_elapsed = '4710.767866'
-type = 'skin'
+time = '4177'
+time_elapsed = '4177.284652'
+type = 'wall-inner'
 v2_2526_slicer_check = 'NULL'
 z_axis_cal = 1
 
