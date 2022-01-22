@@ -40,8 +40,9 @@ evidenced in the contents herein.
 
 As info (more for my recollection more than anything) there are three Klippy files I have overtly edited to keep console noise to a minimum:
 
-	1) probe.py, I commented out the probe: open/TRIGGERED console messages
+	1) probe.py, I commented out the probe: open/TRIGGERED and the probe at console messages
 		# gcmd.respond_info("probe: %s" % (["open", "TRIGGERED"][not not res],))
+	        # self.gcode.respond_info("probe at %.3f,%.3f is z=%.6f" % (epos[0], epos[1], epos[2]))
 	2) save_variables.py, I commented out the save_variable console message "Variable Saved"
 		# gcmd.respond_info("Variable Saved")
 	3) extruder.py, I commented out the pressure advance/smooth time messages
