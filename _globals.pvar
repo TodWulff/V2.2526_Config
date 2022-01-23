@@ -1,7 +1,7 @@
 [Variables]
 filament used = ' 13.4097m'
 flavor = 'marlin'
-last_ptr_state = 'print_ended'
+last_ptr_state = 'started'
 layer = '89'
 layer height = ' 0.2'
 layer_count = '90'
@@ -16,5 +16,5 @@ time = '11286'
 time_elapsed = '11286.477104'
 type = 'skin'
 v2_2526_slicer_check = 'NULL'
-z_axis_cal = 1
+z_axis_cal = 0
 

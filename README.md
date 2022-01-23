@@ -39,7 +39,7 @@ With Alex's help (Discord @ALEX#8260, THANK YOU!), I was able to get an automate
   
 These activities are codified in those scripts and the associated backups of the various .cfgs they impute a backup of, as evidenced in the contents herein.
 
-As info (for my recollection more than anything) there are three Klippy files I have overtly edited to keep console noise to a minimum:
+As info (for my recollection more than anything) there are four Klippy files I have overtly edited to keep console noise to a minimum:
 
 	1) probe.py, I commented out the 'probe: open/TRIGGERED' and the 'probe at' console messages
 		# gcmd.respond_info("probe: %s" % (["open", "TRIGGERED"][not not res],))
@@ -48,6 +48,9 @@ As info (for my recollection more than anything) there are three Klippy files I 
 		# gcmd.respond_info("Variable Saved")
 	3) extruder.py, I commented out the 'pressure advance'/'smooth time' messages
 		# gcmd.respond_info(msg, log=False)
+	4) z_calibration.py, I commented out the 'probe at' console messages
+		# self.gcode.respond_info("probe at %.3f,%.3f is z=%.6f" % (curpos[0], curpos[1], curpos[2]))
+
 
 Of note, there is one .cfg I have overtly nix'd from herein - Moonraker's Telegram Bot's .conf.  If an example is desired to look at, take a peek at the initial commit's history and you'll see it therein.  The token has since been revoked, so don't spin yer wheels. ;)
 https://github.com/TodWulff/V2.2526_Config/commit/8ac0f96c20a67e028ace10987d7467840370a18f#diff-2f205e9c312fdeaf31e98c2e4242087f788b99c51a2f2b692e8175073f6e4cf8
