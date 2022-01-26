@@ -4,7 +4,7 @@ flavor = 'marlin'
 front_ledbar_end = '114'
 front_ledbar_range = '55-114'
 front_ledbar_start = '55'
-last_ptr_state = 'print_ended'
+last_ptr_state = 'started'
 layer = '504'
 layer height = ' 0.2'
 layer_count = '505'
@@ -28,5 +28,5 @@ time = '644'
 time_elapsed = '644.537888'
 type = 'skin'
 v2_2526_slicer_check = 'NULL'
-z_axis_cal = 1
+z_axis_cal = 0
 
