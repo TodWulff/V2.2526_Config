@@ -39,17 +39,17 @@ With Alex's help (Discord @ALEX#8260, THANK YOU!), I was able to get an automate
   
 These activities are codified in those scripts and the associated backups of the various .cfgs they impute a backup of, as evidenced in the contents herein.
 
-~~As info (for my recollection more than anything) there are four Klippy files I have overtly edited to keep console noise to a minimum:
+~~As info (for my recollection more than anything) there are four Klippy files I have overtly edited to keep console noise to a minimum:~~
 
 	1) probe.py, I commented out the 'probe: open/TRIGGERED' and the 'probe at' console messages
-		# gcmd.respond_info("probe: %s" % (["open", "TRIGGERED"][not not res],))
-		# self.gcode.respond_info("probe at %.3f,%.3f is z=%.6f" % (epos[0], epos[1], epos[2]))
+		~~# gcmd.respond_info("probe: %s" % (["open", "TRIGGERED"][not not res],))
+		# self.gcode.respond_info("probe at %.3f,%.3f is z=%.6f" % (epos[0], epos[1], epos[2]))~~
 	2) save_variables.py, I commented out the save_variable console message "Variable Saved"
-		# gcmd.respond_info("Variable Saved")
+		~~# gcmd.respond_info("Variable Saved")~~
 	3) extruder.py, I commented out the 'pressure advance'/'smooth time' messages
-		# gcmd.respond_info(msg, log=False)
+		~~# gcmd.respond_info(msg, log=False)~~
 	4) z_calibration.py, I commented out the 'probe at' console messages
-		# self.gcode.respond_info("probe at %.3f,%.3f is z=%.6f" % (curpos[0], curpos[1], curpos[2]))~~
+		~~# self.gcode.respond_info("probe at %.3f,%.3f is z=%.6f" % (curpos[0], curpos[1], curpos[2]))~~
 
 Now am making use of console filters, vs. changing the source code.  pfft.  IKR.  What an idiot I was... :)
 
