@@ -18,7 +18,7 @@ flavor = 'marlin'
 front_ledbar_end = '114'
 front_ledbar_range = '55-114'
 front_ledbar_start = '55'
-last_ptr_state = 'print_ended'
+last_ptr_state = 'home_checked'
 layer = '1'
 layer height = ' 0.2'
 layer_count = '2'
@@ -42,5 +42,5 @@ time = '32'
 time_elapsed = '32.819553'
 type = 'skin'
 v2_2526_slicer_check = 'NULL'
-z_axis_cal = 1
+z_axis_cal = 0
 
