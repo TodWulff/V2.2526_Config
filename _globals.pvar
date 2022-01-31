@@ -32,6 +32,7 @@ mesh = 'gear ring design.stl'
 minx = '164.413'
 miny = '139.628'
 minz = '0.3'
+module_led_effect_loaded = 1
 rear_ledbar_end = '228'
 rear_ledbar_range = '169-228'
 rear_ledbar_start = '169'
