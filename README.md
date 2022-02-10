@@ -24,6 +24,7 @@ See the /V2.2526_Hardware/ folder for further details.
 
 A) Kiauh's 'shell_commands' [an unofficial extension], 
   - Shell_Commands is used herein to facilitate execution of config_blah.sh scripts which enables the automagic push and pull of these config files, as well as my nozzle cam v4l2 settings, and some other UI goodness such as macro buttons to kick off curl commands to control external devices such as my Wyze Cam day/night modes and smart outlets for the printer and the external enclosure I have.
+
 B) Klicky & the related 'z_calibration',
 C) LED_Effects,
 D) Git (done at host'S OS level)
