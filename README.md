@@ -26,10 +26,12 @@ A) Kiauh's 'shell_commands' [an unofficial extension],
   - Shell_Commands is used herein to facilitate execution of config_blah.sh scripts which enables the automagic push and pull of these config files, as well as my nozzle cam v4l2 settings, and some other UI goodness such as macro buttons to kick off curl commands to control external devices such as my Wyze Cam day/night modes and smart outlets for the printer and the external enclosure I have.
 
 B) Klicky & the related 'z_calibration',
+
 C) LED_Effects,
+
 D) Git (done at host'S OS level)
 
-With Alex's help (Discord @ALEX#8260, THANK YOU!), I was able to get an automated construct setup such that:
+Also, with Alex's help (Discord @ALEX#8260, THANK YOU!), I was able to get an automated construct setup such that:
 
 1) On every boot, the config_pull.sh script runs (see _startup_autoexec.cfg) and pulls down changes from the git repo.
   - in case I make changes that are pushed directly to the repo from elsewhere other than the printer config_push.sh script.
