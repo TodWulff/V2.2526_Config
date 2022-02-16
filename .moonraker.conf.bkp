@@ -1,0 +1,124 @@
+#####################################################################
+# 	v2.2526
+#####################################################################
+
+[server]
+host: 0.0.0.0
+port: 7125
+enable_debug_logging: False
+# enable_object_processing: True
+config_path: ~/klipper_config
+log_path: ~/klipper_logs
+
+queue_gcode_uploads: True
+#   When set to True the file manager will add uploads to the job_queue when
+#   the `start_print` flag has been set.  The default if False.
+
+
+[authorization]
+cors_domains:
+	https://my.mainsail.xyz
+	http://my.mainsail.xyz
+	http://*.local
+	http://*.lan
+trusted_clients:
+	10.0.0.0/8
+	127.0.0.0/8
+	169.254.0.0/16
+	172.16.0.0/12
+	192.168.0.0/16
+	FE80::/10
+	::1/128
+
+# enables partial support of Octoprint API
+[octoprint_compat]
+## enables upload of prints from slicer - see MR docs
+
+# enables moonraker to track and store print history.
+[history]
+
+#####################################################################
+# 	Update Manager Stuffs
+#####################################################################
+
+# this enables moonraker's update manager
+[update_manager]
+enable_auto_refresh: True
+#   When set to True Moonraker will attempt to fetch status about
+#   available updates roughly every 24 hours, between 12am-4am.
+#   When set to False Moonraker will only fetch update state on startup
+#   and clients will need to request that Moonraker updates state.  The
+#   default is False.
+
+#enable_auto_refresh: True
+#   When set to True moonraker will bypass repo validation and allow
+#   updates from unofficial remotes and/or branches.  Updates on
+#   detached repos are also allowed.  This option is intended for
+#   developers and should not be used on production machines.  The
+#   default is False
+
+[update_manager mainsail]
+# type: web
+type: web_beta
+repo: mainsail-crew/mainsail
+path: ~/mainsail
+#persistent_files:
+#   A list of newline separated file names that should persist between
+#   updates.  This is useful for static configuration files, or perhaps
+#   themes.  The default is no persistent files.
+# refresh_interval:
+#   This overrides the refresh_interval set in the primary [update_manager]
+#   section.
+
+[update_manager led_effect]
+type: git_repo
+path: ~/klipper-led_effect
+origin: https://github.com/TodWulff/klipper-led_effect.git
+is_system_service: False
+
+[update_manager client moonraker-telegram-bot]
+type: git_repo
+path: ~/moonraker-telegram-bot
+origin: https://github.com/nlef/moonraker-telegram-bot.git
+env: ~/moonraker-telegram-bot-env/bin/python
+requirements: scripts/requirements.txt
+install_script: scripts/install.sh
+
+[update_manager client z_calibration]
+type: git_repo
+path: /home/pi/klipper_z_calibration
+origin: https://github.com/protoloft/klipper_z_calibration.git
+install_script: install.sh
+
+[update_manager client ERCF]
+type: git_repo
+path: /home/pi/ERCFUpdater
+origin: https://github.com/cpiercedev/ERCFUpdater.git
+install_script: install.sh
+
+#####################################################################
+# 	Power Control
+#####################################################################
+
+[power Printer]
+type: tasmota
+off_when_shutdown: False
+on_when_upload_queued: True
+locked_while_printing: True
+restart_klipper_when_powered: True
+restart_delay: 2
+# *** The following options apply to "tasmota" devices ***
+#   Note:
+#   If your single-relay Tasmota device switches on/off successfully,
+#   but fails to report its state, ensure that 'SetOption26' is set in
+#   Tasmota.
+address: 10.0.0.25
+#   A valid ip address or hostname for the tasmota device.  This parameter
+#   must be provided.
+#password:
+#   A password used to authenticate requests.  Default is no password.
+#output_id: 1
+#   The output_id (or relay id) to use if the Tasmota device supports
+#   more than one output.  Default is 1.
+
+
