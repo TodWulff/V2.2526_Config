@@ -18,13 +18,13 @@ last_chamber_lights_effect = 'normal'
 last_dash_lights_effect = 'off'
 last_ercf_lights_effect = 'off'
 last_lcd_lights_effect = 'normal'
-last_ptr_state = 'print_ended'
+last_ptr_state = 'started'
 maxz = '0.0'
 module_ercf_loaded = 1
 module_led_effect_loaded = 1
-type = 'custom'
+type = 'unknown'
 v2_2526_slicer_check = 'NULL'
 width = '0.122295'
 z = '18.1'
-z_axis_cal = 1
+z_axis_cal = 0
 
