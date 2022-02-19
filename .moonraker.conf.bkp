@@ -107,18 +107,4 @@ on_when_upload_queued: True
 locked_while_printing: True
 restart_klipper_when_powered: True
 restart_delay: 2
-# *** The following options apply to "tasmota" devices ***
-#   Note:
-#   If your single-relay Tasmota device switches on/off successfully,
-#   but fails to report its state, ensure that 'SetOption26' is set in
-#   Tasmota.
 address: 10.0.0.25
-#   A valid ip address or hostname for the tasmota device.  This parameter
-#   must be provided.
-#password:
-#   A password used to authenticate requests.  Default is no password.
-#output_id: 1
-#   The output_id (or relay id) to use if the Tasmota device supports
-#   more than one output.  Default is 1.
-
-
