@@ -27,7 +27,7 @@ module_ercf_loaded = 1
 module_led_effect_loaded = 1
 type = 'custom'
 v2_2526_slicer_check = 'NULL'
-width = '0.4'
-z = '3.9'
+width = '0.403844'
+z = '0.5'
 z_axis_cal = 1
 
