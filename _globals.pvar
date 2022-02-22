@@ -28,6 +28,6 @@ module_led_effect_loaded = 1
 type = 'custom'
 v2_2526_slicer_check = 'NULL'
 width = '0.4'
-z = '10.1'
+z = '26.5'
 z_axis_cal = 1
 
