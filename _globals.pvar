@@ -14,7 +14,7 @@ ercf_calib_9 = 1.0
 ercf_calib_ref = 1027.603488
 ercf_selector_homed = '1'
 ercf_swaps = '138'
-height = '0.200001'
+height = '0.2'
 last_chamber_lights_effect = 'normal'
 last_dash_lights_effect = 'off'
 last_ercf_lights_effect = 'off'
@@ -28,6 +28,6 @@ module_led_effect_loaded = 1
 type = 'custom'
 v2_2526_slicer_check = 'NULL'
 width = '0.4'
-z = '26.5'
+z = '3.9'
 z_axis_cal = 1
 
