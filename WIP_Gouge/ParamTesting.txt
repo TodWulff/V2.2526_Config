@@ -1,0 +1,52 @@
+	#check for floats/ints wrapped in a string (pseudo atof/atoi)
+	# not used {% set passed_value_destringed = params.VALUE|replace("\"","") %}
+	# {% set passed_value_restringed = params.VALUE|replace("\"","")|string %}
+	# {% set passed_value_integer = params.VALUE|replace("\"","")|int %}
+	# {% set passed_value_float = params.VALUE|replace("\"","")|float %}
+		# M118 >> raw: {params.VALUE} << 
+		# M118 >> destringified: {passed_value_destringed} <<
+		# M118 >> restringified: {passed_value_restringed} <<
+		# M118 >> integerized: {passed_value_integer} <<
+		# M118 >> floatified: {passed_value_float} <<
+
+	## ;works with above vars being set
+	# {% if passed_value_integer|string == passed_value_restringed %}
+		# M118 >> is integer <<
+	# {% elif passed_value_float|string == passed_value_restringed %}
+		# M118 >> is float <<
+	# {% else %}
+		# M118 >> is string <<
+	# {% endif %}
+
+	## ;works with inlined
+	# {% if params.VALUE|replace("\"","")|int|string == params.VALUE|replace("\"","")|string %}
+		# M118 >> is integer <<
+	# {% elif params.VALUE|replace("\"","")|float|string == params.VALUE|replace("\"","")|string %}
+		# M118 >> is float <<
+	# {% else %}
+		# M118 >> is string <<
+	# {% endif %}
+
+	## ;works for str vs. number using inlined
+	# {% if params.VALUE|replace("\"","")|int|string != params.VALUE|replace("\"","")|string and params.VALUE|replace("\"","")|float|string != params.VALUE|replace("\"","")|string %}
+		# M118 >> is string <<
+	# {% else %}
+		# M118 >> is number <<
+	# {% endif %}
+
+
+	## ;testing
+	# {% if params.VALUE|replace("\"","")|int|string == params.VALUE|replace("\"","")|string %}
+		# M118 >> is integer <<
+		# {% set svv_VALUE = passed_value_integer|int %}
+	# {% elif params.VALUE|replace("\"","")|float|string == params.VALUE|replace("\"","")|string %}
+		# M118 >> is float <<
+		# {% set svv_VALUE = passed_value_float|float %}
+	# {% else %}
+		# M118 >> is string <<
+		# {% set svv_VALUE = params.VALUE|string %}
+	# {% endif %}
+	
+	# M118 >> svv params: VARIABLE={params.VARIABLE} VALUE={svv_VALUE} <<
+
+

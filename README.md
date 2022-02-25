@@ -1,6 +1,14 @@
 # V2.2526_Config
 Repo for the Klipper Config directory of my Voron V2.4 SN 2526, a 350^3 model built by ~MHz (myself) in 4Q21.
 
+FYSA (24Feb2022):  Be advised that these configs are a big Work In Process (WIP).  The printer is new
+as of Nov 2021.  Further, I recently added a 12-cart ERCF with ERCPs.  And, commensurate with the ERCF,
+I have migrated over to Prusa Slicer from Cura Slicer (which I have used for years), so I am working
+to massage these config files to conform to the workflow that I had established with Cura.  Just so
+y'all know about same...  Usual disclaimers apply.  YMMV.  I am not at fault if your use of these data
+result in injury/damage/issues/etc.  Your use of these data acknowledges these risks and indicates a full
+imdemnification of myself from any potential outcomes of your decision to use same.
+
 Printer Details, for those who may be interested:
 - 12-cart ERCF with ERCPs - ERCF mounted to back, ERCPs are on a rack collocated IVO printer
 - ERCP imputed use of a tool-head filatment detector switch which I folded into the design of the
