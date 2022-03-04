@@ -1,5 +1,13 @@
 # V2.2526_Config
-Repo for the Klipper Config directory of my Voron V2.4 SN 2526, a 350^3 model built by ~MHz (myself) in 4Q21.
+Repo for the Klipper Config directory of my Voron V2.4 (not v2.4r2) SN 2526, a 350^3 model built by ~MHz (myself) in 4Q21.
+
+Useful Links: 
+https://jinja.palletsprojects.com/en/2.10.x/templates/
+https://www.klipper3d.org/Overview.html
+https://github.com/Klipper3d/klipper
+https://github.com/VoronDesign/Voron-2/raw/Voron2.4/Manual/Assembly_Manual_2.4r2.pdf
+https://docs.vorondesign.com/
+
 
 FYSA (24Feb2022):  Be advised that these configs are a big Work In Process (WIP).  The printer is new
 as of Nov 2021.  Further, I recently added a 12-cart ERCF with ERCPs.  And, commensurate with the ERCF,
