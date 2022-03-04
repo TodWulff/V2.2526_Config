@@ -18,7 +18,7 @@ imdemnification of myself from any potential outcomes of your decision to use sa
 
 Printer Details, for those who may be interested:
 - 12-cart ERCF with ERCPs - ERCF mounted to back, ERCPs are on a rack collocated IVO printer
-- ERCP imputed use of a tool-head filatment detector switch which I folded into the design of the
+- ERCP imputed use of a tool-head filament detector switch which I folded into the design of the
   Orbiter v1.5 adapter
 - 7OW/PT1000 AB Print Head housing a Phaetus Dragon HF HE with an Orbiter Extruder fitted thereto.
 - An accelerometerized AB Toolhead PCB was designed, built and installed, oriented to clear stuffs
