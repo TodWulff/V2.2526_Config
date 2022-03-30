@@ -1,0 +1,81 @@
+
+	M400	# experiment to see if this is causing the error https://i.imgur.com/L5tPy8V.png
+			# seems to happen randomly, but when it does, it is during unload - specifically after
+			# it leaves the extruder and right at start of fast unload.
+
+
+03:10:07 M106 S207
+03:10:09 M106 S204
+03:10:13 M220 S144
+
+03:11:02 >>> ERCF_UNLOAD_FILAMENT_IN_EXTRUDER_WITH_TIP_FORMING - Ratio passed: 1.0038995299 <<<
+
+03:11:04 Klipper state: Shutdown
+03:11:04 Too much slippage detected during the unload, please check the ERCF, calling ERCF_PAUSE...
+03:11:04 MCU 'ercf' shutdown: Timer too close
+This often indicates the host computer is overloaded. Check
+for other processes consuming excessive CPU time, high swap
+usage, disk errors, overheating, unstable voltage, or
+similar system problems on the host computer.
+Once the underlying issue is corrected, use the
+"FIRMWARE_RESTART" command to reset the firmware, reload the
+config, and restart the host software.
+Printer is shutdown
+03:11:04 MCU 'ercf' shutdown: Timer too close
+
+03:11:04 MCU 'ercf' shutdown: Timer too close
+This often indicates the host computer is overloaded. Check
+for other processes consuming excessive CPU time, high swap
+usage, disk errors, overheating, unstable voltage, or
+similar system problems on the host computer.
+Once the underlying issue is corrected, use the
+"FIRMWARE_RESTART" command to reset the firmware, reload the
+config, and restart the host software.
+Printer is shutdown
+03:11:04 MCU 'ercf' shutdown: Timer too close
+
+03:11:04 MCU 'ercf' shutdown: Timer too close
+This often indicates the host computer is overloaded. Check
+for other processes consuming excessive CPU time, high swap
+usage, disk errors, overheating, unstable voltage, or
+similar system problems on the host computer.
+Once the underlying issue is corrected, use the
+"FIRMWARE_RESTART" command to reset the firmware, reload the
+config, and restart the host software.
+Printer is shutdown
+03:11:04 MCU 'ercf' shutdown: Timer too close
+
+03:11:04 MCU 'ercf' shutdown: Timer too close
+This often indicates the host computer is overloaded. Check
+for other processes consuming excessive CPU time, high swap
+usage, disk errors, overheating, unstable voltage, or
+similar system problems on the host computer.
+Once the underlying issue is corrected, use the
+"FIRMWARE_RESTART" command to reset the firmware, reload the
+config, and restart the host software.
+Printer is shutdown
+03:11:04 MCU 'ercf' shutdown: Timer too close
+
+03:11:04 MCU 'ercf' shutdown: Timer too close
+This often indicates the host computer is overloaded. Check
+for other processes consuming excessive CPU time, high swap
+usage, disk errors, overheating, unstable voltage, or
+similar system problems on the host computer.
+Once the underlying issue is corrected, use the
+"FIRMWARE_RESTART" command to reset the firmware, reload the
+config, and restart the host software.
+Printer is shutdown
+03:11:04 MCU 'ercf' shutdown: Timer too close
+
+03:11:04 MCU 'ercf' shutdown: Timer too close
+This often indicates the host computer is overloaded. Check
+for other processes consuming excessive CPU time, high swap
+usage, disk errors, overheating, unstable voltage, or
+similar system problems on the host computer.
+Once the underlying issue is corrected, use the
+"FIRMWARE_RESTART" command to reset the firmware, reload the
+config, and restart the host software.
+Printer is shutdown
+03:11:04 MCU 'ercf' shutdown: Timer too close
+
+03:11:59 RESTART
