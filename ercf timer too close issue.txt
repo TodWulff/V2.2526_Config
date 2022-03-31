@@ -112,20 +112,20 @@ Printer is shutdown
 04:40:46 ``` [save_variable] done
 04:40:46 ``` _ERCF_WAIT_HE_TEMP TEMP=240
 04:40:47 ```` _SET_HE_HEATING_INDICATION
-04:40:47 ````` SET_LIGHT_MODE CHAIN=ERCF_LIGHTS EFFECT=HE_TEMP
+04:40:47 ````` _set_ledeff_mode CHAIN=ERCF_LIGHTS EFFECT=HE_TEMP
 04:40:47 `````` SAVE_VARIABLE VARIABLE=LAST_ERCF_LIGHTS_EFFECT VALUE=HE_TEMP
 04:40:47 `````` [save_variable] done
-04:40:47 ````` [set_light_mode] done
+04:40:47 ````` [_set_ledeff_mode] done
 04:40:47 ```` [_set_he_heating_indication] done
 04:40:47 ```` M109 S240
 04:40:47 ````` SAVE_VARIABLE VARIABLE=EXTRUDER_TEMP_SETTING VALUE=240
 04:40:47 ````` [save_variable] done
 04:40:49 ```` [m109] done
 04:40:49 ```` _CLEAR_HE_HEATING_INDICATION
-04:40:49 ````` SET_LIGHT_MODE CHAIN=ERCF_LIGHTS EFFECT=OFF
+04:40:49 ````` _set_ledeff_mode CHAIN=ERCF_LIGHTS EFFECT=OFF
 04:40:49 `````` SAVE_VARIABLE VARIABLE=LAST_ERCF_LIGHTS_EFFECT VALUE=OFF
 04:40:49 `````` [save_variable] done
-04:40:50 ````` [set_light_mode] done
+04:40:50 ````` [_set_ledeff_mode] done
 04:40:50 ```` [_clear_he_heating_indication] done
 04:40:50 ``` [_ercf_wait_he_temp] done
 04:40:50 `` [_ercf_set_eject_temp] done
@@ -133,20 +133,20 @@ Printer is shutdown
 04:40:50 ``` _ERCF_SET_EJECT_TEMP
 04:40:50 ```` _ERCF_WAIT_HE_TEMP TEMP=240
 04:40:50 ````` _SET_HE_HEATING_INDICATION
-04:40:50 `````` SET_LIGHT_MODE CHAIN=ERCF_LIGHTS EFFECT=HE_TEMP
+04:40:50 `````` _set_ledeff_mode CHAIN=ERCF_LIGHTS EFFECT=HE_TEMP
 04:40:50 ``````` SAVE_VARIABLE VARIABLE=LAST_ERCF_LIGHTS_EFFECT VALUE=HE_TEMP
 04:40:51 ``````` [save_variable] done
-04:40:51 `````` [set_light_mode] done
+04:40:51 `````` [_set_ledeff_mode] done
 04:40:51 ````` [_set_he_heating_indication] done
 04:40:51 ````` M109 S240
 04:40:51 `````` SAVE_VARIABLE VARIABLE=EXTRUDER_TEMP_SETTING VALUE=240
 04:40:51 `````` [save_variable] done
 04:40:51 ````` [m109] done
 04:40:51 ````` _CLEAR_HE_HEATING_INDICATION
-04:40:51 `````` SET_LIGHT_MODE CHAIN=ERCF_LIGHTS EFFECT=OFF
+04:40:51 `````` _set_ledeff_mode CHAIN=ERCF_LIGHTS EFFECT=OFF
 04:40:51 ``````` SAVE_VARIABLE VARIABLE=LAST_ERCF_LIGHTS_EFFECT VALUE=OFF
 04:40:51 ``````` [save_variable] done
-04:40:51 `````` [set_light_mode] done
+04:40:51 `````` [_set_ledeff_mode] done
 04:40:52 ````` [_clear_he_heating_indication] done
 04:40:52 ```` [_ercf_wait_he_temp] done
 04:40:52 ``` [_ercf_set_eject_temp] done
@@ -204,20 +204,20 @@ Printer is shutdown
 04:41:04 ``` _ERCF_RESTORE_HE_TEMP
 04:41:04 ```` _ERCF_WAIT_HE_TEMP TEMP=240
 04:41:04 ````` _SET_HE_HEATING_INDICATION
-04:41:04 `````` SET_LIGHT_MODE CHAIN=ERCF_LIGHTS EFFECT=HE_TEMP
+04:41:04 `````` _set_ledeff_mode CHAIN=ERCF_LIGHTS EFFECT=HE_TEMP
 04:41:04 ``````` SAVE_VARIABLE VARIABLE=LAST_ERCF_LIGHTS_EFFECT VALUE=HE_TEMP
 04:41:04 ``````` [save_variable] done
-04:41:04 `````` [set_light_mode] done
+04:41:04 `````` [_set_ledeff_mode] done
 04:41:04 ````` [_set_he_heating_indication] done
 04:41:04 ````` M109 S240
 04:41:04 `````` SAVE_VARIABLE VARIABLE=EXTRUDER_TEMP_SETTING VALUE=240
 04:41:04 `````` [save_variable] done
 04:41:05 ````` [m109] done
 04:41:05 ````` _CLEAR_HE_HEATING_INDICATION
-04:41:05 `````` SET_LIGHT_MODE CHAIN=ERCF_LIGHTS EFFECT=OFF
+04:41:05 `````` _set_ledeff_mode CHAIN=ERCF_LIGHTS EFFECT=OFF
 04:41:05 ``````` SAVE_VARIABLE VARIABLE=LAST_ERCF_LIGHTS_EFFECT VALUE=OFF
 04:41:05 ``````` [save_variable] done
-04:41:05 `````` [set_light_mode] done
+04:41:05 `````` [_set_ledeff_mode] done
 04:41:05 ````` [_clear_he_heating_indication] done
 04:41:05 ```` [_ercf_wait_he_temp] done
 04:41:05 ```` SAVE_VARIABLE VARIABLE=ERCF_HE_TEMP_RESTORE_VAL VALUE=0
@@ -259,22 +259,22 @@ Printer is shutdown
 04:41:27 ` [m300] done
 04:41:27 ` M300
 04:41:27 ` [m300] done
-04:41:27 ` SET_LIGHT_MODE CHAIN=CHAMBER_LIGHTS EFFECT=NORMAL RESET=1
+04:41:27 ` _set_ledeff_mode CHAIN=CHAMBER_LIGHTS EFFECT=NORMAL RESET=1
 04:41:28 `` SAVE_VARIABLE VARIABLE=LAST_CHAMBER_LIGHTS_EFFECT VALUE=NORMAL
 04:41:28 `` [save_variable] done
-04:41:28 ` [set_light_mode] done
-04:41:28 ` SET_LIGHT_MODE CHAIN=LCD_LIGHTS EFFECT=NORMAL RESET=1
+04:41:28 ` [_set_ledeff_mode] done
+04:41:28 ` _set_ledeff_mode CHAIN=LCD_LIGHTS EFFECT=NORMAL RESET=1
 04:41:28 `` SAVE_VARIABLE VARIABLE=LAST_LCD_LIGHTS_EFFECT VALUE=NORMAL
 04:41:28 `` [save_variable] done
-04:41:28 ` [set_light_mode] done
-04:41:28 ` SET_LIGHT_MODE CHAIN=ERCF_LIGHTS EFFECT=OFF RESET=1
+04:41:28 ` [_set_ledeff_mode] done
+04:41:28 ` _set_ledeff_mode CHAIN=ERCF_LIGHTS EFFECT=OFF RESET=1
 04:41:28 `` SAVE_VARIABLE VARIABLE=LAST_ERCF_LIGHTS_EFFECT VALUE=OFF
 04:41:28 `` [save_variable] done
-04:41:29 ` [set_light_mode] done
-04:41:29 ` SET_LIGHT_MODE CHAIN=DASH_LIGHTS EFFECT=OFF RESET=1
+04:41:29 ` [_set_ledeff_mode] done
+04:41:29 ` _set_ledeff_mode CHAIN=DASH_LIGHTS EFFECT=OFF RESET=1
 04:41:29 `` SAVE_VARIABLE VARIABLE=LAST_DASH_LIGHTS_EFFECT VALUE=OFF
 04:41:29 `` [save_variable] done
-04:41:29 ` [set_light_mode] done
+04:41:29 ` [_set_ledeff_mode] done
 04:41:29 ` SAVE_VARIABLE VARIABLE=LAST_PTR_STATE VALUE=PRINT_ENDED
 04:41:29 ` [save_variable] done
 04:41:29 ` SAVE_VARIABLE VARIABLE=FINAL_MAXZ VALUE=0.4
@@ -328,20 +328,20 @@ Printer is shutdown
 04:45:00 ``` [save_variable] done
 04:45:00 ``` _ERCF_WAIT_HE_TEMP TEMP=240
 04:45:00 ```` _SET_HE_HEATING_INDICATION
-04:45:00 ````` SET_LIGHT_MODE CHAIN=ERCF_LIGHTS EFFECT=HE_TEMP
+04:45:00 ````` _set_ledeff_mode CHAIN=ERCF_LIGHTS EFFECT=HE_TEMP
 04:45:00 `````` SAVE_VARIABLE VARIABLE=LAST_ERCF_LIGHTS_EFFECT VALUE=HE_TEMP
 04:45:00 `````` [save_variable] done
-04:45:00 ````` [set_light_mode] done
+04:45:00 ````` [_set_ledeff_mode] done
 04:45:00 ```` [_set_he_heating_indication] done
 04:45:00 ```` M109 S240
 04:45:00 ````` SAVE_VARIABLE VARIABLE=EXTRUDER_TEMP_SETTING VALUE=240
 04:45:00 ````` [save_variable] done
 04:45:01 ```` [m109] done
 04:45:01 ```` _CLEAR_HE_HEATING_INDICATION
-04:45:01 ````` SET_LIGHT_MODE CHAIN=ERCF_LIGHTS EFFECT=OFF
+04:45:01 ````` _set_ledeff_mode CHAIN=ERCF_LIGHTS EFFECT=OFF
 04:45:01 `````` SAVE_VARIABLE VARIABLE=LAST_ERCF_LIGHTS_EFFECT VALUE=OFF
 04:45:01 `````` [save_variable] done
-04:45:01 ````` [set_light_mode] done
+04:45:01 ````` [_set_ledeff_mode] done
 04:45:01 ```` [_clear_he_heating_indication] done
 04:45:01 ``` [_ercf_wait_he_temp] done
 04:45:02 `` [_ercf_set_eject_temp] done
@@ -349,20 +349,20 @@ Printer is shutdown
 04:45:02 ``` _ERCF_SET_EJECT_TEMP
 04:45:02 ```` _ERCF_WAIT_HE_TEMP TEMP=240
 04:45:02 ````` _SET_HE_HEATING_INDICATION
-04:45:02 `````` SET_LIGHT_MODE CHAIN=ERCF_LIGHTS EFFECT=HE_TEMP
+04:45:02 `````` _set_ledeff_mode CHAIN=ERCF_LIGHTS EFFECT=HE_TEMP
 04:45:02 ``````` SAVE_VARIABLE VARIABLE=LAST_ERCF_LIGHTS_EFFECT VALUE=HE_TEMP
 04:45:02 ``````` [save_variable] done
-04:45:02 `````` [set_light_mode] done
+04:45:02 `````` [_set_ledeff_mode] done
 04:45:02 ````` [_set_he_heating_indication] done
 04:45:02 ````` M109 S240
 04:45:03 `````` SAVE_VARIABLE VARIABLE=EXTRUDER_TEMP_SETTING VALUE=240
 04:45:03 `````` [save_variable] done
 04:45:03 ````` [m109] done
 04:45:03 ````` _CLEAR_HE_HEATING_INDICATION
-04:45:03 `````` SET_LIGHT_MODE CHAIN=ERCF_LIGHTS EFFECT=OFF
+04:45:03 `````` _set_ledeff_mode CHAIN=ERCF_LIGHTS EFFECT=OFF
 04:45:03 ``````` SAVE_VARIABLE VARIABLE=LAST_ERCF_LIGHTS_EFFECT VALUE=OFF
 04:45:03 ``````` [save_variable] done
-04:45:03 `````` [set_light_mode] done
+04:45:03 `````` [_set_ledeff_mode] done
 04:45:03 ````` [_clear_he_heating_indication] done
 04:45:03 ```` [_ercf_wait_he_temp] done
 04:45:04 ``` [_ercf_set_eject_temp] done
@@ -420,20 +420,20 @@ Printer is shutdown
 04:45:14 ``` _ERCF_RESTORE_HE_TEMP
 04:45:14 ```` _ERCF_WAIT_HE_TEMP TEMP=240
 04:45:14 ````` _SET_HE_HEATING_INDICATION
-04:45:14 `````` SET_LIGHT_MODE CHAIN=ERCF_LIGHTS EFFECT=HE_TEMP
+04:45:14 `````` _set_ledeff_mode CHAIN=ERCF_LIGHTS EFFECT=HE_TEMP
 04:45:14 ``````` SAVE_VARIABLE VARIABLE=LAST_ERCF_LIGHTS_EFFECT VALUE=HE_TEMP
 04:45:14 ``````` [save_variable] done
-04:45:15 `````` [set_light_mode] done
+04:45:15 `````` [_set_ledeff_mode] done
 04:45:15 ````` [_set_he_heating_indication] done
 04:45:15 ````` M109 S240
 04:45:15 `````` SAVE_VARIABLE VARIABLE=EXTRUDER_TEMP_SETTING VALUE=240
 04:45:15 `````` [save_variable] done
 04:45:15 ````` [m109] done
 04:45:15 ````` _CLEAR_HE_HEATING_INDICATION
-04:45:15 `````` SET_LIGHT_MODE CHAIN=ERCF_LIGHTS EFFECT=OFF
+04:45:15 `````` _set_ledeff_mode CHAIN=ERCF_LIGHTS EFFECT=OFF
 04:45:15 ``````` SAVE_VARIABLE VARIABLE=LAST_ERCF_LIGHTS_EFFECT VALUE=OFF
 04:45:15 ``````` [save_variable] done
-04:45:16 `````` [set_light_mode] done
+04:45:16 `````` [_set_ledeff_mode] done
 04:45:16 ````` [_clear_he_heating_indication] done
 04:45:16 ```` [_ercf_wait_he_temp] done
 04:45:16 ```` SAVE_VARIABLE VARIABLE=ERCF_HE_TEMP_RESTORE_VAL VALUE=0
@@ -475,22 +475,22 @@ Printer is shutdown
 04:45:38 ` [m300] done
 04:45:38 ` M300
 04:45:38 ` [m300] done
-04:45:38 ` SET_LIGHT_MODE CHAIN=CHAMBER_LIGHTS EFFECT=NORMAL RESET=1
+04:45:38 ` _set_ledeff_mode CHAIN=CHAMBER_LIGHTS EFFECT=NORMAL RESET=1
 04:45:38 `` SAVE_VARIABLE VARIABLE=LAST_CHAMBER_LIGHTS_EFFECT VALUE=NORMAL
 04:45:38 `` [save_variable] done
-04:45:38 ` [set_light_mode] done
-04:45:38 ` SET_LIGHT_MODE CHAIN=LCD_LIGHTS EFFECT=NORMAL RESET=1
+04:45:38 ` [_set_ledeff_mode] done
+04:45:38 ` _set_ledeff_mode CHAIN=LCD_LIGHTS EFFECT=NORMAL RESET=1
 04:45:39 `` SAVE_VARIABLE VARIABLE=LAST_LCD_LIGHTS_EFFECT VALUE=NORMAL
 04:45:39 `` [save_variable] done
-04:45:39 ` [set_light_mode] done
-04:45:39 ` SET_LIGHT_MODE CHAIN=ERCF_LIGHTS EFFECT=OFF RESET=1
+04:45:39 ` [_set_ledeff_mode] done
+04:45:39 ` _set_ledeff_mode CHAIN=ERCF_LIGHTS EFFECT=OFF RESET=1
 04:45:39 `` SAVE_VARIABLE VARIABLE=LAST_ERCF_LIGHTS_EFFECT VALUE=OFF
 04:45:39 `` [save_variable] done
-04:45:39 ` [set_light_mode] done
-04:45:39 ` SET_LIGHT_MODE CHAIN=DASH_LIGHTS EFFECT=OFF RESET=1
+04:45:39 ` [_set_ledeff_mode] done
+04:45:39 ` _set_ledeff_mode CHAIN=DASH_LIGHTS EFFECT=OFF RESET=1
 04:45:39 `` SAVE_VARIABLE VARIABLE=LAST_DASH_LIGHTS_EFFECT VALUE=OFF
 04:45:39 `` [save_variable] done
-04:45:39 ` [set_light_mode] done
+04:45:39 ` [_set_ledeff_mode] done
 04:45:40 ` SAVE_VARIABLE VARIABLE=LAST_PTR_STATE VALUE=PRINT_ENDED
 04:45:40 ` [save_variable] done
 04:45:40 ` SAVE_VARIABLE VARIABLE=FINAL_MAXZ VALUE=0.4

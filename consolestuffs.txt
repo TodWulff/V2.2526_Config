@@ -1,0 +1,200 @@
+19:58:00 ` _ENABLE_TRACE_DEBUG
+19:58:00 ` [_enable_trace_debug] done
+19:58:00 ` M109 S240
+19:58:00 `` SAVE_VARIABLE VARIABLE=EXTRUDER_TEMP_SETTING VALUE=240
+19:58:00 `` [save_variable] done
+19:58:02 ` [m109] done
+19:58:02 ` PRINT_START_PURGE TOWER=0
+19:58:02 `` _PRINT_PURGE
+19:58:02 ``` SAVE_GCODE_STATE NAME=PRINT_PURGE_ENTRY
+19:58:02 ```` SAVE_VARIABLE VARIABLE=LAST_SAVED_GCODE_STATE VALUE=PRINT_PURGE_ENTRY
+19:58:02 ```` [save_variable] done
+19:58:02 ``` [save_gcode_state] done
+19:58:02 ``` GO_RELATIVE
+19:58:02 ``` [go_relative] done
+19:58:02 ``` GO_ABSOLUTE
+19:58:02 ``` [go_absolute] done
+19:58:02 ``` GO_RELATIVE
+19:58:02 ``` [go_relative] done
+19:58:03 ``` GO_ABSOLUTE
+19:58:03 ``` [go_absolute] done
+19:58:03 ``` _RESET_EXTRUDER
+19:58:03 ``` [_reset_extruder] done
+19:58:03 ``` CLEAN_NOZZLE DX=175.0 DY=350.05 DZ=15.0
+19:58:03 ```` SAVE_VARIABLE VARIABLE=LAST_PTR_STATE VALUE=SCRUBBING
+19:58:03 ```` [save_variable] done
+19:58:03 ```` SAVE_GCODE_STATE NAME=CLEAN_NOZZLE
+19:58:03 ````` SAVE_VARIABLE VARIABLE=LAST_SAVED_GCODE_STATE VALUE=CLEAN_NOZZLE
+19:58:03 ````` [save_variable] done
+19:58:03 ```` [save_gcode_state] done
+19:58:03 ```` GO_ABSOLUTE
+19:58:03 ```` [go_absolute] done
+19:58:03 ```` GO_RELATIVE
+19:58:03 ```` [go_relative] done
+19:58:05 ```` GO_ABSOLUTE
+19:58:05 ```` [go_absolute] done
+19:58:08 ```` RESTORE_GCODE_STATE NAME=CLEAN_NOZZLE
+19:58:09 ```` [restore_gcode_state] done
+19:58:09 ```` SAVE_VARIABLE VARIABLE=LAST_PTR_STATE VALUE=SCRUBBED
+19:58:09 ```` [save_variable] done
+19:58:09 ``` [clean_nozzle] done
+19:58:09 ``` RESTORE_GCODE_STATE NAME=PRINT_PURGE_ENTRY MOVE=1 MOVE_SPEED=250
+19:58:09 ``` [restore_gcode_state] done
+19:58:09 `` [_print_purge] done
+19:58:09 ` [print_start_purge] done
+19:58:09 ` T3
+19:58:09 `` ERCF_CHANGE_TOOL TOOL=3
+19:58:09 ``` SAVE_GCODE_STATE NAME=ERCF_CHANGE_TOOL_ENTRY
+19:58:09 ```` SAVE_VARIABLE VARIABLE=LAST_SAVED_GCODE_STATE VALUE=ERCF_CHANGE_TOOL_ENTRY
+19:58:09 ```` [save_variable] done
+19:58:09 ``` [save_gcode_state] done
+19:58:09 ``` _RESET_EXTRUDER
+19:58:09 ``` [_reset_extruder] done
+19:58:09 ``` GO_RELATIVE
+19:58:09 ``` [go_relative] done
+19:58:09 ``` GO_ABSOLUTE
+19:58:09 ``` [go_absolute] done
+19:58:12 ``` GO_RELATIVE
+19:58:12 ``` [go_relative] done
+19:58:12 ``` GO_ABSOLUTE
+19:58:12 ``` [go_absolute] done
+19:58:12 ``` _ERCF_SET_EJECT_TEMP
+19:58:12 ```` SAVE_VARIABLE VARIABLE=ERCF_HE_TEMP_RESTORE_VAL VALUE=240
+19:58:12 ```` [save_variable] done
+19:58:12 ```` _ERCF_WAIT_HE_TEMP TEMP=240
+19:58:12 ````` _SET_HE_HEATING_INDICATION
+19:58:12 `````` _set_ledeff_mode CHAIN=ERCF_LIGHTS EFFECT=HE_TEMP
+19:58:12 ``````` SAVE_VARIABLE VARIABLE=LAST_ERCF_LIGHTS_EFFECT VALUE=HE_TEMP
+19:58:12 ``````` [save_variable] done
+19:58:12 `````` [_set_ledeff_mode] done
+19:58:12 ````` [_set_he_heating_indication] done
+19:58:12 ````` M109 S240
+19:58:12 `````` SAVE_VARIABLE VARIABLE=EXTRUDER_TEMP_SETTING VALUE=240
+19:58:12 `````` [save_variable] done
+19:58:12 ````` [m109] done
+19:58:12 ````` _CLEAR_HE_HEATING_INDICATION
+19:58:12 `````` _set_ledeff_mode CHAIN=ERCF_LIGHTS EFFECT=OFF
+19:58:12 ``````` SAVE_VARIABLE VARIABLE=LAST_ERCF_LIGHTS_EFFECT VALUE=OFF
+19:58:12 ``````` [save_variable] done
+19:58:12 `````` [_set_ledeff_mode] done
+19:58:12 ````` [_clear_he_heating_indication] done
+19:58:12 ```` [_ercf_wait_he_temp] done
+19:58:12 ``` [_ercf_set_eject_temp] done
+19:58:12 ``` ERCF_CHANGE_TOOL_STANDALONE TOOL=3
+19:58:12 ```` _ERCF_SET_EJECT_TEMP
+19:58:12 ````` _ERCF_WAIT_HE_TEMP TEMP=240
+19:58:12 `````` _SET_HE_HEATING_INDICATION
+19:58:12 ``````` _set_ledeff_mode CHAIN=ERCF_LIGHTS EFFECT=HE_TEMP
+19:58:12 ```````` SAVE_VARIABLE VARIABLE=LAST_ERCF_LIGHTS_EFFECT VALUE=HE_TEMP
+19:58:12 ```````` [save_variable] done
+19:58:12 ``````` [_set_ledeff_mode] done
+19:58:12 `````` [_set_he_heating_indication] done
+19:58:12 `````` M109 S240
+19:58:12 ``````` SAVE_VARIABLE VARIABLE=EXTRUDER_TEMP_SETTING VALUE=240
+19:58:12 ``````` [save_variable] done
+19:58:12 `````` [m109] done
+19:58:12 `````` _CLEAR_HE_HEATING_INDICATION
+19:58:12 ``````` _set_ledeff_mode CHAIN=ERCF_LIGHTS EFFECT=OFF
+19:58:12 ```````` SAVE_VARIABLE VARIABLE=LAST_ERCF_LIGHTS_EFFECT VALUE=OFF
+19:58:12 ```````` [save_variable] done
+19:58:12 ``````` [_set_ledeff_mode] done
+19:58:12 `````` [_clear_he_heating_indication] done
+19:58:12 ````` [_ercf_wait_he_temp] done
+19:58:12 ```` [_ercf_set_eject_temp] done
+19:58:12 ```` _ERCF_RESTORE_HE_TEMP
+19:58:12 ````` _ERCF_WAIT_HE_TEMP TEMP=240
+19:58:12 `````` _SET_HE_HEATING_INDICATION
+19:58:12 ``````` _set_ledeff_mode CHAIN=ERCF_LIGHTS EFFECT=HE_TEMP
+19:58:12 ```````` SAVE_VARIABLE VARIABLE=LAST_ERCF_LIGHTS_EFFECT VALUE=HE_TEMP
+19:58:12 ```````` [save_variable] done
+19:58:13 ``````` [_set_ledeff_mode] done
+19:58:13 `````` [_set_he_heating_indication] done
+19:58:13 `````` M109 S240
+19:58:13 ``````` SAVE_VARIABLE VARIABLE=EXTRUDER_TEMP_SETTING VALUE=240
+19:58:13 ``````` [save_variable] done
+19:58:14 `````` [m109] done
+19:58:14 `````` _CLEAR_HE_HEATING_INDICATION
+19:58:14 ``````` _set_ledeff_mode CHAIN=ERCF_LIGHTS EFFECT=OFF
+19:58:14 ```````` SAVE_VARIABLE VARIABLE=LAST_ERCF_LIGHTS_EFFECT VALUE=OFF
+19:58:14 ```````` [save_variable] done
+19:58:14 ``````` [_set_ledeff_mode] done
+19:58:14 `````` [_clear_he_heating_indication] done
+19:58:14 ````` [_ercf_wait_he_temp] done
+19:58:14 ````` SAVE_VARIABLE VARIABLE=ERCF_HE_TEMP_RESTORE_VAL VALUE=0
+19:58:14 ````` [save_variable] done
+19:58:14 ```` [_ercf_restore_he_temp] done
+19:58:14 ```` SAVE_VARIABLE VARIABLE=ERCF_SWAPS VALUE=2
+19:58:14 ```` [save_variable] done
+19:58:14 ``` [ercf_change_tool_standalone] done
+19:58:14 ``` _ERCF_RESTORE_HE_TEMP
+19:58:14 ``` [_ercf_restore_he_temp] done
+19:58:14 ``` _PRINT_PURGE
+19:58:14 ```` SAVE_GCODE_STATE NAME=PRINT_PURGE_ENTRY
+19:58:14 ````` SAVE_VARIABLE VARIABLE=LAST_SAVED_GCODE_STATE VALUE=PRINT_PURGE_ENTRY
+19:58:14 ````` [save_variable] done
+19:58:14 ```` [save_gcode_state] done
+19:58:14 ```` GO_RELATIVE
+19:58:14 ```` [go_relative] done
+19:58:14 ```` GO_ABSOLUTE
+19:58:14 ```` [go_absolute] done
+19:58:14 ```` GO_RELATIVE
+19:58:14 ```` [go_relative] done
+19:58:16 ```` GO_ABSOLUTE
+19:58:16 ```` [go_absolute] done
+19:58:16 ```` _RESET_EXTRUDER
+19:58:16 ```` [_reset_extruder] done
+19:58:16 ```` CLEAN_NOZZLE DX=175.0 DY=350.05 DZ=15.0
+19:58:16 ````` SAVE_VARIABLE VARIABLE=LAST_PTR_STATE VALUE=SCRUBBING
+19:58:16 ````` [save_variable] done
+19:58:16 ````` SAVE_GCODE_STATE NAME=CLEAN_NOZZLE
+19:58:16 `````` SAVE_VARIABLE VARIABLE=LAST_SAVED_GCODE_STATE VALUE=CLEAN_NOZZLE
+19:58:16 `````` [save_variable] done
+19:58:16 ````` [save_gcode_state] done
+19:58:16 ````` GO_ABSOLUTE
+19:58:16 ````` [go_absolute] done
+19:58:16 ````` GO_RELATIVE
+19:58:16 ````` [go_relative] done
+19:58:17 ````` GO_ABSOLUTE
+19:58:17 ````` [go_absolute] done
+19:58:21 ````` RESTORE_GCODE_STATE NAME=CLEAN_NOZZLE
+19:58:21 ````` [restore_gcode_state] done
+19:58:21 ````` SAVE_VARIABLE VARIABLE=LAST_PTR_STATE VALUE=SCRUBBED
+19:58:21 ````` [save_variable] done
+19:58:21 ```` [clean_nozzle] done
+19:58:21 ```` RESTORE_GCODE_STATE NAME=PRINT_PURGE_ENTRY MOVE=1 MOVE_SPEED=250
+19:58:21 ```` [restore_gcode_state] done
+19:58:21 ``` [_print_purge] done
+19:58:21 ``` RESTORE_GCODE_STATE NAME=ERCF_CHANGE_TOOL_ENTRY MOVE=1 MOVE_SPEED=300
+19:58:22 ``` [restore_gcode_state] done
+19:58:22 `` [ercf_change_tool] done
+19:58:22 ` [t3] done
+19:58:22 ` M104 S240
+19:58:22 `` SAVE_VARIABLE VARIABLE=EXTRUDER_TEMP_SETTING VALUE=240
+19:58:22 `` [save_variable] done
+19:58:22 ` [m104] done
+19:58:22 ` _SETSLICERVAR VARIABLE=Z VALUE=0.4
+19:58:22 `` SAVE_VARIABLE VARIABLE=Z VALUE=0.4
+19:58:22 `` [save_variable] done
+19:58:22 ` [_setslicervar] done
+19:58:22 ` _SETSLICERVAR VARIABLE=HEIGHT VALUE=0.4
+19:58:22 `` SAVE_VARIABLE VARIABLE=HEIGHT VALUE=0.4
+19:58:22 `` [save_variable] done
+19:58:22 ` [_setslicervar] done
+19:58:22 ` _SETSLICERVAR VARIABLE=MAXZ VALUE=0.4
+19:58:22 `` SAVE_VARIABLE VARIABLE=MAXZ VALUE=0.4
+19:58:22 `` [save_variable] done
+19:58:22 ` [_setslicervar] done
+19:58:22 ` M1170 L0 T45
+19:58:22 ` [m1170] done
+19:58:24 ` _SETSLICERVAR VARIABLE=TYPE VALUE=SKIRT/BRIM
+19:58:24 `` SAVE_VARIABLE VARIABLE=TYPE VALUE=SKIRT/BRIM
+19:58:24 `` [save_variable] done
+19:58:24 ` [_setslicervar] done
+19:58:24 ` _SETSLICERVAR VARIABLE=WIDTH VALUE=0.9
+19:58:24 `` SAVE_VARIABLE VARIABLE=WIDTH VALUE=0.9
+19:58:24 `` [save_variable] done
+19:58:24 ` [_setslicervar] done
+19:58:26 _disable_trace_debug
+19:58:29 ` _DISABLE_TRACE_DEBUG
+19:58:29 ` [_disable_trace_debug] done
+19:58:29 19:58:29
