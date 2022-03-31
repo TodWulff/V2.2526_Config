@@ -1,3 +1,5 @@
+^([0-9][0-9]:[0-9][0-9]:[0-9][0-9])\r\n(.*)$  <-- npp regex to fix console pastes...  replacement:  \1 \2
+
 19:58:00 ` _ENABLE_TRACE_DEBUG
 19:58:00 ` [_enable_trace_debug] done
 19:58:00 ` M109 S240
@@ -197,4 +199,62 @@
 19:58:26 _disable_trace_debug
 19:58:29 ` _DISABLE_TRACE_DEBUG
 19:58:29 ` [_disable_trace_debug] done
-19:58:29 19:58:29
+19:58:29
+19:58:29
+
+
+
+good load_seq and cal:
+
+
+01:05:56 Klipper state: Ready
+01:06:12 Load move done, requested = 45.0, measured = 57.4
+01:06:16 Printer state: Ready
+01:14:18 _ercf_test_load_seq
+01:14:20 Unknown command:"_ERCF_TEST_LOAD_SEQ"
+01:14:53 ERCF_TEST_LOAD_SEQ
+01:15:03 Load move done, requested = 100.0, measured = 101.4
+01:15:07 Unload move done, requested = 70.0, measured = 71.6
+01:15:19 Load move done, requested = 100.0, measured = 100.7
+01:15:22 Unload move done, requested = 70.0, measured = 70.9
+01:15:36 Load move done, requested = 100.0, measured = 99.3
+01:15:38 Unload move done, requested = 70.0, measured = 68.9
+01:15:52 Load move done, requested = 100.0, measured = 98.6
+01:15:55 Unload move done, requested = 70.0, measured = 68.9
+01:16:07 Load move done, requested = 100.0, measured = 100.7
+01:16:11 Unload move done, requested = 70.0, measured = 70.9
+01:16:26 Load move done, requested = 100.0, measured = 100.7
+01:16:30 Unload move done, requested = 70.0, measured = 70.9
+01:16:41 Load move done, requested = 100.0, measured = 98.6
+01:16:43 Unload move done, requested = 70.0, measured = 67.6
+01:16:57 Load move done, requested = 100.0, measured = 98.6
+01:17:00 Unload move done, requested = 70.0, measured = 67.6
+01:32:58 ERCF_CALIBRATE
+01:33:15 Load move done, requested = 45.0, measured = 50.0
+01:35:22 Load move done, requested = 945.0, measured = 952.0
+01:36:24 Unload move done, requested = 971.6, measured = 972.3
+01:36:49 Load move done, requested = 845.0, measured = 850.7
+01:37:08 Unload move done, requested = 842.0, measured = 848.6
+01:37:31 Load move done, requested = 845.0, measured = 841.2
+01:37:50 Unload move done, requested = 845.9, measured = 834.5
+01:37:50 Correction unload move done, requested = 845.9, measured = 837.2
+01:38:14 Load move done, requested = 845.0, measured = 820.9
+01:38:14 Correction load move done, requested = 845.0, measured = 843.9
+01:38:36 Unload move done, requested = 843.1, measured = 831.8
+01:38:37 Correction unload move done, requested = 843.1, measured = 843.2
+01:38:56 Load move done, requested = 845.0, measured = 845.3
+01:39:14 Unload move done, requested = 842.0, measured = 837.8
+01:39:16 Correction unload move done, requested = 842.0, measured = 837.8
+01:39:39 Load move done, requested = 845.0, measured = 850.7
+01:39:57 Unload move done, requested = 842.0, measured = 834.5
+01:39:57 Correction unload move done, requested = 842.0, measured = 837.8
+01:40:21 Load move done, requested = 845.0, measured = 829.7
+01:40:22 Correction load move done, requested = 845.0, measured = 844.6
+01:40:42 Unload move done, requested = 842.4, measured = 827.0
+01:40:42 Correction unload move done, requested = 842.4, measured = 839.2
+01:41:05 Load move done, requested = 845.0, measured = 834.5
+01:41:07 Correction load move done, requested = 845.0, measured = 844.6
+01:41:26 Unload move done, requested = 842.4, measured = 832.4
+01:41:27 Correction unload move done, requested = 842.4, measured = 842.6
+01:41:28 ERCF_Calibrate Error: 0
+01:41:28 End of auto-cal - Restart firmware now.
