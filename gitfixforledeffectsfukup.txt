@@ -1,0 +1,128 @@
+pi@thow3d:~/klipper-led_effect/src$ git log
+commit 6978924c1b1c1e163db12398f51741f8b6f40e61 (HEAD -> master, origin/master, origin/HEAD)
+Merge: 598abad 484d0e2
+Author: TodWulff <tod.wulff@gmail.com>
+Date:   Fri Apr 1 06:28:44 2022 -0400
+
+    Merge branch 'julianschill:master' into master
+
+commit 484d0e29dc950b14bafed7aacd654024cce53ff9
+Author: Julian Schill <j.schill@web.de>
+Date:   Mon Mar 21 21:06:23 2022 +0100
+
+    Fix fading out of disabled effects
+
+commit 9b5870a8530a08448c1801cb7d8188826eb64aff
+Author: Julian Schill <j.schill@web.de>
+Date:   Mon Mar 21 20:26:45 2022 +0100
+
+    Added fading in and out of effects
+
+    * Implement fading in of effects
+    * Implement fading out of effects
+    * Fading: Improved timing and added documentation
+
+commit 374bfab9d4c2a67a06abe61e43682ce3b0e3a6fd
+Author: Julian Schill <j.schill@web.de>
+Date:   Mon Mar 21 11:14:55 2022 +0100
+
+    Fix mistake in documentation
+
+commit 1d504835368b7d990afde7b5cc967c46543e16ba
+Author: Julian Schill <j.schill@web.de>
+Date:   Sun Mar 6 16:23:45 2022 +0100
+
+    Fixed error in documentation
+
+commit f54c82b228d80287dbfdd3ba80c94a63315ddf02
+Author: Julian Schill <j.schill@web.de>
+Date:   Fri Feb 25 00:01:25 2022 +0000
+
+    Improved code for inverse led definitions
+
+commit ad54ba354fcff5fbe4facc79b97ce9a618cc3cdb
+Author: Ken Sanislo <ksanislo@users.noreply.github.com>
+Date:   Thu Feb 24 15:54:34 2022 -0800
+
+    diffuse from heatsource, not LED 3 (#27)
+
+[2]+  Stopped                 git log
+pi@thow3d:~/klipper-led_effect/src$ git revert
+usage: git revert [<options>] <commit-ish>...
+   or: git revert <subcommand>
+
+    --quit                end revert or cherry-pick sequence
+    --continue            resume revert or cherry-pick sequence
+    --abort               cancel revert or cherry-pick sequence
+    --skip                skip current commit and continue
+    --cleanup <mode>      how to strip spaces and #comments from message
+    -n, --no-commit       don't automatically commit
+    -e, --edit            edit the commit message
+    -s, --signoff         add Signed-off-by:
+    -m, --mainline <parent-number>
+                          select mainline parent
+    --rerere-autoupdate   update the index with reused conflict resolution if possible
+    --strategy <strategy>
+                          merge strategy
+    -X, --strategy-option <option>
+                          option for merge strategy
+    -S, --gpg-sign[=<key-id>]
+                          GPG sign commit
+
+pi@thow3d:~/klipper-led_effect/src$ git reset 484d0e29dc950b14bafed7aacd654024cce53ff9
+pi@thow3d:~/klipper-led_effect/src$ git status
+On branch master
+Your branch is behind 'origin/master' by 8 commits, and can be fast-forwarded.
+  (use "git pull" to update your local branch)
+
+nothing to commit, working tree clean
+pi@thow3d:~/klipper-led_effect/src$ git log
+commit 484d0e29dc950b14bafed7aacd654024cce53ff9 (HEAD -> master)
+Author: Julian Schill <j.schill@web.de>
+Date:   Mon Mar 21 21:06:23 2022 +0100
+
+    Fix fading out of disabled effects
+
+commit 9b5870a8530a08448c1801cb7d8188826eb64aff
+Author: Julian Schill <j.schill@web.de>
+Date:   Mon Mar 21 20:26:45 2022 +0100
+
+    Added fading in and out of effects
+
+    * Implement fading in of effects
+    * Implement fading out of effects
+    * Fading: Improved timing and added documentation
+
+commit 374bfab9d4c2a67a06abe61e43682ce3b0e3a6fd
+Author: Julian Schill <j.schill@web.de>
+Date:   Mon Mar 21 11:14:55 2022 +0100
+
+    Fix mistake in documentation
+
+commit 1d504835368b7d990afde7b5cc967c46543e16ba
+Author: Julian Schill <j.schill@web.de>
+Date:   Sun Mar 6 16:23:45 2022 +0100
+
+    Fixed error in documentation
+
+commit f54c82b228d80287dbfdd3ba80c94a63315ddf02
+Author: Julian Schill <j.schill@web.de>
+Date:   Fri Feb 25 00:01:25 2022 +0000
+
+    Improved code for inverse led definitions
+
+commit ad54ba354fcff5fbe4facc79b97ce9a618cc3cdb
+Author: Ken Sanislo <ksanislo@users.noreply.github.com>
+Date:   Thu Feb 24 15:54:34 2022 -0800
+
+    diffuse from heatsource, not LED 3 (#27)
+
+    * diffuse from heatsource, not LED #3
+
+    * allow reverse LED orders by range
+
+commit b206ab05970b797415516e534b6fda5ad81060c6
+Author: Julian Schill <j.schill@web.de>
+Date:   Fri Feb 25 00:42:12 2022 +0100
+:
+ 
