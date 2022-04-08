@@ -1,0 +1,36 @@
+Here is my take on passing print-specific slice-time parameters from slicer (Cura in this case) to 
+klipper programmatically:
+
+Set up slicer to emit comments with various print parameters embedded as comments in the gcode.
+Some might be automatically added when sliced, others will require overt config to get it to do so.
+My frame of reference is Cura and I've no idea if other slicers offer this sort of functionality.
+
+Replacement patterns to use to get specific slicer vitals and print-specific parameters in cura, 
+as gcode comments can be viewed here:
+
+https://discord.com/channels/877549316913365083/885253010236780634/911342365904613456
+http://files.fieldofview.com/cura/Replacement_Patterns.html
+https://i.imgur.com/3FUoMQK.png
+https://csi.t6.fyi/
+
+A quick example:  My slicer automatically adds a print's max z height comment to each gcode file generated:
+Line 10 here:
+https://i.imgur.com/7nf8AzS.png   
+
+I added a plugin to Cura to allow me to post-process the sliced gcode before it is processed for saving.
+https://i.imgur.com/pLFdsp7.png
+
+Therein, I set up a regex find & replace:
+https://i.imgur.com/e0PZQZE.png
+https://i.imgur.com/aB4wig4.png
+Search Pattern: (;MAXZ:)(.*)
+Replace Pattern: \1\2\n_SET_MAXZ Z=\2
+
+Now, whenever cura slices a file, as longs as the plugin is active, it'll automagically add a new line
+thereafter which calls a [gcode_macro] I've instantiated in klipper:
+Line 11 here:
+https://i.imgur.com/odwwIE5.png  
+calls this code, passing the print specific parameter to it, whenever this gcode is printed
+https://i.imgur.com/blw1B15.png
+
+

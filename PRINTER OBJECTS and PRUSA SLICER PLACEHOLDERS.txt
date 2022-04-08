@@ -1,0 +1,488 @@
+18:13:29 DUMP_PARAMETER
+printer['bed_mesh'].mesh_matrix = [[0.1375, 0.124593, 0.103241, 0.09, 0.085944, 0.082667, 0.0825, 0.092537, 0.110019, 0.1225, 0.136704, 0.157574, 0.17], [0.114926, 0.104657, 0.087579, 0.07663, 0.070694, 0.063742, 0.061333, 0.071402, 0.089449, 0.102389, 0.117116, 0.138783, 0.151685], [0.077685, 0.07171, 0.061589, 0.05437, 0.04538, 0.032452, 0.026389, 0.036447, 0.055313, 0.068944, 0.084574, 0.107632, 0.12137], [0.055, 0.051407, 0.045148, 0.04, 0.029333, 0.013111, 0.005, 0.014796, 0.033704, 0.0475, 0.063833, 0.088056, 0.1025], [0.051426, 0.046502, 0.038088, 0.031796, 0.022251, 0.00811, 0.001037, 0.009094, 0.024914, 0.037019, 0.054615, 0.081336, 0.097333], [0.051074, 0.043384, 0.030491, 0.021815, 0.014498, 0.004539, -0.00037, 0.004785, 0.015355, 0.024537, 0.044024, 0.074565, 0.092944], [0.0525, 0.043167, 0.027611, 0.0175, 0.011407, 0.003759, 0.0, 0.003204, 0.010296, 0.0175, 0.037889, 0.070389, 0.09], [0.059796, 0.050755, 0.03564, 0.02563, 0.018457, 0.008925, 0.003815, 0.005519, 0.010366, 0.016037, 0.034879, 0.065164, 0.083463], [0.072537, 0.064455, 0.050842, 0.041426, 0.032204, 0.019027, 0.011407, 0.011014, 0.012833, 0.016352, 0.0324, 0.058542, 0.07437], [0.0825, 0.075481, 0.063574, 0.055, 0.044593, 0.029185, 0.02, 0.018185, 0.017926, 0.02, 0.034389, 0.058111, 0.0725], [0.099148, 0.095381, 0.088834, 0.083519, 0.073587, 0.058158, 0.048685, 0.045397, 0.042712, 0.04337, 0.058003, 0.082465, 0.097333], [0.124685, 0.12613, 0.12819, 0.128148, 0.119277, 0.104305, 0.094704, 0.089306, 0.08309, 0.081741, 0.097157, 0.123397, 0.139389], [0.14, 0.144593, 0.151852, 0.155, 0.146796, 0.132148, 0.1225, 0.115852, 0.107537, 0.105, 0.120926, 0.148296, 0.165]]
+printer['bed_mesh'].mesh_max = (330.0, 330.0)
+printer['bed_mesh'].mesh_min = (40.0, 40.0)
+printer['bed_mesh'].probed_matrix = [[0.1375, 0.09, 0.0825, 0.1225, 0.17], [0.055, 0.04, 0.005, 0.0475, 0.1025], [0.0525, 0.0175, 0.0, 0.0175, 0.09], [0.0825, 0.055, 0.02, 0.02, 0.0725], [0.14, 0.155, 0.1225, 0.105, 0.165]]
+printer['bed_mesh'].profile_name = default
+printer['bed_mesh'].profiles = {'UberSoaked': {'points': ((0.1675, 0.12, 0.085, 0.085, 0.155), (0.055, 0.04, -0.01, 0.0375, 0.1025), (0.07, 0.01, 0.0, 0.0275, 0.0775), (0.0825, 0.0825, 0.03, 0.0575, 0.1075), (0.1575, 0.1825, 0.1525, 0.16, 0.2175)), 'mesh_params': OrderedDict([('tension', 0.2), ('mesh_x_pps', 2), ('algo', 'bicubic'), ('min_x', 40.0), ('min_y', 40.0), ('y_count', 5), ('mesh_y_pps', 2), ('x_count', 5), ('max_x', 330.0), ('max_y', 330.0)])}, 'HOT_KLICKY': {'points': ((0.115938, 0.114063, 0.075, 0.093594, 0.175313), (0.0975, 0.040938, -0.007344, 0.026875, 0.090625), (0.040313, 0.01375, 0.0, 0.019687, 0.044062), (0.09875, 0.049687, 0.012812, 0.045, 0.07875), (0.157812, 0.171719, 0.125, 0.133594, 0.200312)), 'mesh_params': OrderedDict([('tension', 0.2), ('mesh_x_pps', 2), ('algo', 'bicubic'), ('min_x', 40.0), ('min_y', 40.0), ('y_count', 5), ('mesh_y_pps', 2), ('x_count', 5), ('max_x', 330.0), ('max_y', 330.0)])}, 'default': {'points': ((0.1375, 0.09, 0.0825, 0.1225, 0.17), (0.055, 0.04, 0.005, 0.0475, 0.1025), (0.0525, 0.0175, 0.0, 0.0175, 0.09), (0.0825, 0.055, 0.02, 0.02, 0.0725), (0.14, 0.155, 0.1225, 0.105, 0.165)), 'mesh_params': OrderedDict([('tension', 0.2), ('mesh_x_pps', 2), ('algo', 'bicubic'), ('min_x', 40.0), ('min_y', 40.0), ('y_count', 5), ('mesh_y_pps', 2), ('x_count', 5), ('max_x', 330.0), ('max_y', 330.0)])}, 'SOAKED': {'points': ((0.155, 0.1225, 0.1225, 0.1325, 0.2025), (0.0925, 0.0825, 0.035, 0.0375, 0.1125), (0.0975, 0.035, 0.0, 0.035, 0.08), (0.1225, 0.1025, 0.0675, 0.0725, 0.125), (0.215, 0.2075, 0.1575, 0.1625, 0.225)), 'mesh_params': OrderedDict([('tension', 0.2), ('mesh_x_pps', 2), ('algo', 'bicubic'), ('min_x', 40.0), ('min_y', 40.0), ('y_count', 5), ('mesh_y_pps', 2), ('x_count', 5), ('max_x', 330.0), ('max_y', 330.0)])}, '110_Klicky_NoSoak': {'points': ((-0.045, -0.025, 0.0025, -0.045, -0.06), (-0.075, -0.0, -0.01, -0.05, -0.025), (-0.0075, -0.0025, 0.0, 0.0, -0.0225), (-0.0075, 0.0275, 0.04, 0.01, -0.01), (-0.0025, 0.0575, 0.04, -0.015, -0.0225)), 'mesh_params': OrderedDict([('tension', 0.2), ('mesh_x_pps', 2), ('algo', 'bicubic'), ('min_x', 40.0), ('min_y', 40.0), ('y_count', 5), ('mesh_y_pps', 2), ('x_count', 5), ('max_x', 330.0), ('max_y', 330.0)])}, '120_MAGPROBE': {'points': ((0.072344, 0.080781, 0.059531, 0.05, 0.092656), (-0.000312, 0.005313, -0.015156, -0.017969, 0.021406), (0.018281, 0.020781, 0.0, -0.006719, 0.027656), (0.023594, 0.035469, 0.021562, 0.000156, 0.040625), (0.098594, 0.130625, 0.104375, 0.088594, 0.120937)), 'mesh_params': OrderedDict([('tension', 0.2), ('mesh_x_pps', 2), ('algo', 'bicubic'), ('min_x', 40.0), ('min_y', 40.0), ('y_count', 5), ('mesh_y_pps', 2), ('x_count', 5), ('max_x', 330.0), ('max_y', 330.0)])}, '110_Soaked_Klicky': {'points': ((0.05, 0.05, 0.0825, 0.08, 0.1175), (-0.0325, 0.03, 0.015, 0.0175, 0.075), (-0.0075, -0.0075, 0.0, 0.035, 0.06), (0.01, 0.04, 0.05, 0.045, 0.07), (0.0525, 0.0925, 0.0775, 0.0525, 0.08)), 'mesh_params': OrderedDict([('tension', 0.2), ('mesh_x_pps', 2), ('algo', 'bicubic'), ('min_x', 40.0), ('min_y', 40.0), ('y_count', 5), ('mesh_y_pps', 2), ('x_count', 5), ('max_x', 330.0), ('max_y', 330.0)])}, 'COLD_KLICKY': {'points': ((0.003281, 0.035625, 0.063438, 0.025781, -0.020937), (-0.007344, 0.030469, 0.021719, -0.021094, -0.02), (-0.035156, 0.006406, 0.0, -0.013906, -0.055625), (-0.01375, 0.044375, 0.014375, -0.021875, -0.044375), (-0.032813, 0.016875, -0.002188, -0.035781, -0.03625)), 'mesh_params': OrderedDict([('tension', 0.2), ('mesh_x_pps', 2), ('algo', 'bicubic'), ('min_x', 40.0), ('min_y', 40.0), ('y_count', 5), ('mesh_y_pps', 2), ('x_count', 5), ('max_x', 330.0), ('max_y', 330.0)])}, 'NoSoak': {'points': ((-0.08, -0.0575, -0.07, -0.115, -0.1575), (-0.0725, -0.0275, -0.04, -0.04, -0.0825), (-0.02, -0.0, 0.0, -0.0075, -0.025), (-0.0275, 0.035, 0.01, 0.0075, -0.01), (-0.0525, 0.0375, 0.0325, 0.0025, -0.02)), 'mesh_params': OrderedDict([('tension', 0.2), ('mesh_x_pps', 2), ('algo', 'bicubic'), ('min_x', 40.0), ('min_y', 40.0), ('y_count', 5), ('mesh_y_pps', 2), ('x_count', 5), ('max_x', 330.0), ('max_y', 330.0)])}}
+printer['display_status'].message = Welcome!
+printer['display_status'].progress = 0.0
+printer['dotstar chamber_lights'].color_data = [(0.5, 0.5, 0.5, 0.0), (0.5, 0.5, 0.5, 0.0), (0.5, 0.5, 0.5, 0.0), (0.5, 0.5, 0.5, 0.0), (0.5, 0.5, 0.5, 0.0), (0.5, 0.5, 0.5, 0.0), (0.5, 0.5, 0.5, 0.0), (0.5, 0.5, 0.5, 0.0), (0.5, 0.5, 0.5, 0.0), (0.5, 0.5, 0.5, 0.0), (0.5, 0.5, 0.5, 0.0), (0.5, 0.5, 0.5, 0.0), (0.5, 0.5, 0.5, 0.0), (0.5, 0.5, 0.5, 0.0), (0.5, 0.5, 0.5, 0.0), (0.5, 0.5, 0.5, 0.0), (0.5, 0.5, 0.5, 0.0), (0.5, 0.5, 0.5, 0.0), (0.5, 0.5, 0.5, 0.0), (0.5, 0.5, 0.5, 0.0), (0.5, 0.5, 0.5, 0.0), (0.5, 0.5, 0.5, 0.0), (0.5, 0.5, 0.5, 0.0), (0.5, 0.5, 0.5, 0.0), (0.5, 0.5, 0.5, 0.0), (0.5, 0.5, 0.5, 0.0), (0.5, 0.5, 0.5, 0.0), (0.5, 0.5, 0.5, 0.0), (0.5, 0.5, 0.5, 0.0), (0.5, 0.5, 0.5, 0.0), (0.5, 0.5, 0.5, 0.0), (0.5, 0.5, 0.5, 0.0), (0.5, 0.5, 0.5, 0.0), (0.5, 0.5, 0.5, 0.0), (0.5, 0.5, 0.5, 0.0), (0.5, 0.5, 0.5, 0.0), (0.5, 0.5, 0.5, 0.0), (0.5, 0.5, 0.5, 0.0), (0.5, 0.5, 0.5, 0.0), (0.5, 0.5, 0.5, 0.0), (0.5, 0.5, 0.5, 0.0), (0.5, 0.5, 0.5, 0.0), (0.5, 0.5, 0.5, 0.0), (0.5, 0.5, 0.5, 0.0), (0.5, 0.5, 0.5, 0.0), (0.5, 0.5, 0.5, 0.0), (0.5, 0.5, 0.5, 0.0), (0.5, 0.5, 0.5, 0.0), (0.5, 0.5, 0.5, 0.0), (0.5, 0.5, 0.5, 0.0), (0.5, 0.5, 0.5, 0.0), (0.5, 0.5, 0.5, 0.0), (0.5, 0.5, 0.5, 0.0), (0.5, 0.5, 0.5, 0.0), (0.5, 0.5, 0.5, 0.0), (0.5, 0.5, 0.5, 0.0), (0.5, 0.5, 0.5, 0.0), (0.5, 0.5, 0.5, 0.0), (0.5, 0.5, 0.5, 0.0), (0.5, 0.5, 0.5, 0.0), (0.5, 0.5, 0.5, 0.0), (0.5, 0.5, 0.5, 0.0), (0.5, 0.5, 0.5, 0.0), (0.5, 0.5, 0.5, 0.0), (0.5, 0.5, 0.5, 0.0), (0.5, 0.5, 0.5, 0.0), (0.5, 0.5, 0.5, 0.0), (0.5, 0.5, 0.5, 0.0), (0.5, 0.5, 0.5, 0.0), (0.5, 0.5, 0.5, 0.0), (0.5, 0.5, 0.5, 0.0), (0.5, 0.5, 0.5, 0.0), (0.5, 0.5, 0.5, 0.0), (0.5, 0.5, 0.5, 0.0), (0.5, 0.5, 0.5, 0.0), (0.5, 0.5, 0.5, 0.0), (0.5, 0.5, 0.5, 0.0), (0.5, 0.5, 0.5, 0.0), (0.5, 0.5, 0.5, 0.0), (0.5, 0.5, 0.5, 0.0), (0.5, 0.5, 0.5, 0.0), (0.5, 0.5, 0.5, 0.0), (0.5, 0.5, 0.5, 0.0), (0.5, 0.5, 0.5, 0.0), (0.5, 0.5, 0.5, 0.0), (0.5, 0.5, 0.5, 0.0), (0.5, 0.5, 0.5, 0.0), (0.5, 0.5, 0.5, 0.0), (0.5, 0.5, 0.5, 0.0), (0.5, 0.5, 0.5, 0.0), (0.5, 0.5, 0.5, 0.0), (0.5, 0.5, 0.5, 0.0), (0.5, 0.5, 0.5, 0.0), (0.5, 0.5, 0.5, 0.0), (0.5, 0.5, 0.5, 0.0), (0.5, 0.5, 0.5, 0.0), (0.5, 0.5, 0.5, 0.0), (0.5, 0.5, 0.5, 0.0), (0.5, 0.5, 0.5, 0.0), (0.5, 0.5, 0.5, 0.0), (0.5, 0.5, 0.5, 0.0), (0.5, 0.5, 0.5, 0.0), (0.5, 0.5, 0.5, 0.0), (0.5, 0.5, 0.5, 0.0), (0.5, 0.5, 0.5, 0.0), (0.5, 0.5, 0.5, 0.0), (0.5, 0.5, 0.5, 0.0), (0.5, 0.5, 0.5, 0.0), (0.5, 0.5, 0.5, 0.0), (0.5, 0.5, 0.5, 0.0), (0.5, 0.5, 0.5, 0.0), (0.5, 0.5, 0.5, 0.0), (0.5, 0.5, 0.5, 0.0), (0.5, 0.5, 0.5, 0.0), (0.5, 0.5, 0.5, 0.0), (0.5, 0.5, 0.5, 0.0), (0.5, 0.5, 0.5, 0.0), (0.5, 0.5, 0.5, 0.0), (0.5, 0.5, 0.5, 0.0), (0.5, 0.5, 0.5, 0.0), (0.5, 0.5, 0.5, 0.0), (0.5, 0.5, 0.5, 0.0), (0.5, 0.5, 0.5, 0.0), (0.5, 0.5, 0.5, 0.0), (0.5, 0.5, 0.5, 0.0), (0.5, 0.5, 0.5, 0.0), (0.5, 0.5, 0.5, 0.0), (0.5, 0.5, 0.5, 0.0), (0.5, 0.5, 0.5, 0.0), (0.5, 0.5, 0.5, 0.0), (0.5, 0.5, 0.5, 0.0), (0.5, 0.5, 0.5, 0.0), (0.5, 0.5, 0.5, 0.0), (0.5, 0.5, 0.5, 0.0), (0.5, 0.5, 0.5, 0.0), (0.5, 0.5, 0.5, 0.0), (0.5, 0.5, 0.5, 0.0), (0.5, 0.5, 0.5, 0.0), (0.5, 0.5, 0.5, 0.0), (0.5, 0.5, 0.5, 0.0), (0.5, 0.5, 0.5, 0.0), (0.5, 0.5, 0.5, 0.0), (0.5, 0.5, 0.5, 0.0), (0.5, 0.5, 0.5, 0.0), (0.5, 0.5, 0.5, 0.0), (0.5, 0.5, 0.5, 0.0), (0.5, 0.5, 0.5, 0.0), (0.5, 0.5, 0.5, 0.0), (0.5, 0.5, 0.5, 0.0), (0.5, 0.5, 0.5, 0.0), (0.5, 0.5, 0.5, 0.0), (0.5, 0.5, 0.5, 0.0), (0.5, 0.5, 0.5, 0.0), (0.5, 0.5, 0.5, 0.0), (0.5, 0.5, 0.5, 0.0), (0.5, 0.5, 0.5, 0.0), (0.5, 0.5, 0.5, 0.0), (0.5, 0.5, 0.5, 0.0), (0.5, 0.5, 0.5, 0.0), (0.5, 0.5, 0.5, 0.0), (0.5, 0.5, 0.5, 0.0), (0.5, 0.5, 0.5, 0.0), (0.5, 0.5, 0.5, 0.0), (0.5, 0.5, 0.5, 0.0), (0.5, 0.5, 0.5, 0.0), (0.5, 0.5, 0.5, 0.0), (0.5, 0.5, 0.5, 0.0), (0.5, 0.5, 0.5, 0.0), (0.5, 0.5, 0.5, 0.0), (0.5, 0.5, 0.5, 0.0), (0.5, 0.5, 0.5, 0.0), (0.5, 0.5, 0.5, 0.0), (0.5, 0.5, 0.5, 0.0), (0.5, 0.5, 0.5, 0.0), (0.5, 0.5, 0.5, 0.0), (0.5, 0.5, 0.5, 0.0), (0.5, 0.5, 0.5, 0.0), (0.5, 0.5, 0.5, 0.0), (0.5, 0.5, 0.5, 0.0), (0.5, 0.5, 0.5, 0.0), (0.5, 0.5, 0.5, 0.0), (0.5, 0.5, 0.5, 0.0), (0.5, 0.5, 0.5, 0.0), (0.5, 0.5, 0.5, 0.0), (0.5, 0.5, 0.5, 0.0), (0.5, 0.5, 0.5, 0.0), (0.5, 0.5, 0.5, 0.0), (0.5, 0.5, 0.5, 0.0), (0.5, 0.5, 0.5, 0.0), (0.5, 0.5, 0.5, 0.0), (0.5, 0.5, 0.5, 0.0), (0.5, 0.5, 0.5, 0.0), (0.5, 0.5, 0.5, 0.0), (0.5, 0.5, 0.5, 0.0), (0.5, 0.5, 0.5, 0.0), (0.5, 0.5, 0.5, 0.0), (0.5, 0.5, 0.5, 0.0), (0.5, 0.5, 0.5, 0.0), (0.5, 0.5, 0.5, 0.0), (0.5, 0.5, 0.5, 0.0), (0.5, 0.5, 0.5, 0.0), (0.5, 0.5, 0.5, 0.0), (0.5, 0.5, 0.5, 0.0), (0.5, 0.5, 0.5, 0.0), (0.5, 0.5, 0.5, 0.0), (0.5, 0.5, 0.5, 0.0), (0.5, 0.5, 0.5, 0.0), (0.5, 0.5, 0.5, 0.0), (0.5, 0.5, 0.5, 0.0), (0.5, 0.5, 0.5, 0.0), (0.5, 0.5, 0.5, 0.0), (0.5, 0.5, 0.5, 0.0), (0.5, 0.5, 0.5, 0.0), (0.5, 0.5, 0.5, 0.0), (0.5, 0.5, 0.5, 0.0), (0.5, 0.5, 0.5, 0.0), (0.5, 0.5, 0.5, 0.0), (0.5, 0.5, 0.5, 0.0), (0.5, 0.5, 0.5, 0.0), (0.5, 0.5, 0.5, 0.0), (0.5, 0.5, 0.5, 0.0), (0.5, 0.5, 0.5, 0.0), (0.5, 0.5, 0.5, 0.0), (0.5, 0.5, 0.5, 0.0), (0.5, 0.5, 0.5, 0.0), (0.5, 0.5, 0.5, 0.0), (0.5, 0.5, 0.5, 0.0), (0.5, 0.5, 0.5, 0.0), (0.5, 0.5, 0.5, 0.0), (0.5, 0.5, 0.5, 0.0), (0.5, 0.5, 0.5, 0.0)]
+printer['ercf'].encoder_pos = 43.6534475
+printer['extruder'].can_extrude = False
+printer['extruder'].power = 0.0
+printer['extruder'].pressure_advance = 0.035
+printer['extruder'].smooth_time = 0.04
+printer['extruder'].target = 0.0
+printer['extruder'].temperature = 45.02
+printer['fan'].rpm = None
+printer['fan'].speed = 0.101960784314
+printer['filament_motion_sensor encoder_sensor'].enabled = False
+printer['filament_motion_sensor encoder_sensor'].filament_detected = True
+printer['filament_switch_sensor toolhead_sensor'].enabled = True
+printer['filament_switch_sensor toolhead_sensor'].filament_detected = False
+printer['firmware_retraction'].retract_length = 0.4
+printer['firmware_retraction'].retract_speed = 45.0
+printer['firmware_retraction'].unretract_extra_length = 0.0
+printer['firmware_retraction'].unretract_speed = 22.5
+printer['gcode_macro _CheckProbe'].probe_state = 0
+printer['gcode_macro _debug_vars'].debug_verb_codeflow = 0
+printer['gcode_macro _debug_vars'].debug_verb_debug = 0
+printer['gcode_macro _debug_vars'].debug_verb_error = 1
+printer['gcode_macro _debug_vars'].debug_verb_info = 0
+printer['gcode_macro _debug_vars'].debug_verb_status = 0
+printer['gcode_macro _debug_vars'].gcode_state_debug = 0
+printer['gcode_macro _debug_vars'].gmove_debug = 0
+printer['gcode_macro _debug_vars'].save_var_debug = 0
+printer['gcode_macro _ERCF_PAUSE'].extruder_temp = 0
+printer['gcode_macro _ERCF_PAUSE'].is_paused = 0
+printer['gcode_macro _ERCF_VAR'].clog_detection = 0
+printer['gcode_macro _ERCF_VAR'].colorselector = [2.0, 23.0, 44.15, 70.5, 91.5, 112.0, 138.6, 159.5, 180.0, 206.5, 227.5, 248.5]
+printer['gcode_macro _ERCF_VAR'].disable_heater = 600
+printer['gcode_macro _ERCF_VAR'].end_of_bowden_to_sensor = 47
+printer['gcode_macro _ERCF_VAR'].endless_spool_mode = 0
+printer['gcode_macro _ERCF_VAR'].ercf_cart_load_length = 45
+printer['gcode_macro _ERCF_VAR'].ercf_cart_move_dwell = 100
+printer['gcode_macro _ERCF_VAR'].ercf_cart_unload_length = 68
+printer['gcode_macro _ERCF_VAR'].ercf_dual_unload_mod = 20
+printer['gcode_macro _ERCF_VAR'].ercf_eject_unknow_state_len_mod = 50
+printer['gcode_macro _ERCF_VAR'].ercf_extruder_move_dwell = 100
+printer['gcode_macro _ERCF_VAR'].ercf_gear_move_dwell = 100
+printer['gcode_macro _ERCF_VAR'].ercf_load_unload_dwell = 50
+printer['gcode_macro _ERCF_VAR'].ercf_servo_move_dwell = 200
+printer['gcode_macro _ERCF_VAR'].ercf_test_load_seq_len = 100
+printer['gcode_macro _ERCF_VAR'].ercf_th_load_len_mod = 0
+printer['gcode_macro _ERCF_VAR'].ercf_verb_codeflow = 0
+printer['gcode_macro _ERCF_VAR'].ercf_verb_debug = 0
+printer['gcode_macro _ERCF_VAR'].ercf_verb_error = 1
+printer['gcode_macro _ERCF_VAR'].ercf_verb_info = 0
+printer['gcode_macro _ERCF_VAR'].ercf_verb_loadunload = 0
+printer['gcode_macro _ERCF_VAR'].ercf_verb_motors = 0
+printer['gcode_macro _ERCF_VAR'].ercf_verb_status = 0
+printer['gcode_macro _ERCF_VAR'].extruder_eject_temp = 240
+printer['gcode_macro _ERCF_VAR'].home_ercf_at_boot = 1
+printer['gcode_macro _ERCF_VAR'].min_bowden_length = 945.0
+printer['gcode_macro _ERCF_VAR'].min_temp_extruder = 180
+printer['gcode_macro _ERCF_VAR'].sensor_to_nozzle = 41.5
+printer['gcode_macro _ERCF_VAR'].servo_down_angle = 80
+printer['gcode_macro _ERCF_VAR'].servo_up_angle = 30
+printer['gcode_macro _ERCF_VAR'].sync_accel = 0
+printer['gcode_macro _ERCF_VAR'].sync_feedrate = 1500
+printer['gcode_macro _ERCF_VAR'].sync_speed = 25
+printer['gcode_macro _ERCF_VAR'].test_ercf_load_seq_at_boot = 0
+printer['gcode_macro _ERCF_VAR'].test_ercf_load_seq_at_print = 0
+printer['gcode_macro _ERCF_VAR'].timeout_pause = 72000
+printer['gcode_macro _ERCF_VAR'].unload_modifier = 9.0
+printer['gcode_macro _gcodeproc_vars'].dynamic_extrate_enable = 0
+printer['gcode_macro _gcodeproc_vars'].dynamic_spdrate_enable = 0
+printer['gcode_macro _gcodeproc_vars'].gcodeproc_verb_codeflow = 0
+printer['gcode_macro _gcodeproc_vars'].gcodeproc_verb_debug = 0
+printer['gcode_macro _gcodeproc_vars'].gcodeproc_verb_error = 1
+printer['gcode_macro _gcodeproc_vars'].gcodeproc_verb_info = 0
+printer['gcode_macro _gcodeproc_vars'].gcodeproc_verb_status = 0
+printer['gcode_macro _klicky_vars'].klicky_verb_codeflow = 0
+printer['gcode_macro _klicky_vars'].klicky_verb_debug = 0
+printer['gcode_macro _klicky_vars'].klicky_verb_error = 1
+printer['gcode_macro _klicky_vars'].klicky_verb_info = 0
+printer['gcode_macro _klicky_vars'].klicky_verb_status = 0
+printer['gcode_macro _ledeff_vars'].ledeff_verb_debug = 0
+printer['gcode_macro _ledeff_vars'].ledeff_verb_error = 1
+printer['gcode_macro _ledeff_vars'].ledeff_verb_info = 0
+printer['gcode_macro _ledeff_vars'].ledeff_verb_status = 0
+printer['gcode_macro _linadv_vars'].dynamic_pa_enable = 0
+printer['gcode_macro _linadv_vars'].linadv_verb_codeflow = 0
+printer['gcode_macro _linadv_vars'].linadv_verb_debug = 0
+printer['gcode_macro _linadv_vars'].linadv_verb_error = 1
+printer['gcode_macro _linadv_vars'].linadv_verb_info = 0
+printer['gcode_macro _linadv_vars'].linadv_verb_status = 0
+printer['gcode_macro _print_purge'].ooze_dwell = 1
+printer['gcode_macro _print_purge'].purge_len = 30
+printer['gcode_macro _print_purge'].purge_ret = 0.2
+printer['gcode_macro _print_purge'].purge_spd = 750
+printer['gcode_macro _print_purge'].purge_temp_min = 180
+printer['gcode_macro _print_purge'].verbose = False
+printer['gcode_macro _print_purge'].wipe_zheight = 0.05
+printer['gcode_macro _printer_vars'].pause_retract_default = 1.0
+printer['gcode_macro _printer_vars'].ptr_verb_codeflow = 0
+printer['gcode_macro _printer_vars'].ptr_verb_debug = 0
+printer['gcode_macro _printer_vars'].ptr_verb_error = 1
+printer['gcode_macro _printer_vars'].ptr_verb_info = 0
+printer['gcode_macro _printer_vars'].ptr_verb_modload = 0
+printer['gcode_macro _printer_vars'].ptr_verb_status = 0
+printer['gcode_macro _printer_vars'].show_proc_exit = 1
+printer['gcode_macro _printer_vars'].show_proc_exit_details = 1
+printer['gcode_macro _Probe_Variables'].probe_attached = False
+printer['gcode_macro _Probe_Variables'].probe_lock = False
+printer['gcode_macro _Probe_Variables'].probe_state = False
+printer['gcode_macro _Probe_Variables'].z_endstop_x = 0
+printer['gcode_macro _Probe_Variables'].z_endstop_y = 0
+printer['gcode_macro _scrub_vars'].scrub_err_flag = 0
+printer['gcode_macro _scrub_vars'].scrub_verb_codeflow = 0
+printer['gcode_macro _scrub_vars'].scrub_verb_debug = 0
+printer['gcode_macro _scrub_vars'].scrub_verb_error = 1
+printer['gcode_macro _scrub_vars'].scrub_verb_info = 0
+printer['gcode_macro _scrub_vars'].scrub_verb_status = 0
+printer['gcode_macro _SetDynamicExtRate'].mesh_extrate = [1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0]
+printer['gcode_macro _SetDynamicExtRate'].mesh_name = ['Unknown', 'Perimeter', 'External perimeter', 'Overhang perimeter', 'Internal infill', 'Solid infill', 'Top solid infill', 'Ironing', 'Bridge infill', 'Gap fill', 'Skirt/Brim', 'Support material', 'Support material interface', 'Wipe tower', 'Custom', 'Mixed']
+printer['gcode_macro _SetDynamicPA'].mesh_kval = [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
+printer['gcode_macro _SetDynamicPA'].mesh_name = ['Unknown', 'Perimeter', 'External perimeter', 'Overhang perimeter', 'Internal infill', 'Solid infill', 'Top solid infill', 'Ironing', 'Bridge infill', 'Gap fill', 'Skirt/Brim', 'Support material', 'Support material interface', 'Wipe tower', 'Custom', 'Mixed']
+printer['gcode_macro _SetDynamicPA'].mesh_smtm = [0.04, 0.04, 0.04, 0.04, 0.04, 0.04, 0.04, 0.04, 0.04, 0.04, 0.04, 0.04, 0.04, 0.04, 0.04, 0.04]
+printer['gcode_macro _SetDynamicSpdRate'].mesh_name = ['Unknown', 'Perimeter', 'External perimeter', 'Overhang perimeter', 'Internal infill', 'Solid infill', 'Top solid infill', 'Ironing', 'Bridge infill', 'Gap fill', 'Skirt/Brim', 'Support material', 'Support material interface', 'Wipe tower', 'Custom', 'Mixed']
+printer['gcode_macro _SetDynamicSpdRate'].mesh_spdrate = [1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0]
+printer['gcode_macro _User_Variables'].attachmove_x = 0
+printer['gcode_macro _User_Variables'].attachmove_y = 30
+printer['gcode_macro _User_Variables'].attachmove_z = 0
+printer['gcode_macro _User_Variables'].docklocation_x = 319.0
+printer['gcode_macro _User_Variables'].docklocation_y = 350.0
+printer['gcode_macro _User_Variables'].docklocation_z = -128
+printer['gcode_macro _User_Variables'].dockmove_x = -88
+printer['gcode_macro _User_Variables'].dockmove_y = 0
+printer['gcode_macro _User_Variables'].dockmove_z = 0
+printer['gcode_macro _User_Variables'].enable_z_hop = True
+printer['gcode_macro _User_Variables'].max_bed_x = 350.0
+printer['gcode_macro _User_Variables'].max_bed_y = 350.0
+printer['gcode_macro _User_Variables'].park_toolhead = False
+printer['gcode_macro _User_Variables'].parkposition_x = 175
+printer['gcode_macro _User_Variables'].parkposition_y = 350
+printer['gcode_macro _User_Variables'].parkposition_z = 15
+printer['gcode_macro _User_Variables'].safe_z = 15
+printer['gcode_macro _User_Variables'].umbilical = False
+printer['gcode_macro _User_Variables'].umbilical_x = 15
+printer['gcode_macro _User_Variables'].umbilical_y = 15
+printer['gcode_macro _User_Variables'].verbose = False
+printer['gcode_macro _User_Variables'].version = 1
+printer['gcode_macro _User_Variables'].xydock_speed = 50
+printer['gcode_macro _User_Variables'].xyrelease_speed = 75
+printer['gcode_macro _User_Variables'].xytravel_speed = 250
+printer['gcode_macro _User_Variables'].z_drop_speed = 5
+printer['gcode_macro _User_Variables'].z_endstop_x = 231.3
+printer['gcode_macro _User_Variables'].z_endstop_y = 349.0
+printer['gcode_macro _User_Variables'].zdock_speed = 5
+printer['gcode_macro _User_Variables'].zrelease_speed = 5
+printer['gcode_macro _User_Variables'].ztravel_speed = 50
+printer['gcode_macro CALIBRATE_Z'].entryexit_z = 15
+printer['gcode_macro CALIBRATE_Z'].entryexit_zfeedrate = 900
+printer['gcode_macro clean_nozzle'].brush_depth = 0
+printer['gcode_macro clean_nozzle'].brush_front = 0
+printer['gcode_macro clean_nozzle'].brush_start = 84
+printer['gcode_macro clean_nozzle'].brush_top = 4
+printer['gcode_macro clean_nozzle'].brush_width = 34
+printer['gcode_macro clean_nozzle'].bucket_gap = 22
+printer['gcode_macro clean_nozzle'].bucket_left_width = 92
+printer['gcode_macro clean_nozzle'].bucket_pos = 1
+printer['gcode_macro clean_nozzle'].bucket_right_width = 40
+printer['gcode_macro clean_nozzle'].bucket_start = 0
+printer['gcode_macro clean_nozzle'].clearance_z = 5
+printer['gcode_macro clean_nozzle'].enable_purge = False
+printer['gcode_macro clean_nozzle'].location_bucket_rear = True
+printer['gcode_macro clean_nozzle'].ooze_dwell = 2
+printer['gcode_macro clean_nozzle'].prep_spd_xy = 15000
+printer['gcode_macro clean_nozzle'].prep_spd_z = 3000
+printer['gcode_macro clean_nozzle'].purge_len = 10
+printer['gcode_macro clean_nozzle'].purge_ret = 2
+printer['gcode_macro clean_nozzle'].purge_spd = 150
+printer['gcode_macro clean_nozzle'].purge_temp_min = 180
+printer['gcode_macro clean_nozzle'].verbose = False
+printer['gcode_macro clean_nozzle'].wipe_qty = 3
+printer['gcode_macro clean_nozzle'].wipe_spd_xy = 15000
+printer['gcode_macro DO_BED_MESH'].bed_temp = 60
+printer['gcode_macro DO_BED_MESH'].extruder_temp = 230
+printer['gcode_macro ERCF_CALIB_UNLOAD'].ratio = 0.0
+printer['gcode_macro ERCF_CALIB_UNLOAD'].ref = 0.0
+printer['gcode_macro ERCF_CHANGE_TOOL'].retract_temp_min = 180
+printer['gcode_macro ERCF_HOME'].home = 1
+printer['gcode_macro ERCF_SELECT_TOOL'].color_selected = -1
+printer['gcode_macro ERCF_SELECT_TOOL'].tool_selected = -1
+printer['gcode_macro PRINT_END'].print_end_scrub = False
+printer['gcode_macro PRINT_END'].retract_temp_min = 180
+printer['gcode_macro PRINT_START'].swapcounter = 0
+printer['gcode_macro PROBE_Z_ACCURACY'].entryexit_z = 15
+printer['gcode_macro PROBE_Z_ACCURACY'].entryexit_zrate = 900
+printer['gcode_macro set_startup_bedtemp'].heat_on_start = 0
+printer['gcode_macro set_startup_bedtemp'].ptrstartup_bedtemp = 120
+printer['gcode_move'].absolute_coordinates = True
+printer['gcode_move'].absolute_extrude = True
+printer['gcode_move'].extrude_factor = 1.0
+printer['gcode_move'].gcode_position = Coord(x=0.0, y=0.0, z=-0.1375, e=0.0)
+printer['gcode_move'].homing_origin = Coord(x=0.0, y=0.0, z=0.0, e=0.0)
+printer['gcode_move'].position = Coord(x=0.0, y=0.0, z=-0.1375, e=0.0)
+printer['gcode_move'].speed = 1500.0
+printer['gcode_move'].speed_factor = 1.0
+printer['heater_bed'].power = 0.0
+printer['heater_bed'].target = 0.0
+printer['heater_bed'].temperature = 49.75
+printer['heater_fan Hotend_Fan'].rpm = None
+printer['heater_fan Hotend_Fan'].speed = 0.0
+printer['heaters'].available_heaters = ['heater_bed', 'extruder']
+printer['heaters'].available_sensors = ['temperature_sensor Host', 'heater_bed', 'temperature_fan MCU_Fan', 'temperature_fan PS_Fan', 'temperature_fan Chamber', 'temperature_fan Exhaust', 'extruder']
+printer['idle_timeout'].printing_time = 0.0
+printer['idle_timeout'].state = Ready
+printer['mcu'].last_stats = {'retransmit_seq': 2, 'receive_seq': 410, 'send_seq': 410, 'bytes_invalid': 0, 'rto': 0.025, 'ready_bytes': 0, 'srtt': 0.0, 'stalled_bytes': 0, 'bytes_write': 9584, 'mcu_awake': 0.003, 'mcu_task_avg': 1.2e-05, 'rttvar': 0.0, 'mcu_task_stddev': 2.9e-05, 'freq': 180004464, 'bytes_retransmit': 9, 'bytes_read': 15112}
+printer['mcu'].mcu_build_versions = gcc: (15:9-2019-q4-0ubuntu1) 9.2.1 20191025 (release) [ARM/arm-9-branch revision 277599] binutils: (2.34-4ubuntu1+13ubuntu1) 2.34
+printer['mcu'].mcu_constants = {u'BUS_PINS_i2c1': u'PB6,PB7', u'BUS_PINS_i2c2': u'PB10,PB11', u'BUS_PINS_spi3a': u'PC11,PC12,PC10', u'PWM_MAX': 255, u'BUS_PINS_spi2a': u'PC2,PC3,PB10', u'BUS_PINS_i2c1a': u'PB8,PB9', u'RESERVE_PINS_crystal': u'PH0,PH1', u'STEPPER_BOTH_EDGE': 1, u'ADC_MAX': 4095, u'BUS_PINS_spi4': u'PE13,PE14,PE12', u'RESERVE_PINS_USB': u'PA11,PA12', u'CLOCK_FREQ': 180000000, u'BUS_PINS_spi1': u'PA6,PA7,PA5', u'BUS_PINS_spi3': u'PB4,PB5,PB3', u'MCU': u'stm32f446xx', u'BUS_PINS_spi2': u'PB14,PB15,PB13', u'BUS_PINS_spi1a': u'PB4,PB5,PB3', u'STATS_SUMSQ_BASE': 256}
+printer['mcu'].mcu_version = v0.10.0-184-gdd714fc7
+printer['mcu ercf'].last_stats = {'retransmit_seq': 0, 'receive_seq': 481, 'send_seq': 481, 'bytes_invalid': 0, 'rto': 0.025, 'ready_bytes': 0, 'srtt': 0.0, 'stalled_bytes': 0, 'bytes_write': 7233, 'mcu_awake': 0.049, 'mcu_task_avg': 2.9e-05, 'rttvar': 0.0, 'mcu_task_stddev': 2.1e-05, 'freq': 48000235, 'bytes_retransmit': 0, 'adj': 47999142, 'bytes_read': 55717}
+printer['mcu ercf'].mcu_build_versions = gcc: (15:9-2019-q4-0ubuntu1) 9.2.1 20191025 (release) [ARM/arm-9-branch revision 277599] binutils: (2.34-4ubuntu1+13ubuntu1) 2.34
+printer['mcu ercf'].mcu_constants = {u'STEPPER_BOTH_EDGE': 1, u'ADC_MAX': 4095, u'PWM_MAX': 255, u'CLOCK_FREQ': 48000000, u'RESERVE_PINS_USB': u'PA24,PA25', u'MCU': u'samd21g18a', u'STATS_SUMSQ_BASE': 256}
+printer['mcu ercf'].mcu_version = v0.10.0-235-gf97fd7c6-dirty-20220126_035429-thow3d
+printer['mcu pico'].last_stats = {'retransmit_seq': 2, 'receive_seq': 5946, 'send_seq': 5957, 'bytes_invalid': 0, 'rto': 0.025, 'ready_bytes': 15, 'srtt': 0.001, 'stalled_bytes': 0, 'bytes_write': 291925, 'mcu_awake': 0.131, 'mcu_task_avg': 7.4e-05, 'rttvar': 0.0, 'mcu_task_stddev': 5e-05, 'freq': 12000113, 'bytes_retransmit': 9, 'adj': 12000224, 'bytes_read': 33213}
+printer['mcu pico'].mcu_build_versions = gcc: (15:9-2019-q4-0ubuntu1) 9.2.1 20191025 (release) [ARM/arm-9-branch revision 277599] binutils: (2.34-4ubuntu1+13ubuntu1) 2.34
+printer['mcu pico'].mcu_constants = {u'BUS_PINS_spi0a': u'gpio0,gpio3,gpio2', u'BUS_PINS_spi0b': u'gpio4,gpio7,gpio6', u'BUS_PINS_spi0c': u'gpio16,gpio19,gpio18', u'BUS_PINS_spi0d': u'gpio20,gpio23,gpio22', u'INITIAL_PINS': u'gpio2,!gpio3,!gpio12,gpio13', u'STEPPER_BOTH_EDGE': 1, u'ADC_MAX': 4095, u'PWM_MAX': 255, u'CLOCK_FREQ': 12000000, u'MCU': u'rp2040', u'BUS_PINS_spi1c': u'gpio24,gpio27,gpio26', u'BUS_PINS_spi1b': u'gpio12,gpio15,gpio14', u'BUS_PINS_spi1a': u'gpio8,gpio11,gpio10', u'STATS_SUMSQ_BASE': 256}
+printer['mcu pico'].mcu_version = v0.10.0-184-gdd714fc7
+printer['menu'].cols = 16
+printer['menu'].rows = 4
+printer['menu'].running = False
+printer['menu'].timeout = 0
+printer['motion_report'].live_extruder_velocity = 0.0
+printer['motion_report'].live_position = Coord(x=0.0, y=0.0, z=0.0, e=0.0)
+printer['motion_report'].live_velocity = 0.0
+printer['motion_report'].steppers = ['extruder', 'manual_stepper gear_stepper', 'manual_stepper selector_stepper', 'stepper_x', 'stepper_y', 'stepper_z', 'stepper_z1', 'stepper_z2', 'stepper_z3']
+printer['motion_report'].trapq = ['extruder', 'toolhead']
+printer['neopixel dash_lights'].color_data = [(0.0, 0.0, 0.0, 0.0), (0.0, 0.0, 0.0, 0.0), (0.0, 0.0, 0.0, 0.0), (0.0, 0.0, 0.0, 0.0), (0.0, 0.0, 0.0, 0.0), (0.0, 0.0, 0.0, 0.0), (0.0, 0.0, 0.0, 0.0), (0.0, 0.0, 0.0, 0.0)]
+printer['neopixel ercf_lights'].color_data = [(0.0, 0.0, 0.0, 0.0), (0.0, 0.0, 0.0, 0.0), (0.0, 0.0, 0.0, 0.0), (0.0, 0.0, 0.0, 0.0), (0.0, 0.0, 0.0, 0.0), (0.0, 0.0, 0.0, 0.0), (0.0, 0.0, 0.0, 0.0), (0.0, 0.0, 0.0, 0.0)]
+printer['neopixel lcd_lights'].color_data = [(0.5, 0.5, 0.5, 0.0), (0.5, 0.5, 0.5, 0.0), (0.5, 0.5, 0.5, 0.0)]
+printer['output_pin _BEEPER_pin'].value = 0.0
+printer['output_pin _host_connect_led'].value = 1.0
+printer['output_pin _hourmeter'].value = 0.0
+printer['output_pin _sw_blu_led'].value = 0.0
+printer['output_pin _sw_grn_led'].value = 1.0
+printer['output_pin _sw_red_led'].value = 0.0
+printer['pause_resume'].is_paused = False
+printer['print_stats'].filament_used = 0.0
+printer['print_stats'].filename =
+printer['print_stats'].message =
+printer['print_stats'].print_duration = 0.0
+printer['print_stats'].state = standby
+printer['print_stats'].total_duration = 0.0
+printer['probe'].last_query = False
+printer['probe'].last_z_result = 0.0
+printer['quad_gantry_level'].applied = False
+printer['query_endstops'].last_query = {}
+printer['save_variables'].variables = {'ercf_selector_homed': 1, 'ercf_calib_11': 1.0033535269, 'ercf_calib_10': 1.00095888841, 'final_maxz': 81.1, 'ledeff_err_flag': 0, 'last_spd_fact': 1.0, 'height': 0.3, 'last_chamber_lights_effect': 'normal', 'scrub_err_flag': 0, 'z_axis_cal': 0, 'module_led_effect_loaded': 1, 'ercf_he_temp_restore_val': 0, 'maxz': 0.0, 'last_dash_lights_effect': 'off', 'pause_ercf_error': 0, 'width': 0.6, 'ercf_swaps': 0, 'ercf_calib_3': 1.00016321362, 'ercf_calib_2': 1.00016321362, 'ercf_calib_1': 1.00016321362, 'ercf_calib_0': 1.0, 'ercf_calib_7': 1.00656425818, 'ercf_calib_6': 1.00095888841, 'ercf_calib_5': 1.00016321362, 'ercf_calib_4': 1.0017558302, 'ercf_calib_9': 1.00255404202, 'last_ptr_state': 'started', 'type': 'custom', 'debug_err_flag': 0, 'v2_2526_slicer_check': 'NULL', 'module_klicky_loaded': 1, 'last_restored_gcode_state': 'clean_nozzle', 'ercf_err_flag': 0, 'klicky_err_flag': 0, 'linadv_err_flag': 0, 'extruder_temp_setting': 0, 'module_ledeff_loaded': 1, 'module_debug_loaded': 1, 'last_ercf_lights_effect': 'off', 'module_linadv_loaded': 1, 'last_saved_gcode_state': 'NULL', 'ercf_swaps_last_canx_print': 2, 'gcodeproc_err_flag': 0, 'last_lcd_lights_effect': 'normal', 'ercf_calib_8': 1.0017558302, 'module_gcodeproc_loaded': 1, 'ercf_calib_ref': 1003.357701, 'ercf_swaps_last_complete_print': 106, 'module_scrub_loaded': 1, 'has_wipe_tower': -1, 'heater_bed_temp_setting': 0, 'proc_depth': 0, 'module_ercf_loaded': 1, 'z': 0.3}
+printer['servo ercf_servo'].value = 0.0
+printer['system_stats'].cputime = 7683.057892
+printer['system_stats'].memavail = 14416168
+printer['system_stats'].sysload = 0.23
+printer['temperature_fan Chamber'].rpm = None
+printer['temperature_fan Chamber'].speed = 0.0
+printer['temperature_fan Chamber'].target = 0.0
+printer['temperature_fan Chamber'].temperature = 40.12
+printer['temperature_fan Exhaust'].rpm = None
+printer['temperature_fan Exhaust'].speed = 0.0
+printer['temperature_fan Exhaust'].target = 0.0
+printer['temperature_fan Exhaust'].temperature = 38.64
+printer['temperature_fan MCU_Fan'].rpm = None
+printer['temperature_fan MCU_Fan'].speed = 0.0
+printer['temperature_fan MCU_Fan'].target = 0.0
+printer['temperature_fan MCU_Fan'].temperature = 33.28
+printer['temperature_fan PS_Fan'].rpm = None
+printer['temperature_fan PS_Fan'].speed = 0.0
+printer['temperature_fan PS_Fan'].target = 0.0
+printer['temperature_fan PS_Fan'].temperature = 34.94
+printer['temperature_host Host'].temperature = 45.0
+printer['temperature_sensor Host'].measured_max_temp = 46.0
+printer['temperature_sensor Host'].measured_min_temp = 45.0
+printer['temperature_sensor Host'].temperature = 45.0
+printer['tmc2209 extruder'].drv_status = None
+printer['tmc2209 extruder'].hold_current = 0.0611919329873
+printer['tmc2209 extruder'].mcu_phase_offset = 63
+printer['tmc2209 extruder'].phase_offset_position = -1816.81704241
+printer['tmc2209 extruder'].run_current = 0.856687061822
+printer['tmc2209 manual_stepper gear_stepper'].drv_status = {'cs_actual': 2L, 'stst': 1L}
+printer['tmc2209 manual_stepper gear_stepper'].hold_current = 0.0917878994809
+printer['tmc2209 manual_stepper gear_stepper'].mcu_phase_offset = 63
+printer['tmc2209 manual_stepper gear_stepper'].phase_offset_position = -85.3415241021
+printer['tmc2209 manual_stepper gear_stepper'].run_current = 0.795495128835
+printer['tmc2209 manual_stepper selector_stepper'].drv_status = {'cs_actual': 2L, 'stst': 1L}
+printer['tmc2209 manual_stepper selector_stepper'].hold_current = 0.0917878994809
+printer['tmc2209 manual_stepper selector_stepper'].mcu_phase_offset = 63
+printer['tmc2209 manual_stepper selector_stepper'].phase_offset_position = 228.2625
+printer['tmc2209 manual_stepper selector_stepper'].run_current = 0.611919329873
+printer['tmc2209 stepper_x'].drv_status = None
+printer['tmc2209 stepper_x'].hold_current = 1.41421356237
+printer['tmc2209 stepper_x'].mcu_phase_offset = 61
+printer['tmc2209 stepper_x'].phase_offset_position = 0.2
+printer['tmc2209 stepper_x'].run_current = 1.41421356237
+printer['tmc2209 stepper_y'].drv_status = None
+printer['tmc2209 stepper_y'].hold_current = 1.41421356237
+printer['tmc2209 stepper_y'].mcu_phase_offset = 61
+printer['tmc2209 stepper_y'].phase_offset_position = 0.4
+printer['tmc2209 stepper_y'].run_current = 1.41421356237
+printer['tmc2209 stepper_z'].drv_status = None
+printer['tmc2209 stepper_z'].hold_current = 0.815892439831
+printer['tmc2209 stepper_z'].mcu_phase_offset = 61
+printer['tmc2209 stepper_z'].phase_offset_position = -80.2525
+printer['tmc2209 stepper_z'].run_current = 1.19664224508
+printer['tmc2209 stepper_z1'].drv_status = None
+printer['tmc2209 stepper_z1'].hold_current = 0.815892439831
+printer['tmc2209 stepper_z1'].mcu_phase_offset = 3
+printer['tmc2209 stepper_z1'].phase_offset_position = -80.3875
+printer['tmc2209 stepper_z1'].run_current = 1.19664224508
+printer['tmc2209 stepper_z2'].drv_status = None
+printer['tmc2209 stepper_z2'].hold_current = 0.815892439831
+printer['tmc2209 stepper_z2'].mcu_phase_offset = 63
+printer['tmc2209 stepper_z2'].phase_offset_position = -80.355
+printer['tmc2209 stepper_z2'].run_current = 1.19664224508
+printer['tmc2209 stepper_z3'].drv_status = None
+printer['tmc2209 stepper_z3'].hold_current = 0.815892439831
+printer['tmc2209 stepper_z3'].mcu_phase_offset = 1
+printer['tmc2209 stepper_z3'].phase_offset_position = -80.5375
+printer['tmc2209 stepper_z3'].run_current = 1.19664224508
+printer['toolhead'].axis_maximum = Coord(x=350.05, y=350.05, z=300.0, e=0.0)
+printer['toolhead'].axis_minimum = Coord(x=0.0, y=0.0, z=-5.0, e=0.0)
+printer['toolhead'].estimated_print_time = 5915.0272531
+printer['toolhead'].extruder = extruder
+printer['toolhead'].homed_axes =
+printer['toolhead'].max_accel = 4000.0
+printer['toolhead'].max_accel_to_decel = 3000.0
+printer['toolhead'].max_velocity = 400.0
+printer['toolhead'].position = Coord(x=0.0, y=0.0, z=0.0, e=0.0)
+printer['toolhead'].print_time = 5908.45235077
+printer['toolhead'].square_corner_velocity = 20.0
+printer['toolhead'].stalls = 0
+printer['virtual_sdcard'].file_path = None
+printer['virtual_sdcard'].file_position = 0
+printer['virtual_sdcard'].file_size = 0
+printer['virtual_sdcard'].is_active = False
+printer['virtual_sdcard'].progress = 0.0
+printer['webhooks'].state = ready
+printer['webhooks'].state_message = Printer is ready
+printer['z_calibration'].last_query = False
+printer['z_calibration'].last_z_offset = 0.0
+
+GCODE LISTING PLACEHOLDERS 
+before_layer_gcode
+between_objects_gcode
+color_change_gcode
+end_filament_gcode
+end_gcode
+layer_gcode
+pause_print_gcode
+start_filament_gcode
+start_gcode
+tcr_rotated_gcode
+template_custom_gcode
+toolchange_gcode
+
+PLACEHOLDERS AVAILABLE IN ALL CUSTOM G-CODES
+current_extruder
+current_object_idx
+day
+filament_preset
+first_layer_print_convex_hull
+first_layer_print_max
+first_layer_print_min
+first_layer_print_size
+has_single_extruder_multi_material_priming
+has_wipe_tower
+hour
+initial_extruder
+initial_tool
+input_filename
+input_filename_base
+layer_height
+minute
+month
+num_instances
+num_objects
+physical_printer_preset
+print_bed_max
+print_bed_min
+print_bed_size
+print_preset
+printer_preset
+scale
+second
+timestamp
+total_layer_count
+total_toolchanges
+year
+
+TOOLCHANGE GCODE PLACEHOLDERS
+next_extruder
+previous_extruder
+toolchange_z
+max_layer_z
+layer_num
+layer_z
+
+BEFORE LAYER GCODE PLACEHOLDERS
+max_layer_z
+layer_num
+layer_z
+
+AFTER LAYER GCODE PLACEHOLDERS
+max_layer_z
+layer_num
+layer_z
+
+FILAMENT START GCODE PLACEHOLDERS
+max_layer_z
+layer_num
+layer_z
+filament_extruder_id
+
+FILAMENT END GCODE PLACEHOLDERS
+max_layer_z
+layer_num
+layer_z
+filament_extruder_id
+
+END GCODE PLACEHOLDERS
+max_layer_z
+layer_num
+layer_z
+
+OUTPUT FILENAME FORMAT FDM PLACEHOLDERS
+day
+extruded_volume
+filament_preset
+hour
+initial_extruder
+initial_filament_type
+initial_tool
+input_filename
+input_filename_base
+minute
+month
+normal_print_time
+num_extruders
+num_instances
+num_objectsnum_printing_extruders
+physical_printer_preset
+print_preset
+print_time
+printer_preset
+printing_filament_types
+scale
+second
+silent_print_time
+timestamp
+total_cost
+total_toolchanges
+total_weight
+total_wipe_tower_cost
+total_wipe_tower_filament
+used_filament
+version
+year
+
+OUTPUT FILENAME FORMAT SLA PLACEHOLDERS
+day
+hour
+input_filename
+input_filename_base
+minute
+month
+num_instances
+num_objects
+objects_used_material
+print_time
+scale
+second
+support_used_material
+timestamp
+total_cost
+total_weight
+version
+year
