@@ -1,8 +1,7 @@
-; if Z gets fuked on a normal pause, enter the following into the console:
-M27 ; will net current gcode file offset
-
-
-G1 X217.802 Y142.965   F2400					; change locations to current xy
-G1 Z14.5 F18000									; change locations to current z
-M26 S9306958									; reset gcode file index
+go_absolute
+G1 X260.534 Y58.664 F4619
+G1 Z3.2 F18000
+M26 S265591
 SAVE_GCODE_STATE NAME=State_Save_Pause			; set gcode state name
+SAVE_GCODE_STATE NAME=ERCF_state				; set gcode state name
+SAVE_GCODE_STATE NAME=PAUSE_STATE				; set gcode state name
