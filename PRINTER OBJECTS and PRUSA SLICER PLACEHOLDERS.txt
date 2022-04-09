@@ -195,7 +195,6 @@ printer['gcode_macro ERCF_SELECT_TOOL'].color_selected = -1
 printer['gcode_macro ERCF_SELECT_TOOL'].tool_selected = -1
 printer['gcode_macro PRINT_END'].print_end_scrub = False
 printer['gcode_macro PRINT_END'].retract_temp_min = 180
-printer['gcode_macro PRINT_START'].swapcounter = 0
 printer['gcode_macro PROBE_Z_ACCURACY'].entryexit_z = 15
 printer['gcode_macro PROBE_Z_ACCURACY'].entryexit_zrate = 900
 printer['gcode_macro set_startup_bedtemp'].heat_on_start = 0
