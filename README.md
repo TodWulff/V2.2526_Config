@@ -7,16 +7,37 @@ Useful Links:
 - https://github.com/Klipper3d/klipper
 - https://github.com/VoronDesign/Voron-2/raw/Voron2.4/Manual/Assembly_Manual_2.4r2.pdf
 - https://docs.vorondesign.com/
+- https://klipper.discourse.group/
+- Nice Klipper macro tutorial from Mental: https://klipper.discourse.group/t/macro-creation-tutorial/30
 
-FYSA (24Feb2022):  Be advised that these configs are a big Work In Process (WIP).  The printer is new
-as of Nov 2021.  Further, I recently added a 12-cart ERCF with ERCPs.  And, commensurate with the ERCF,
-I have migrated over to Prusa Slicer from Cura Slicer (which I have used for years), so I am working
-to massage these config files to conform to the workflow that I had established with Cura.  Just so
-y'all know about same...  Usual disclaimers apply.  YMMV.  I am not at fault if your use of these data
-result in injury/damage/issues/etc.  Your use of these data acknowledges these risks and indicates a full
-imdemnification of myself from any potential outcomes of your decision to use same.
+Spring 2022:  Be advised that I continue to muck with things related to the ERCF.  One of my findings
+is that repeatedly yanking hot filament up through the hot end contributes to heat creep.  After having
+fought heat creep with my Dragon HF HE on a traditional AB setup, having installed 'the dragon duct' to
+ward off heat creep in a non-ercf context, I was good.  However, with the ERCF install, it has come back.
+As such, I have installed a Dragon WHF - a water cooled HF HE.  One can glean a bit of info in Discord:
+https://discord.com/channels/877549316913365083/928716501480009768/963178294424006767 and
+https://discord.com/channels/460117602945990666/830395563094442044/966138287905443880 (VD's Phaetus Ch)
+
+Voron Kit Feedback Server Invite:  https://bit.ly/3igPTpJ (resolves to https://discord.com/invite/RyAGnb9y3G)
+My Formbot printer kit feedback ch: https://discord.com/channels/877549316913365083/885942140012744744
+My ERCF DFH Kit feedback ch: https://discord.com/channels/877549316913365083/928716501480009768
+
+FYSA (24Feb2022):  Be advised that these configs are a big Work In Process (WIP).  The printer is a new
+build in Nov 2021.  Further, I recently added a 12-cart ERCF with ERCPs.  And, commensurate with the ERCF,
+I have migrated over to Prusa Slicer from Cura Slicer (which I have used for years), so I am working to 
+massage these config files to conform to the workflow that I had initially established with Cura.  Just
+so y'all know about same...  Usual disclaimers apply.  YMMV.  blah blah blah.
+
+DISCLAIMER:  I am not at fault if your use of these info/data/code/macros/configs result in injury/damage/issues/etc.
+Your use of these info/data/code/macros/configs acknowledges these risks and indicates a full imdemnification
+of myself from any potential outcomes of your decision to use the info/data/code/macros/configs presented herein.
 
 Printer Details, for those who may be interested:
+- Watercooled Phaetus WHF High Flow Hot End, with Phaetus WaterCooler Pump/Radiator/Fan Kit
+  - I supplemented the latter with a stand-alone temp sensor/indicator ()
+  - And I've added sensors to enable programmatic indication of the 'H2O' cooling system in Klipper
+  - Further, I changed the kit wiring to enable PWM of the pump and to provide pump tach feedback to Klipper
+  - Finally (I think), I replaced the kit fan (2-wire 92mm, loud AF) with a Noctua () which is MUCH quieter. 
 - 12-cart ERCF with ERCPs - ERCF mounted to back, ERCPs are on a rack collocated IVO printer
 - ERCP imputed use of a tool-head filament detector switch which I folded into the design of the
   Orbiter v1.5 adapter
