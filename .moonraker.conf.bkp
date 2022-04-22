@@ -1,26 +1,23 @@
-#####################################################################
-# 	v2.2526
-#####################################################################
-
 [server]
-host: 0.0.0.0
-port: 7125
-enable_debug_logging: False
-# enable_object_processing: True
-config_path: ~/klipper_config
-log_path: ~/klipper_logs
+host = 0.0.0.0
+port = 7125
+klippy_uds_address = /tmp/klippy_uds
+max_upload_size = 2048
+enable_debug_logging = False
 
-queue_gcode_uploads: True
-#   When set to True the file manager will add uploads to the job_queue when
-#   the `start_print` flag has been set.  The default if False.
+[file_manager]
+config_path = ~/klipper_config
+log_path = ~/klipper_logs
+queue_gcode_uploads = True
+enable_object_processing = True
 
 [authorization]
-cors_domains:
+cors_domains = 
 	https://my.mainsail.xyz
 	http://my.mainsail.xyz
 	http://*.local
 	http://*.lan
-trusted_clients:
+trusted_clients = 
 	10.0.0.0/8
 	127.0.0.0/8
 	169.254.0.0/16
@@ -29,81 +26,78 @@ trusted_clients:
 	FE80::/10
 	::1/128
 
-# enables partial support of Octoprint API
-[octoprint_compat]
-## enables upload of prints from slicer - see MR docs
+[machine]
+provider = systemd_dbus
 
-# enables moonraker to track and store print history.
+[database]
+database_path = ~/.moonraker_database
+
+[data_store]
+temperature_store_size = 1200
+gcode_store_size = 10000
+
+[job_queue]
+load_on_startup = False
+automatic_transition = False
+
+[announcements]
+dev_mode = False
+
+[octoprint_compat]
+enable_ufp = True
+flip_h = False
+flip_v = False
+rotate_90 = False
+stream_url = /webcam/?action=stream
+webcam_enabled = True
+
 [history]
 
-#####################################################################
-# 	Update Manager Stuffs
-#####################################################################
-
-# this enables moonraker's update manager
 [update_manager]
-enable_auto_refresh: True
-#   When set to True Moonraker will attempt to fetch status about
-#   available updates roughly every 24 hours, between 12am-4am.
-#   When set to False Moonraker will only fetch update state on startup
-#   and clients will need to request that Moonraker updates state.  The
-#   default is False.
-
-#enable_auto_refresh: True
-#   When set to True moonraker will bypass repo validation and allow
-#   updates from unofficial remotes and/or branches.  Updates on
-#   detached repos are also allowed.  This option is intended for
-#   developers and should not be used on production machines.  The
-#   default is False
+enable_repo_debug = False
+enable_auto_refresh = True
+refresh_interval = 672
+enable_system_updates = True
+enable_packagekit = True
+channel = dev
 
 [update_manager mainsail]
-# type: web
-type: web_beta
-repo: mainsail-crew/mainsail
-path: ~/mainsail
-#persistent_files:
-#   A list of newline separated file names that should persist between
-#   updates.  This is useful for static configuration files, or perhaps
-#   themes.  The default is no persistent files.
-# refresh_interval:
-#   This overrides the refresh_interval set in the primary [update_manager]
-#   section.
+type = web
+channel = beta
+repo = mainsail-crew/mainsail
+path = ~/mainsail
 
 [update_manager led_effect]
-type: git_repo
-path: ~/klipper-led_effect
-origin: https://github.com/TodWulff/klipper-led_effect.git
-is_system_service: False
+type = git_repo
+path = ~/klipper-led_effect
+origin = https://github.com/TodWulff/klipper-led_effect.git
+is_system_service = False
 
 [update_manager client moonraker-telegram-bot]
-type: git_repo
-path: ~/moonraker-telegram-bot
-origin: https://github.com/nlef/moonraker-telegram-bot.git
-env: ~/moonraker-telegram-bot-env/bin/python
-requirements: scripts/requirements.txt
-install_script: scripts/install.sh
+type = git_repo
+path = ~/moonraker-telegram-bot
+origin = https://github.com/nlef/moonraker-telegram-bot.git
+env = ~/moonraker-telegram-bot-env/bin/python
+requirements = scripts/requirements.txt
+install_script = scripts/install.sh
 
 [update_manager client z_calibration]
-type: git_repo
-path: /home/pi/klipper_z_calibration
-origin: https://github.com/protoloft/klipper_z_calibration.git
-install_script: install.sh
+type = git_repo
+path = /home/pi/klipper_z_calibration
+origin = https://github.com/protoloft/klipper_z_calibration.git
+install_script = install.sh
 
 [update_manager client ERCF]
-type: git_repo
-path: /home/pi/ERCFUpdater
-origin: https://github.com/cpiercedev/ERCFUpdater.git
-install_script: install.sh
-
-#####################################################################
-# 	Power Control
-#####################################################################
+type = git_repo
+path = /home/pi/ERCFUpdater
+origin = https://github.com/cpiercedev/ERCFUpdater.git
+install_script = install.sh
 
 [power Printer]
-type: tasmota
-off_when_shutdown: False
-# on_when_upload_queued: True
-locked_while_printing: True
-restart_klipper_when_powered: True
-restart_delay: 2
-address: 10.0.0.25
+type = tasmota
+off_when_shutdown = False
+locked_while_printing = True
+restart_klipper_when_powered = True
+restart_delay = 2
+address = 10.0.0.25
+
