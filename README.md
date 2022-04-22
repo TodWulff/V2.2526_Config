@@ -92,5 +92,10 @@ Enjoy and Happy Printing!
 
 Useful Tidbits:
 	NPP Regex to fix copy/pastes from Mailsail Console:
-		Find: ^([0-9][0-9]:[0-9][0-9]:[0-9][0-9])\r\n(.*)$
-		Replace: \1 \2
+		Win Find:  ^([0-9][0-9]:[0-9][0-9]:[0-9][0-9])\r\n(.*)$
+		Replace:   \1 \2
+		
+		*nix Find:  ^([0-9][0-9]:[0-9][0-9]:[0-9][0-9])\n(.*)$
+		Replace:    \1 \2
+
+		
