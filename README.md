@@ -66,7 +66,7 @@ B) Klicky & the related 'z_calibration',
 
 C) LED_Effects, (31mar22 - recent klipper LED updates breaks LED effects - reportedly to be worked on in the coming days to fix it)
 
-D) Git (done at host'S OS level)
+D) Git (done at host's OS level)
 
 Also, with Alex's help (Discord @ALEX#8260, THANK YOU!), I was able to get an automated construct setup such that:
 
@@ -82,7 +82,7 @@ These activities are codified in those scripts and the associated backups of the
 Of note, there is one .cfg I have overtly nix'd from herein - Moonraker's Telegram Bot's .conf.  If an example is desired to look at, take a peek at the initial commit's history and you'll see it therein.  The token has since been revoked, so don't spin yer wheels. ;)
 https://github.com/TodWulff/V2.2526_Config/commit/8ac0f96c20a67e028ace10987d7467840370a18f#diff-2f205e9c312fdeaf31e98c2e4242087f788b99c51a2f2b692e8175073f6e4cf8
 
-I've also elected to ignore the save_variables file that houses configuration data for the ERCF, etc. so that old config data doesn't overright current data.
+I've also elected to ignore the save_variables file that houses configuration data for the ERCF, etc. so that old config data doesn't overwright current data.
 
 Enjoy and Happy Printing!
 
