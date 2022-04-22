@@ -87,3 +87,10 @@ I've also elected to ignore the save_variables file that houses configuration da
 Enjoy and Happy Printing!
 
 ~MHz
+
+
+
+Useful Tidbits:
+	NPP Regex to fix copy/pastes from Mailsail Console:
+		Find: ^([0-9][0-9]:[0-9][0-9]:[0-9][0-9])\r\n(.*)$
+		Replace: \1 \2
