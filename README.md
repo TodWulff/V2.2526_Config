@@ -9,6 +9,7 @@ Useful Links:
 - https://docs.vorondesign.com/
 - https://klipper.discourse.group/
 - Nice Klipper macro tutorial from Mental: https://klipper.discourse.group/t/macro-creation-tutorial/30
+- Current Wiring: https://github.com/TodWulff/V2.2526_Config/blob/main/V2.2526_Hardware/__WDM/V2.2526%20Wiring%20Diagram.pdf
 
 Spring 2022:  Be advised that I continue to muck with things related to the ERCF.  One of my findings
 is that repeatedly yanking hot filament up through the hot end contributes to heat creep.  After having
