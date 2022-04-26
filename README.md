@@ -11,7 +11,7 @@ Useful Links:
 - Nice Klipper macro tutorial from Mental: https://klipper.discourse.group/t/macro-creation-tutorial/30
 - Current Wiring: https://github.com/TodWulff/V2.2526_Config/blob/main/V2.2526_Hardware/__WDM/V2.2526%20Wiring%20Diagram.pdf
 
-Spring 2022:  Be advised that I continue to muck with things related to the ERCF.  One of my findings
+Spring 2022 Update:  Be advised that I continue to muck with things related to the ERCF.  One of my findings
 is that repeatedly yanking hot filament up through the hot end contributes to heat creep.  After having
 fought heat creep with my Dragon HF HE on a traditional AB setup, having installed 'the dragon duct' to
 ward off heat creep in a non-ercf context, I was good.  However, with the ERCF install, it has come back.
@@ -89,6 +89,7 @@ Enjoy and Happy Printing!
 
 ~MHz
 
+Also, https://i.imgur.com/IHALDMd.png  Making use of Mainsail's console filtering to quiet the noise... ;)
 
 
 Useful Tidbits:
