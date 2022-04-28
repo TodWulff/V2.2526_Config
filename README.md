@@ -65,7 +65,7 @@ A) Kiauh's 'shell_commands' [an unofficial extension],
 
 B) Klicky & the related 'z_calibration',
 
-C) LED_Effects, (31mar22 - recent klipper LED updates breaks LED effects - reportedly to be worked on in the coming days to fix it)
+C) LED_Effects by Hagbard
 
 D) Git (done at host's OS level)
 
@@ -77,6 +77,8 @@ Also, with Alex's help (Discord @ALEX#8260, THANK YOU!), I was able to get an au
   
 2) On print_end event, the config_push.sh script runs to push a snapshot of the printer's current config out to the git repo.
   - I am still cogitating on what other, if any, events to use to trigger a config backup.
+  
+3) Macro buttons on Mainsail enables manual initiation of either a push or pull from Klipper's Mainsail UI.
   
 These activities are codified in those scripts and the associated backups of the various .cfgs they impute a backup of, as evidenced in the contents herein.
 

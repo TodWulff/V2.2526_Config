@@ -59,7 +59,7 @@ remove trailing verbose gcode comments
 
 note: can just turn off verbose gcode. BUT PS is
 ignoring this on the start M190 Sblah command...
-and that is fracking with cfgs (i think lol)
+and that is fracking with cfgs (iirc, lol)
 note the leading space...
 -----------------------------------------------
 find
