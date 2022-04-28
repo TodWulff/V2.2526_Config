@@ -1,0 +1,93 @@
+https://3dfans.de/prusaslicer-2-4-1-beta1-released/
+https://regex101.com/ - reportedly should select ecmascript flavor...
+
+https://i.imgur.com/qgNX951.png (as of 28Apr22)
+
+-----------------------------------------------
+Note the format of this cheat sheet
+-----------------------------------------------
+find
+replace
+comment
+notes
+
+
+-----------------------------------------------
+-- production regex follows
+-----------------------------------------------
+(; stop printing object )(.*)
+;LAST_OBJECT_PRINTED:${2}\n${1}${2}
+massage to enable capture of last_object_printed
+-----------------------------------------------
+(; printing object )(.*)
+;CURRENT_OBJECT_PRINTED:${2}\n${1}${2}\n
+massage to enable capture of current_object_printed
+-----------------------------------------------
+([XYZEF]-?)(\.[0-9]+)
+${1}0${2}
+add leading 0 to param values where missing
+-----------------------------------------------
+ id:
+ id_
+WORKAROUND get rid of 2nd : (greedy is mucking with next regex)
+note leading spaces.
+-----------------------------------------------
+(^;)([^ ])(.*)(:)(.*)
+\n_SetSlicerVar VARIABLE='${2}${3}' VALUE='"${5}"'\n${1}${2}${3}${4}${5}
+add a set slicer var cmd for print param comments
+
+note: can't get the colon to be lazy.  it is always greedy regardless of 
+lazy - tried (:?) (:+?) (:{1}?) - no joy - goal: https://i.imgur.com/TeVjDtM.png
+so doing the former and following as a WORKAROUND...
+-----------------------------------------------
+ id_
+ id:
+WORKAROUND revert prior 'greedy fix'
+note leading spaces.
+-----------------------------------------------
+^(\s*\n){2,}
+\n
+nuke multiple concatenated blank lines
+-----------------------------------------------
+#.*
+
+remove all comment lines beginning with #
+-----------------------------------------------
+ ; .*
+
+remove trailing verbose gcode comments
+
+note: can just turn off verbose gcode. BUT PS is
+ignoring this on the start M190 Sblah command...
+and that is fracking with cfgs (i think lol)
+note the leading space...
+-----------------------------------------------
+find
+replace
+comment
+-----------------------------------------------
+find
+replace
+comment
+-----------------------------------------------
+find
+replace
+comment
+-----------------------------------------------
+find
+replace
+comment
+-----------------------------------------------
+find
+replace
+comment
+-----------------------------------------------
+find
+replace
+comment
+-----------------------------------------------
+find
+replace
+comment
+-----------------------------------------------
+ 
