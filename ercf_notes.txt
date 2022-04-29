@@ -1,0 +1,69 @@
+From: Durahl
+
+I'd describe the ERCF as being super needy in terms of repeatability to work properly...
+But the more accurate you can build and tune it the more reliable it'll work...
+
+My three biggest advice I can give:
+
+1) Make sure the D-Shaped Axle doesn't resemble a Banana ( glancing angrily towards DFH )
+
+2) Replace the 3D printed 80T Pulley with a proper Metal one.
+
+3) 3D print a Spacer that goes between any of the Bearings and the BMGs sitting on the D-Shaft otherwise you run the risk of them wandering out of their Bearing Block Cavity not supporting the D-Shaft anymore.
+
+From: Megahurtz
+
+1a) I too had to replace my dfh d-shaft.  I ended up going with a stainless round shaft from amazonia
+	and then used a dremel with fiber reinforced grinding wheel to nub flats onto the shaft where the
+	gears grub screws went.  
+	
+2a) I've a metal 80T on order.
+
+3a) Haven't any issues with the block bearings wandering, but it does make sense - 
+	when I blow mine apart for the metal 80T, I'll likely do this.
+
+Additional elements of feedback from MHz:
+
+4) Larger cart count = more sensitivity.  If you only need 4 or 6 colors, get a 4 or 6 cart ercf.
+   In hind sight, with my getting the 12-cart, I've made my bed for this.  The longer shafts are
+   subject to more flex, especially in the middle of the span.  And, with a larger part count, the
+   law of averages/murphy will rear their effin heads.  If I was doing it all again, I would go with
+   2ea 6-cart (or even 3ea 4-cart) ERCFs and just mod the macros to select with stepper/gear/servo.
+   gets used (T0-5 vs. T6-11).  But I am very comfortable coding something like this up using Klipper/
+   Jinja.  Other's might not be willing to tackle the software mods needed for such an implementation.
+
+5) While not rooted in an ERCF issue, the ERCF can exaserbate a latent issue.  Dragon HF hotend (SF too?)
+   seemingly has some organic issues with heat creep.  In a non-ercf context, a new duct insert/fan can
+   usually help provide adequate airflow to stave off any heat creep, event in a heated chamber (v2.4).
+   But, when performing a high-swap-density ercf print, the repeated and rapid color swaps can overcome any
+   benefit perceived to be sattributed by the duct/fan.  I went with a Dragon WHF watercooled highflow unit.
+   I'll advise outcomes as things get settled in.  Ifin you're running an Afterburner with a Phaetus HF/SF
+   Dragon, even if you've the duct insert add-on therein, you may end up experiencing heat creep at 150-
+   250 high-density swaps (from repeatedly pulling hot filament up through the HE).  I had the Dragon HF 
+   and was chugging along quite nicely, until I decided on a MM print that was pretty intense with the
+   swaps (a lot of very short extrusions) and then I discovered what others had previously described.  In
+   an attempt to alleviate this, I've just installed a water-cooled Phaetus and will advise outcomes as
+   soon as I get things back together and re-tuned.
+
+6) A low-drama buffering solution is pretty critical.  For w/e reason, I got my arse kicked by the ERCP
+   and ended up implementing a home-brew RMU-ish solution: 
+      https://github.com/TodWulff/-MHz-ERCF-Filament-Rack-Buffer-Tube-Assy
+
+7) Bowden ID size dynamics...  A lot of the traffic herein reflects the sensitivity of this topic for the
+   user base.  I was running 2.0/4.0 and, when I used a new filament type (MG Chemicals Gold ABS), the tip
+   formed as a bulb vs. as expected with my other filaments (I typically run with KVP ABS).  That bulb got
+   hung on a retract inside the extruder, just above the gears, at the edge of the bowden throat:  
+   https://i.imgur.com/AKRK4wA.jpg  As such, commensurate with my installing  the water-cooled HE, I've 
+   changed to a 3.0/4.0 reverse bowden from the encoder cart to the hot end.  Hopefully that will prove to
+   lend a bit of tolerance to my setup.
+
+8) Bowden ID chamfer:  Relatedly, I am heeding some advise I gleaned from other users herein:  Adding a
+   chamfer to the ID should also help:  https://imgur.com/a/eEr7N4g
+
+9) Don't over tighten the threaded M5 shafts - a wee bit loose is OK.  Too tight and things bind.  Mounting
+   will provide adequate stiffness.
+
+10) If you change anything, it is strongly suggested that, at a minimum, you re-run ercf_calibrate.  This goes
+    for bowden lengths, bowden ID changes, top hat changes, simple maintenance, and maybe even filament changes
+
+11) tophats, gates, ...

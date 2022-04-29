@@ -2,7 +2,7 @@ https://3dfans.de/prusaslicer-2-4-1-beta1-released/
 https://regex101.com/ - reportedly should select ecmascript flavor...
 
 https://i.imgur.com/qgNX951.png (as of 28Apr22)
-
+https://i.imgur.com/bpkikAs.png
 -----------------------------------------------
 Note the format of this cheat sheet
 -----------------------------------------------
@@ -45,10 +45,6 @@ so doing the former and following as a WORKAROUND...
 WORKAROUND revert prior 'greedy fix'
 note leading spaces.
 -----------------------------------------------
-^(\s*\n){2,}
-\n
-nuke multiple concatenated blank lines
------------------------------------------------
 #.*
 
 remove all comment lines beginning with #
@@ -61,6 +57,10 @@ note: can just turn off verbose gcode. BUT PS is
 ignoring this on the start M190 Sblah command...
 and that is fracking with cfgs (iirc, lol)
 note the leading space...
+-----------------------------------------------
+^(\s*\n){2,}
+\n
+nuke multiple concatenated blank lines
 -----------------------------------------------
 find
 replace
