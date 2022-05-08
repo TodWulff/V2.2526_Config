@@ -2,7 +2,7 @@ find: exiting sd card print
 shortly there after, find the position and the xyz values in the pause statement:
 	_PAUSE_STOCK @ 3506015 - 76.39%: X:84.964 Y:152.836 Z:32.2
 
-fill in the blanks and then copy and paste into the console
+fill in the blanks and then copy and paste into the console after addressing w/e 
 
 
 go_absolute
