@@ -1,7 +1,16 @@
+find: exiting sd card print	
+shortly there after, find the position and the xyz values in the pause statement:
+	_PAUSE_STOCK @ 3506015 - 76.39%: X:84.964 Y:152.836 Z:32.2
+
+fill in the blanks and then copy and paste into the console
+
+
 go_absolute
-G1 X260.534 Y58.664 F4619
-G1 Z3.2 F18000
-M26 S265591
-SAVE_GCODE_STATE NAME=State_Save_Pause			; set gcode state name
-SAVE_GCODE_STATE NAME=ERCF_state				; set gcode state name
-SAVE_GCODE_STATE NAME=PAUSE_STATE				; set gcode state name
+G92 E0
+G1 X_______ Y_________ F________
+G1 Z____ F18000
+M26 S_________
+SAVE_GCODE_STATE NAME=State_Save_Pause
+SAVE_GCODE_STATE NAME=ERCF_state
+SAVE_GCODE_STATE NAME=PAUSE_STATE
+RESUME
