@@ -17,7 +17,7 @@ From: Megahurtz
 	and then used a dremel with fiber reinforced grinding wheel to nub flats onto the shaft where the
 	gears grub screws went.  
 	
-2a) I've a metal 80T on order.
+2a) I've a metal 80T on order.  Receive and need to integrate it - not as easy as it sounds...
 
 3a) Haven't any issues with the block bearings wandering, but it does make sense - 
 	when I blow mine apart for the metal 80T, I'll likely do this.
@@ -65,5 +65,51 @@ Additional elements of feedback from MHz:
 
 10) If you change anything, it is strongly suggested that, at a minimum, you re-run ercf_calibrate.  This goes
     for bowden lengths, bowden ID changes, top hat changes, simple maintenance, and maybe even filament changes
+
+11) If you decide to mount the ERCF to your printer chassis, it is suggested that some sort of mechanical isolation
+	is applied, otherwise the echo box that is the print chamber can amplify noises of the steppers.  I don't yet
+	have a pointer to a good isolation damper, but am thinking of something along the line of lord mounts (we use 
+	them in aerospace for shock isolating sensitive devices such as gyros and/or various avionics LRUs).  Spring
+	coil isolators are an option here too - selection of the right ones are probably pretty important.  MTF...
+	https://www.amazon.com/uxcell-Female-Vibration-Isolators-Absorber/dp/B07KT44PQB
+	
+12)	For larger cart counts, it may br prudent to source a gear stepper that is beefy with ample torque - otherwise
+	you might find that the load and unload speeds need to be kept down to <=50mm/s, sadly.  Unless it is built to
+	high specs/standards, it is likely that the larger count units will have substantive friction on the gear axis
+	
+13)	Watercooled Hot End is useful and suggested.  BUT, do your home work and make sure that the heat break throat is
+	2mm or so.  With the Dragon WHF, the heat break throat is on the order of 1.8mm (a 1.75mm bit fits with no play).
+	With the ERCF, tip tuning is a thing and, if your tips aren't spot on, the tips may get hung on the heat break
+	entry throat (I actually chamfered mine a bit after disassembling when I thought I had a clog).  This is not
+	a readily apparant issue and can be frustrating AF.
+	
+14) Encoder ... there is a lot of traffic on the discord about these.  My recommendation is that it be heeded, and
+	to make use of the new encoder cart design with adjustability features built in.  I've seen traffic about having
+	to apply marker or paint to the surfaces of the gear that the encoder reads, but I've not had to go there.  I am
+	actually kicking the old style encoder cart that required a bit of filing to tune the sensor distance.
+	
+15) Sensorless homing/stall guard...  While neat, cool, and all that, imo there is no substitute for a switch when it
+	comes to homing.  Now, it does make sense from an issue-detection perspective (i.e. cart hung due to filament not
+	fully retracted into the feeder cart, etc.), but not for homing the cart, in my opinion.
+	
+16)	Toolhead sensor - just use a mechanical switch/bearing solution - you'll have a hell of a lot less issues...
+
+17)	ECAS vs. PC4-M6/M10	- It is suggested to make use of PC4-Mx connectors where it makes sense.  They are just bettar...
+
+18) Camera and LED Indication on encoder - I took the time to unsolder and reloate the sensor's LED indicator - having a 
+	cam monitoring the ERCF, plus having the LED overtly visible makes for a nice config, especially when cutting teeth
+	with the ERCF.  Also, note the transparency of the cart to toolhead bowden.  Makes quickly referencing if it has 
+	filament or not uber easy.  https://i.imgur.com/OEHPBEY.jpeg  https://youtu.be/m8GtaJYdFBg?t=22
+	
+19)	If using sensorless homing, it might be useful, if you're finding that things are all of the sudden not as they should
+	be, to throw a bit of appropriate lube at the linear rail shafts.  By appropriate, given I am ignorant, I am nodding
+	towards what the great and powerful oz says: "Linear systems typically use lithium-based greases, with no solid additives
+	such as MoS2 (molybdenum disulfide) or PTFE (Teflon), in consistency class between 0 and 3. These greases perform well 
+	in high-load applications and have good stability against oxidation."  (Oz = the web, cause it's never ever wrong)
+	
+	Doing this allowed me to save a print as I was starting to get 'Selector path is blocked, please check the ERCF, calling 
+	_ERCF_PAUSE...' during the print for no good reason...
+	
+20)	Servo Arm...
 
 11) tophats, gates, ...

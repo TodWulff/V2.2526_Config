@@ -1,0 +1,12 @@
+https://www.researchgate.net/publication/339245680_Quantification_of_Acrylonitrile_Butadiene_Styrene_Odor_Intensity_Based_on_a_Novel_Odor_Assessment_System_With_a_Sensor_Array
+
+Men, Hong & Yin, Chongbo & Shi, Yan & Liu, Xiaotong & Hairui, Fang & Han, Xiaoju & Liu, Jingjing. (2020). Quantification of Acrylonitrile Butadiene Styrene Odor Intensity Based on a Novel Odor Assessment System With a Sensor Array. IEEE Access. PP. 1-1. 10.1109/ACCESS.2020.2973665. As an engineering plastic, acrylonitrile butadiene styrene (ABS) has been widely used in the automobile trims. The odor intensity of ABS can be considered as an important reference for the quality of in-vehicle air. Currently, many automobile manufacturers employ their own testing methods to measure the odor intensity of the trims. Different rules lead that the market lacks a unified standard to evaluate the odor intensity. In this paper, a novel odor evaluation system was proposed to measure the odor intensity of ABS. According to coefficient of variation (CV), analysis of variance (ANOVA), and principal component analysis (PCA), eight sensors were selected to compose an array with stability, repeatability, and selectivity. By means of the pretreatment and the feature extraction, the odor features were quantified by grey relation analysis (GRA). Then, the regression models were constructed by extreme learning machine (ELM), random forest (RF), and support vector machine (SVM) to predict the odor intensity. The results indicated that the quantified data could describe the odor intensity accurately and be predicted well by three models. This study demonstrated that the system achieved perception and quantification of the odor intensity of ABS. In conclusion, a self-developed system was put forward, offering a new technique to evaluate the odor intensity, prospective to replace the manual testing.
+
+MQ-2		$4		Smoke LPG Butane Hydrogen Gas Sensor Detector Module				
+MQ-3		$4		Alcohol Sensor Module Breath Gas Detector Ethanol Detection			
+MQ137		$20		NH3 NOx Alcohol Benzene Smoke CO2 Gas Sensor Detector Module		https://www.ebay.com/itm/325042556552?chn=ps&mkevt=1&mkcid=28
+TGS-813		$10		Gas Sensor Test For Combustible Gases Methane/Propane Sensor		https://www.ebay.com/itm/384842756280
+TGS-821		$150	Hydrogen H2 Gas Sensor Detector										https://www.ebay.com/itm/143317578406
+TGS-825
+TGS-830
+TGS2610		$10		LP Gas Sensor for Portable LP Gas / Vapor Detector					https://www.ebay.com/itm/363729246977
