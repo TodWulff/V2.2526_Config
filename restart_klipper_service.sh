@@ -1,0 +1,2 @@
+/bin/systemctl restart klipper
+
