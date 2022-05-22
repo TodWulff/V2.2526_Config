@@ -60,11 +60,11 @@ Additional elements of feedback from MHz:
 8) Bowden ID chamfer:  Relatedly, I am heeding some advise I gleaned from other users herein:  Adding a
    chamfer to the ID should also help:  https://imgur.com/a/eEr7N4g
 
-9) Don't over tighten the threaded M5 shafts - a wee bit loose is OK.  Too tight and things bind.  Mounting
+9) Don't over tighten the threaded M5 shafts - a wee bit 'loose' is OK.  Too tight and things bind.  Mounting
    will provide adequate stiffness.
 
 10) If you change anything, it is strongly suggested that, at a minimum, you re-run ercf_calibrate.  This goes
-    for bowden lengths, bowden ID changes, top hat changes, simple maintenance, and maybe even filament changes
+    for bowden lengths, bowden ID changes, top hat changes, simple maintenance, and even filament changes
 
 11) If you decide to mount the ERCF to your printer chassis, it is suggested that some sort of mechanical isolation
 	is applied, otherwise the echo box that is the print chamber can amplify noises of the steppers.  I don't yet
@@ -73,7 +73,7 @@ Additional elements of feedback from MHz:
 	coil isolators are an option here too - selection of the right ones are probably pretty important.  MTF...
 	https://www.amazon.com/uxcell-Female-Vibration-Isolators-Absorber/dp/B07KT44PQB
 	
-12)	For larger cart counts, it may br prudent to source a gear stepper that is beefy with ample torque - otherwise
+12)	For larger cart counts, it may be prudent to source a gear stepper that is beefy with ample torque - otherwise
 	you might find that the load and unload speeds need to be kept down to <=50mm/s, sadly.  Unless it is built to
 	high specs/standards, it is likely that the larger count units will have substantive friction on the gear axis
 	
@@ -86,19 +86,24 @@ Additional elements of feedback from MHz:
 14) Encoder ... there is a lot of traffic on the discord about these.  My recommendation is that it be heeded, and
 	to make use of the new encoder cart design with adjustability features built in.  I've seen traffic about having
 	to apply marker or paint to the surfaces of the gear that the encoder reads, but I've not had to go there.  I am
-	actually kicking the old style encoder cart that required a bit of filing to tune the sensor distance.
+	actually still kicking the old style encoder cart that required a bit of filing to tune the sensor distance.
 	
 15) Sensorless homing/stall guard...  While neat, cool, and all that, imo there is no substitute for a switch when it
 	comes to homing.  Now, it does make sense from an issue-detection perspective (i.e. cart hung due to filament not
-	fully retracted into the feeder cart, etc.), but not for homing the cart, in my opinion.
+	fully retracted into the feeder cart, etc.), but not for homing the cart, in my opinion.  BUT, I do have it and it
+	is seemingly working.  One thing of note, fine machine oil on the shafts is good and appropriate.  Do NOT try and
+	use lubes with additives like moly, ptfe, etc.  Just don't.  See #19.
 	
-16)	Toolhead sensor - just use a mechanical switch/bearing solution - you'll have a hell of a lot less issues...
+16)	Toolhead sensor - just use a mechanical switch/bearing solution - you'll have a hell of a lot less issues.  I used
+	my slicer (PS 2.4.x) to make a toolhead adapter that has the required negative spaces needed for the bowden, bearing
+	switch, wiring path, and mating connector.  It was as simple as finding the STLs for the switch and the jst mating
+	connector, cobbling them together in PS to yield a customized tool head sensor. https://i.imgur.com/dUu4s0K.png
 
-17)	ECAS vs. PC4-M6/M10	- It is suggested to make use of PC4-Mx connectors where it makes sense.  They are just bettar...
+17)	ECAS vs. PC4-M6/M10	- It is suggested to make use of PC4-M__ connectors where it makes sense.  They are moar bettar...
 
-18) Camera and LED Indication on encoder - I took the time to unsolder and reloate the sensor's LED indicator - having a 
-	cam monitoring the ERCF, plus having the LED overtly visible makes for a nice config, especially when cutting teeth
-	with the ERCF.  Also, note the transparency of the cart to toolhead bowden.  Makes quickly referencing if it has 
+18) Filament Camera and LED Indication on encoder - I took the time to unsolder and reloate the sensor's LED indicator -
+	having a cam monitoring the ERCF, plus having the LED overtly visible makes for a nice config, especially when cutting
+	teeth with the ERCF.  Also, note the transparency of the cart to toolhead bowden.  Makes quickly referencing if it has 
 	filament or not uber easy.  https://i.imgur.com/OEHPBEY.jpeg  https://youtu.be/m8GtaJYdFBg?t=22
 	
 19)	If using sensorless homing, it might be useful, if you're finding that things are all of the sudden not as they should
@@ -109,7 +114,16 @@ Additional elements of feedback from MHz:
 	
 	Doing this allowed me to save a print as I was starting to get 'Selector path is blocked, please check the ERCF, calling 
 	_ERCF_PAUSE...' during the print for no good reason...
-	
-20)	Servo Arm...
 
-11) tophats, gates, ...
+20)	Powering the ERCF MCU..  I found that having the Xiao ERCF MCU powered via the USB as being problematic.  Sometimes it
+	would just hang and klipper couldn't reset it.  I ended up using a USB hub for all my MCUs that has a power switch for
+	each.  The Main MCU (Octopus v1.x in my case) has a means to defeat the usb from powering the controller.  This is good.
+	When coupled with a skirt mounted power switch, I was able to reset the MCU by way of toggling printer power.  I adopted
+	the same approach with the pico (lighting, discrete io, adxl spi) and the Xiao ERCF MCU and am happy.  If any of them get
+	hung, just toggling the printer power resolves any issues.  On the ERCF EZY BRD, I added a 2-pin header connected to 5VDC
+	and the 5V pin on the Xiao.  With a jumper cap installed, and the hub power switch off, all is right in the world, and
+	angels break out into a harmonious beat box.
+
+21)	Savox Servo & Arm...
+
+22) tophats, gates, ...
