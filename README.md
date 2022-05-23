@@ -20,6 +20,8 @@ https://discord.com/channels/877549316913365083/928716501480009768/9631782944240
 https://discord.com/channels/460117602945990666/830395563094442044/966138287905443880 (VD's Phaetus Ch)
 https://i.imgur.com/eYwYVdl.png <-- image of my mainsail instance.
 
+I also just installed an Orbiter v2 (23May22).
+
 Voron Kit Feedback Server Invite:  https://bit.ly/3igPTpJ (resolves to https://discord.com/invite/RyAGnb9y3G)
 My Formbot printer kit feedback ch: https://discord.com/channels/877549316913365083/885942140012744744
 My ERCF DFH Kit feedback ch: https://discord.com/channels/877549316913365083/928716501480009768
