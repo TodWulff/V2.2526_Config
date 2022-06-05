@@ -1,10 +1,10 @@
-find: "exiting sd card print..."	
+find: "exiting sd card print..."
 shortly there after, find the position and the xyz values in the pause statement:
 	_PAUSE_STOCK @ 3506015 - 76.39%: X84.964 Y152.836 Z32.2
 
 If klipper didn't shut down and if the steppers weren't disabled (causing loss of QGL)
 raise head above the Z height
-fill in the blanks and then copy and paste into the console after addressing w/e 
+fill in the blanks and then copy and paste into the console after addressing w/e
 
 
 ERCF_SELECT_TOOL TOOL=___
@@ -41,7 +41,7 @@ go_absolute
 G92 E0
 G1 X110.452 Y38.624 F15000
 G1 Z10.9 F18000
-M26 S647667 
+M26 S647667
 SAVE_GCODE_STATE NAME=State_Save_Pause
 SAVE_GCODE_STATE NAME=ERCF_state
 SAVE_GCODE_STATE NAME=PAUSE_STATE
