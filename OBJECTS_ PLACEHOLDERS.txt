@@ -963,7 +963,7 @@ M3001 S740 P187
 M3001 S740 P187
 M3001 S740 P187
 M3001 S784 P750
-M300done
+M300.1
 M117
 {% if printer["gcode_macro _printer_vars"].ptr_verb_codeflow %} _proc_end function=sng_simpons {% endif %}
 printer.configfile.config['gcode_shell_command hello_world'].command : echo hello world
@@ -1324,10 +1324,10 @@ M140.1 {rawparams}
 printer.configfile.config['gcode_macro snd_MeshStore'].gcode :
 {% if printer["gcode_macro _printer_vars"].ptr_verb_codeflow %} _proc_start function=snd_MeshStore {% endif %}
 {% if printer["gcode_macro _printer_vars"].ptr_verb_codeflow %} _proc_end function=snd_MeshStore {% endif %}
-printer.configfile.config['gcode_macro M300done'].gcode :
-{% if printer["gcode_macro _printer_vars"].ptr_verb_codeflow %} _proc_start function=M300done {% endif %}
+printer.configfile.config['gcode_macro M300.1'].gcode :
+{% if printer["gcode_macro _printer_vars"].ptr_verb_codeflow %} _proc_start function=M300.1 {% endif %}
 SET_PIN PIN=_BEEPER_pin VALUE=0.0 cycle_time=0.024
-{% if printer["gcode_macro _printer_vars"].ptr_verb_codeflow %} _proc_end function=M300done {% endif %}
+{% if printer["gcode_macro _printer_vars"].ptr_verb_codeflow %} _proc_end function=M300.1 {% endif %}
 printer.configfile.config['gcode_macro printer_config_restore'].gcode :
 {% if printer["gcode_macro _printer_vars"].ptr_verb_codeflow %} _proc_start function=printer_config_restore func_params='"{rawparams|string}"'  {% endif %}
 RUN_SHELL_COMMAND CMD=restore_configs
@@ -2015,7 +2015,7 @@ M3001 S440 P200
 M3001 S740 P200
 M3001 S440 P200
 M3001 S294 P800
-M300done
+M300.1
 M117
 {% if printer["gcode_macro _printer_vars"].ptr_verb_codeflow %} _proc_end function=sng_scom {% endif %}
 printer.configfile.config['gcode_macro _enable_gcode_state_debug'].gcode :
@@ -2090,7 +2090,7 @@ M3001 S988 P400
 M3001 S988 P600
 M3001 S880 P200
 M3001 S880 P800
-M300done
+M300.1
 M117
 {% if printer["gcode_macro _printer_vars"].ptr_verb_codeflow %} _proc_end function=sng_bethovene {% endif %}
 printer.configfile.config['gcode_macro PRINT_START'].gcode :
@@ -2515,7 +2515,7 @@ M3001 P206 S220
 M3001 P5 S92
 M3001 P16 S147
 M3001 P250 S73
-M300done
+M300.1
 M117
 {% if printer["gcode_macro _printer_vars"].ptr_verb_codeflow %} _proc_end function=sng_mch2 {% endif %}
 printer.configfile.config['gcode_macro go_absolute'].gcode :
@@ -2527,7 +2527,7 @@ printer.configfile.config['gcode_macro go_absolute'].description : does a G90 - 
 printer.configfile.config['gcode_macro sng_'].gcode :
 {% if printer["gcode_macro _printer_vars"].ptr_verb_codeflow %} _proc_start function=sng_ {% endif %}
 M117 Playing ___
-M300done
+M300.1
 M117
 {% if printer["gcode_macro _printer_vars"].ptr_verb_codeflow %} _proc_end function=sng_ {% endif %}
 printer.configfile.config.resonance_tester.probe_points :
@@ -3111,7 +3111,7 @@ M3001 s3000 p300
 M3001 s2900 p100
 M3001 s2400 p250
 M3001 s2700 p1500
-M300done
+M300.1
 M117
 {% if printer["gcode_macro _printer_vars"].ptr_verb_codeflow %} _proc_end function=sng_cena {% endif %}
 printer.configfile.config['gcode_macro _HOURMETER_OFF'].gcode :
@@ -4071,7 +4071,7 @@ M3001 S523 P108
 M3001 S0 P27
 M3001 S440 P653
 M3001 S0 P163
-M300done
+M300.1
 M117
 {% if printer["gcode_macro _printer_vars"].ptr_verb_codeflow %} _proc_end function=sng_empire {% endif %}
 printer.configfile.config['gcode_macro SET_HEATER_TEMPERATURE'].rename_existing : _SET_HEATER_TEMPERATURE_STOCK
@@ -4486,7 +4486,7 @@ M3001 S155.563 P125
 G4 P62.5
 M3001 S233.082 P62.5
 M3001 S195.998 P500
-M300done
+M300.1
 M117
 {% if printer["gcode_macro _printer_vars"].ptr_verb_codeflow %} _proc_end function=sng_imperialmarch {% endif %}
 printer.configfile.config.virtual_sdcard.path : /home/pi/gcode_files
@@ -4863,7 +4863,7 @@ M3001 P63 S523
 M3001 P125 S392
 M3001 P125 S392
 M3001 P333 S523
-M300done
+M300.1
 M117
 {% if printer["gcode_macro _printer_vars"].ptr_verb_codeflow %} _proc_end function=sng_reveille {% endif %}
 printer.configfile.config['gcode_macro PrintLED_Off'].gcode :
@@ -5045,7 +5045,7 @@ M3001 P4286 S294
 M3001 P643 S294
 M3001 P214 S294
 M3001 P5991 S392
-M300done
+M300.1
 M117
 {% if printer["gcode_macro _printer_vars"].ptr_verb_codeflow %} _proc_end function=sng_taps {% endif %}
 printer.configfile.config['gcode_macro PAUSE'].rename_existing : _PAUSE_STOCK
@@ -5177,7 +5177,7 @@ M117 Startup
 M3001 S1174 P125
 M3001 S1174 P125
 M3001 S2349 P125
-M300done
+M300.1
 M117
 {% if printer["gcode_macro _printer_vars"].ptr_verb_codeflow %} _proc_end function=sng_startup {% endif %}
 printer.configfile.config['gcode_macro ERCF_HOME_SELECTOR'].gcode :
@@ -5892,7 +5892,7 @@ M117 Mario
 M3001 S1046 P150
 M3001 S1318 P150
 M3001 S1567 P150
-M300done
+M300.1
 M117
 {% if printer["gcode_macro _printer_vars"].ptr_verb_codeflow %} _proc_end function=sng_mario {% endif %}
 printer.configfile.config['thermistor H2O'].beta : 3950
@@ -6179,7 +6179,7 @@ M3001 P2 S100
 M3001 P20 S100
 M3001 P150 S0
 M3001 P20 S100
-M300done
+M300.1
 M117
 {% if printer["gcode_macro _printer_vars"].ptr_verb_codeflow %} _proc_end function=sng_badboys {% endif %}
 printer.configfile.config['gcode_macro LcdLts_Blue'].gcode :
@@ -6706,7 +6706,7 @@ M3001 P206 S220
 M3001 P5 S92
 M3001 P16 S147
 M3001 P250 S73
-M300done
+M300.1
 M117
 {% if printer["gcode_macro _printer_vars"].ptr_verb_codeflow %} _proc_end function=sng_mch {% endif %}
 printer.configfile.config['gcode_macro ERCF_UNLOCK'].gcode :
@@ -6757,7 +6757,7 @@ M3001 S783 P400
 M3001 S987 P800
 M3001 S1174 P800
 M3001 S1318 P1600
-M300done
+M300.1
 M117
 {% if printer["gcode_macro _printer_vars"].ptr_verb_codeflow %} _proc_end function=sng_auldlangsyne {% endif %}
 printer.configfile.config.firmware_retraction.retract_length : 0.4
@@ -6947,7 +6947,7 @@ M3001 S493.883 P125
 M3001 S587.33 P125
 M3001 S523.251 P125
 M3001 S440 P500
-M300done
+M300.1
 M117
 {% if printer["gcode_macro _printer_vars"].ptr_verb_codeflow %} _proc_end function=sng_classical {% endif %}
 printer.configfile.config['gcode_macro _reset_extruder'].gcode :
@@ -7615,7 +7615,7 @@ M117 Startup
 M3001 S1174 P125
 M3001 S1174 P125
 M3001 S2349 P125
-M300done
+M300.1
 M117
 {% if printer["gcode_macro _printer_vars"].ptr_verb_codeflow %} _proc_end function=sng_startup {% endif %}
 printer.configfile.settings['gcode_macro sng_startup'].description : G-Code macro
@@ -7648,7 +7648,7 @@ M3001 S740 P187
 M3001 S740 P187
 M3001 S740 P187
 M3001 S784 P750
-M300done
+M300.1
 M117
 {% if printer["gcode_macro _printer_vars"].ptr_verb_codeflow %} _proc_end function=sng_simpons {% endif %}
 printer.configfile.settings['gcode_macro sng_simpons'].description : G-Code macro
@@ -8542,7 +8542,7 @@ M3001 S440 P200
 M3001 S740 P200
 M3001 S440 P200
 M3001 S294 P800
-M300done
+M300.1
 M117
 {% if printer["gcode_macro _printer_vars"].ptr_verb_codeflow %} _proc_end function=sng_scom {% endif %}
 printer.configfile.settings['gcode_macro sng_scom'].description : G-Code macro
@@ -8753,7 +8753,7 @@ M3001 S988 P400
 M3001 S988 P600
 M3001 S880 P200
 M3001 S880 P800
-M300done
+M300.1
 M117
 {% if printer["gcode_macro _printer_vars"].ptr_verb_codeflow %} _proc_end function=sng_bethovene {% endif %}
 printer.configfile.settings['gcode_macro sng_bethovene'].description : G-Code macro
@@ -9201,7 +9201,7 @@ M3001 P206 S220
 M3001 P5 S92
 M3001 P16 S147
 M3001 P250 S73
-M300done
+M300.1
 M117
 {% if printer["gcode_macro _printer_vars"].ptr_verb_codeflow %} _proc_end function=sng_mch2 {% endif %}
 printer.configfile.settings['gcode_macro sng_mch2'].description : G-Code macro
@@ -9218,7 +9218,7 @@ printer.configfile.settings['gcode_macro ercflts_full'].description : G-Code mac
 printer.configfile.settings['gcode_macro sng_'].gcode :
 {% if printer["gcode_macro _printer_vars"].ptr_verb_codeflow %} _proc_start function=sng_ {% endif %}
 M117 Playing ___
-M300done
+M300.1
 M117
 {% if printer["gcode_macro _printer_vars"].ptr_verb_codeflow %} _proc_end function=sng_ {% endif %}
 printer.configfile.settings['gcode_macro sng_'].description : G-Code macro
@@ -9922,7 +9922,7 @@ M3001 s3000 p300
 M3001 s2900 p100
 M3001 s2400 p250
 M3001 s2700 p1500
-M300done
+M300.1
 M117
 {% if printer["gcode_macro _printer_vars"].ptr_verb_codeflow %} _proc_end function=sng_cena {% endif %}
 printer.configfile.settings['gcode_macro sng_cena'].description : G-Code macro
@@ -10750,7 +10750,7 @@ M3001 S523 P108
 M3001 S0 P27
 M3001 S440 P653
 M3001 S0 P163
-M300done
+M300.1
 M117
 {% if printer["gcode_macro _printer_vars"].ptr_verb_codeflow %} _proc_end function=sng_empire {% endif %}
 printer.configfile.settings['gcode_macro sng_empire'].description : G-Code macro
@@ -11222,7 +11222,7 @@ M3001 S155.563 P125
 G4 P62.5
 M3001 S233.082 P62.5
 M3001 S195.998 P500
-M300done
+M300.1
 M117
 {% if printer["gcode_macro _printer_vars"].ptr_verb_codeflow %} _proc_end function=sng_imperialmarch {% endif %}
 printer.configfile.settings['gcode_macro sng_imperialmarch'].description : G-Code macro
@@ -11378,11 +11378,11 @@ _ERCF_ENDLESSSPOOL_UNLOAD_STOCK {rawparams}
 {% if printer["gcode_macro _printer_vars"].ptr_verb_codeflow %} _proc_end function=ERCF_ENDLESSSPOOL_UNLOAD {% endif %}
 printer.configfile.settings['gcode_macro ercf_endlessspool_unload'].description : wrapper for ERCF.py fw proc to handle error conditions, verbosity
 printer.configfile.settings['gcode_macro ercf_endlessspool_unload'].rename_existing : _ERCF_ENDLESSSPOOL_UNLOAD_STOCK
-printer.configfile.settings['gcode_macro m300done'].gcode :
-{% if printer["gcode_macro _printer_vars"].ptr_verb_codeflow %} _proc_start function=M300done {% endif %}
+printer.configfile.settings['gcode_macro M300.1'].gcode :
+{% if printer["gcode_macro _printer_vars"].ptr_verb_codeflow %} _proc_start function=M300.1 {% endif %}
 SET_PIN PIN=_BEEPER_pin VALUE=0.0 cycle_time=0.024
-{% if printer["gcode_macro _printer_vars"].ptr_verb_codeflow %} _proc_end function=M300done {% endif %}
-printer.configfile.settings['gcode_macro m300done'].description : G-Code macro
+{% if printer["gcode_macro _printer_vars"].ptr_verb_codeflow %} _proc_end function=M300.1 {% endif %}
+printer.configfile.settings['gcode_macro M300.1'].description : G-Code macro
 printer.configfile.settings['gcode_macro g1'].rename_existing : G1.1
 printer.configfile.settings['gcode_macro g1'].description : G1, with console echo if enabled
 printer.configfile.settings['gcode_macro g1'].gcode :
@@ -11416,7 +11416,7 @@ M3001 S493.883 P125
 M3001 S587.33 P125
 M3001 S523.251 P125
 M3001 S440 P500
-M300done
+M300.1
 M117
 {% if printer["gcode_macro _printer_vars"].ptr_verb_codeflow %} _proc_end function=sng_classical {% endif %}
 printer.configfile.settings['gcode_macro sng_classical'].description : G-Code macro
@@ -11692,7 +11692,7 @@ M3001 P63 S523
 M3001 P125 S392
 M3001 P125 S392
 M3001 P333 S523
-M300done
+M300.1
 M117
 {% if printer["gcode_macro _printer_vars"].ptr_verb_codeflow %} _proc_end function=sng_reveille {% endif %}
 printer.configfile.settings['gcode_macro sng_reveille'].description : G-Code macro
@@ -11787,7 +11787,7 @@ M3001 P4286 S294
 M3001 P643 S294
 M3001 P214 S294
 M3001 P5991 S392
-M300done
+M300.1
 M117
 {% if printer["gcode_macro _printer_vars"].ptr_verb_codeflow %} _proc_end function=sng_taps {% endif %}
 printer.configfile.settings['gcode_macro sng_taps'].description : G-Code macro
@@ -12702,7 +12702,7 @@ M117 Mario
 M3001 S1046 P150
 M3001 S1318 P150
 M3001 S1567 P150
-M300done
+M300.1
 M117
 {% if printer["gcode_macro _printer_vars"].ptr_verb_codeflow %} _proc_end function=sng_mario {% endif %}
 printer.configfile.settings['gcode_macro sng_mario'].description : G-Code macro
@@ -13040,7 +13040,7 @@ M3001 P2 S100
 M3001 P20 S100
 M3001 P150 S0
 M3001 P20 S100
-M300done
+M300.1
 M117
 {% if printer["gcode_macro _printer_vars"].ptr_verb_codeflow %} _proc_end function=sng_badboys {% endif %}
 printer.configfile.settings['gcode_macro sng_badboys'].description : G-Code macro
@@ -13218,7 +13218,7 @@ M3001 S783 P400
 M3001 S987 P800
 M3001 S1174 P800
 M3001 S1318 P1600
-M300done
+M300.1
 M117
 {% if printer["gcode_macro _printer_vars"].ptr_verb_codeflow %} _proc_end function=sng_auldlangsyne {% endif %}
 printer.configfile.settings['gcode_macro sng_auldlangsyne'].description : G-Code macro
@@ -13757,7 +13757,7 @@ M3001 P206 S220
 M3001 P5 S92
 M3001 P16 S147
 M3001 P250 S73
-M300done
+M300.1
 M117
 {% if printer["gcode_macro _printer_vars"].ptr_verb_codeflow %} _proc_end function=sng_mch {% endif %}
 printer.configfile.settings['gcode_macro sng_mch'].description : G-Code macro
@@ -14706,7 +14706,7 @@ printer['gcode_macro snd_MeshStart']
 printer['gcode_macro snd_MeshEnd']
 printer['gcode_macro snd_MeshFail']
 printer['gcode_macro snd_MeshStore']
-printer['gcode_macro M300done']
+printer['gcode_macro M300.1']
 printer['gcode_macro M3001']
 printer['gcode_macro M300']
 printer['gcode_macro init_gbl_vars']
