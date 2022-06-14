@@ -35,22 +35,8 @@ RESUME
 
 
 
-ERCF_SELECT_TOOL TOOL=11
-ERCF_SERVO_UP
-go_absolute
-G92 E0
-G1 X110.452 Y38.624 F15000
-G1 Z10.9 F18000
-M26 S647667
-SAVE_GCODE_STATE NAME=State_Save_Pause
-SAVE_GCODE_STATE NAME=ERCF_state
-SAVE_GCODE_STATE NAME=PAUSE_STATE
-RESUME
-
-
 _stop_bounds_checking
 stop_pause_alarm
-
 
 ercf_test_load_seq
 M112 INJECT=1
@@ -59,4 +45,31 @@ ercf_home
 _ERCF_SELECT_TOOL TOOL=0
 ercf_load
 ercf_calibrate_encoder DIST=500
+
+######################################################
+
+_SetSlicerVar VARIABLE='v2_2526_slicer_check' VALUE='"mhz_ps"'
+_SetSlicerVar VARIABLE='has_wipe_tower' VALUE='"0"'
+_SetSlicerVar VARIABLE='total_toolchanges' VALUE='"0"'
+G21		; metric
+M190 S120	; wait bed temp
+M109 S240	; wait he temp
+M1181 CE-1 NE3 TC0	; annunciate swap stuff
+T3					; load t3
+_print_purge	; purge & clean_nozzle - no retract
+G10		; hw retract
+G90		; absolute xyz
+M83		; relative e
+M106 S102	; fan
+_SetSlicerVar VARIABLE='maxz' VALUE='"7.3"'
+M1170 L35 T277	; annunciate layer stuff
+G92 E0		; reset extruder
+G1 Z25.0 F3000	; move up to some safe z height
+G1 X174.371 Y270.43 F21000	; move to the restart xy position
+G1 Z7.3 F3000	; move to restart z
+G11				; prime nozzle
+
+;;; set exclude object name here too
+;  ... and carry on
+; ################################################
 
