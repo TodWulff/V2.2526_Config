@@ -16,7 +16,7 @@ FW code chokes on - see: https://github.com/TodWulff/V2.2526_Config/blob/main/_g
 
 Throughout my configs, virtually all gcode macros have been 'instrumented' - the first and last lines of each gcode
 block can be deleted.  I have these as I have an ability to trace macro code execution and display same in the
-console - quite powerful for macro development/troubleshooting but of little/no use to others, with rare exception - 
+console - quite powerful for macro development/troubleshooting but of little/no use to others, with rare exception -
 see: https://github.com/TodWulff/V2.2526_Config/blob/main/_debug_macros.cfg
 
 Users should consider adding a User Input macro pane, as depicted here: https://i.imgur.com/QVxLuVZ.png which calls macros herein
@@ -30,7 +30,7 @@ Optional Parameters:
 **`PROMPT`**		Quoted Text to display in console as a user input prompt.  Promts are vistually separated from balance
 of console context via a dashed line being displayed before and after the prompt (see images below).
 
-**`RCVR_MACRO`**	Macro name to run when VALID input received - UI_INPUT param, containing user input contents is 
+**`RCVR_MACRO`**	Macro name to run when VALID input received - UI_INPUT param, containing user input contents is
 passed to the called macro - if required, the called user macro can query svv for additional details.
 
 **`TYPE`**		The TYPE of input needed - one of these three string/str, integer/int, float/flt
@@ -66,7 +66,7 @@ Again, ALL parameters are optional and default to something:
 	TYPE=STRING				'string' or 'integer' or 'float' - for buttons use string
 	BOUNDS_LO=1				min string chars or min numercial value (Int/Flt -999999999)
 	BOUNDS_HI=255				max string chars or max numercial value (Int/Flt  999999999)
-	RCVR_MACRO=_test_show_user_input	to accept param UI_INPUT that will be an int/flt/"string" that was 
+	RCVR_MACRO=_test_show_user_input	to accept param UI_INPUT that will be an int/flt/"string" that was
 						input and passes sniff test (simple bounding checks)
 	TO_PERIOD=120				in seconds
 	EXCPT_HDLR=_ui_exception_handler	no params passed to this proc - use svv to get runtime specifics if needed
