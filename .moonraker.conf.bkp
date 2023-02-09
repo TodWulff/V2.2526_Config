@@ -1,15 +1,11 @@
 [server]
 host = 0.0.0.0
 port = 7125
-klippy_uds_address = /tmp/klippy_uds
-max_upload_size = 2048
-enable_debug_logging = False
+max_upload_size = 1024
+klippy_uds_address = ~/printer_data/comms/klippy.sock
 
 [file_manager]
-config_path = ~/klipper_config
-log_path = ~/klipper_logs
-queue_gcode_uploads = True
-enable_object_processing = True
+enable_object_processing = False
 
 [authorization]
 cors_domains = 
@@ -26,81 +22,49 @@ trusted_clients =
 	FE80::/10
 	::1/128
 
-[machine]
-provider = systemd_dbus
-
-[database]
-database_path = ~/.moonraker_database
-
-[data_store]
-temperature_store_size = 2400
-gcode_store_size = 5000
-
-[job_queue]
-load_on_startup = False
-automatic_transition = False
-
-[announcements]
-dev_mode = False
-
 [octoprint_compat]
-enable_ufp = True
-flip_h = False
-flip_v = False
-rotate_90 = False
-stream_url = /webcam/?action=stream
-webcam_enabled = True
 
 [history]
 
+[announcements]
+subscriptions = 
+	mainsail
+
 [update_manager]
-enable_repo_debug = False
+refresh_interval = 168
 enable_auto_refresh = True
-refresh_interval = 672
-enable_system_updates = True
-enable_packagekit = True
-channel = dev
 
 [update_manager mainsail]
 type = web
-channel = beta
+channel = stable
 repo = mainsail-crew/mainsail
 path = ~/mainsail
 
-[update_manager client moonraker-telegram-bot]
+[update_manager mainsail-config]
 type = git_repo
-primary_branch = development
-path = ~/moonraker-telegram-bot
-origin = https://github.com/nlef/moonraker-telegram-bot.git
-env = ~/moonraker-telegram-bot-env/bin/python
-requirements = scripts/requirements.txt
-install_script = scripts/install.sh
+primary_branch = master
+path = ~/mainsail-config
+origin = https://github.com/mainsail-crew/mainsail-config.git
+managed_services = klipper
+
+[update_manager crowsnest]
+type = git_repo
+path = ~/crowsnest
+origin = https://github.com/mainsail-crew/crowsnest.git
+managed_services = crowsnest
+install_script = tools/install.sh
+
+[update_manager sonar]
+type = git_repo
+path = ~/sonar
+origin = https://github.com/mainsail-crew/sonar.git
+primary_branch = main
+managed_services = sonar
+install_script = tools/install.sh
 
 [update_manager led_effect]
 type = git_repo
 path = ~/klipper-led_effect
-origin = https://github.com/TodWulff/klipper-led_effect.git
+origin = https://github.com/julianschill/klipper-led_effect.git
 is_system_service = False
-
-[update_manager client z_calibration]
-type = git_repo
-path = /home/pi/klipper_z_calibration
-origin = https://github.com/protoloft/klipper_z_calibration.git
-install_script = install.sh
-
-[update_manager KlipperScreen]
-type = git_repo
-path = /home/pi/KlipperScreen
-origin = https://github.com/jordanruthe/KlipperScreen.git
-env = /home/pi/.KlipperScreen-env/bin/python
-requirements = scripts/KlipperScreen-requirements.txt
-install_script = scripts/KlipperScreen-install.sh
-
-[power Printer]
-type = tasmota
-off_when_shutdown = False
-locked_while_printing = True
-restart_klipper_when_powered = True
-restart_delay = 2
-address = 10.0.0.25
 

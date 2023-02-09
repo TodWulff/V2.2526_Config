@@ -1,4 +1,4 @@
-cd ~/klipper_config
+cd ~/printer_data/config
 git fetch
 echo "Pulling a config restore - will restart Klipper if config changes exist."
 if git status | grep -q 'Your branch is behind'; then
