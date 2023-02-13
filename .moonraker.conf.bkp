@@ -68,3 +68,11 @@ path = ~/klipper-led_effect
 origin = https://github.com/julianschill/klipper-led_effect.git
 is_system_service = False
 
+[power Printer]
+type = tasmota
+off_when_shutdown = False
+locked_while_printing = True
+restart_klipper_when_powered = True
+restart_delay = 2
+address = 10.0.0.25
+
