@@ -4,3 +4,4 @@ imgs/
 v2.2526.twilio_guidance
 .twiliorc
 .gitignore
+secrets.conf
