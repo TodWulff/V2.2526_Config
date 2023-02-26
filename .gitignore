@@ -3,5 +3,5 @@ _globals.pvar
 imgs/
 v2.2526.twilio_guidance
 .twiliorc
-.gitignore
 secrets.conf
+shell_command.cfg
