@@ -4,9 +4,9 @@ Repo for the Klipper Config directory of my Voron V2.4 (not v2.4r2) SN 2526, a 3
 01MAR23 Update Brief:
 1) 	Touched every .cfg to add delayed gcode macros to validate it loading.
 	This can be disabled in the Printer_Vars variables (...cfgload: 0).
-	I was having an issue with sequencing the load and a silly syntax error
-	was causing a module to load but not run a specific macro I was working,
-	and I thought my edits borked the loading, but it was just the macro that
+	I was having an issue with sequencing the load and a silly syntax AND
+	logic error caused a module to load but not run a specific macro, I had
+	thought my edits borked the cfg loading, but it was just the macro that
 	was failing silently... (A Klipper Behavior Feature they say ;-)
 2)	Added ability for Klipper to synthesize voice by way of pico2wave on the
 	host.  I'll make a separate readme for those who might be interested.  As
