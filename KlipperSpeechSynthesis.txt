@@ -1,0 +1,59 @@
+Make your Klipper host capable of speech synthesis
+
+This is just the way I ended up skinning this cat:
+
+*nix diehards will likely have comments on my decisions, and I welcome same.  I am a *nix hack.
+
+install pico2wave (sudo apt install libttspico-utils)
+Optional: install vlc (sudo apt install vlc) ifin you favor VLC
+create /home/pi/temp (not necessairly required, but works for me on my setup)
+
+create say.sh in ~/printer-data/config (or w/e - i put it there for ease of use from klipper)
+
+	#!/bin/bash
+	pico2wave -l en-US -w ~/temp/temp.wav "$1"
+	# cvlc --gain 2 --quiet --play-and-exit ~/temp/temp.wav > /dev/null 2>&1
+	# ^^^ optional if one favors vlc, or, if you're using aplay (raspbian) the following line works
+	aplay ~/temp/temp.wav > /dev/null 2>&1
+	
+save it and chmod it to 755(? - worked for me)
+
+then make it executable program everywhere by linking it to /usr/bin:
+	sudo ln -s /home/pi/printer_data/config/say.sh /usr/bin/say
+
+there after one can just enter ' say "blah" ' in the shell and it just works.
+
+Now I can call a shell command macro to have the printer speak utterances as desired.
+
+I'll end up writing a custom macro to make it easiest to use from gcode with utterance string passed as a parameter.
+
+Happy Printing/Tuning/Geeking! :)
+
+~MHz
+
+
+
+
+
+
+
+
+
+cvlc --play-and-exit /home/pi/sounds/file_example_WAV_10MG.wav
+
+gtts-cli 'hello' | cvlc --play-and-exit -
+
+
+
+
+
+GD: 
+
+cvlc --gain 2 --quiet --play-and-exit - > /dev/null 2>&1
+
+
+pico2wave -l en-GB -w /home/pi/sounds/temp.wav "This is a wicked good test"; cvlc --gain 2 --quiet --play-and-exit /home/pi/sounds/temp.wav > /dev/null 2>&1
+
+pico2wave -l en-US -w ~/temp/temp.wav "$(cat ~/temp/temp.txt)"; cvlc --gain 2 --quiet --play-and-exit ~/temp/temp.wav > /dev/null 2>&1
+
+

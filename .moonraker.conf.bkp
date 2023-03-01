@@ -5,7 +5,10 @@ max_upload_size = 1024
 klippy_uds_address = ~/printer_data/comms/klippy.sock
 
 [file_manager]
-enable_object_processing = False
+enable_object_processing = True
+
+[machine]
+shutdown_action = halt
 
 [authorization]
 cors_domains = 
@@ -13,6 +16,8 @@ cors_domains =
 	http://my.mainsail.xyz
 	http://*.local
 	http://*.lan
+	*.amazonalexa.com
+	*.amazonaws.com
 trusted_clients = 
 	10.0.0.0/8
 	127.0.0.0/8
