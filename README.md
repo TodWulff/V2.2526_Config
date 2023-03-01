@@ -16,7 +16,7 @@ Repo for the Klipper Config directory of my Voron V2.4 (not v2.4r2) SN 2526, a 3
 	used to hearing as the machine did it's thing).  Beeping just doesn't cut
 	it after one gets used to the verbal emissions (at least for me...).
 3)  Working to add code to stall a print starting if host cpu utilization is
-	>1.0.  This is relevant if one automagically generates timelapses and one
+	\>1.0.  This is relevant if one automagically generates timelapses and one
 	tries to start a new print after a longer print completed and a timelapse
 	is being built by the host.  Can you say Timer-Too-Close.?.
 
