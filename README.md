@@ -1,6 +1,26 @@
 # V2.2526_Config
 Repo for the Klipper Config directory of my Voron V2.4 (not v2.4r2) SN 2526, a 350^3 model built by ~MHz (myself) in 4Q21.
 
+01MAR23 Update Brief:
+1) 	Touched every .cfg to add delayed gcode macros to validate it loading.
+	This can be disabled in the Printer_Vars variables (...cfgload: 0).
+	I was having an issue with sequencing the load and a silly syntax error
+	was causing a module to load but not run a specific macro I was working,
+	and I thought my edits borked the loading, but it was just the macro that
+	was failing silently... (A Klipper Behavior Feature they say ;-)
+2)	Added ability for Klipper to synthesize voice by way of pico2wave on the
+	host.  I'll make a separate readme for those who might be interested.  As
+	a result of this capability, I threaded speech synthesis commands into a
+	lot of the macros.  I've been missing TTS since I switch to Klipper from
+	Octoprint (Jneliii has the M117VoiceSynthesis plugin that I loved and got
+	used to hearing as the machine did it's thing).  Beeping just doesn't cut
+	it after one gets used to the verbal emissions (at least for me...).
+3)  Working to add code to stall a print starting if host cpu utilization is
+	>1.0.  This is relevant if one automagically generates timelapses and one
+	tries to start a new print after a longer print completed and a timelapse
+	is being built by the host.  Can you say Timer-Too-Close.?.
+
+
 Useful Links:
 - https://jinja.palletsprojects.com/en/2.10.x/templates/
 - https://www.klipper3d.org/Overview.html
