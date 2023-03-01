@@ -2,7 +2,7 @@
 Repo for the Klipper Config directory of my Voron V2.4 (not v2.4r2) SN 2526, a 350^3 model built by ~MHz (myself) in 4Q21.
 
 01MAR23 Update Brief:
-1) 	Touched every .cfg to add delayed gcode macros to validate it loading.
+1) 	Added delayed gcode macros every .crfg to validate load/sequencing.
 	This can be disabled in the Printer_Vars variables (...cfgload: 0).
 	I was having an issue with sequencing the load and a silly syntax AND
 	logic error caused a module to load but not run a specific macro, I had
@@ -19,7 +19,30 @@ Repo for the Klipper Config directory of my Voron V2.4 (not v2.4r2) SN 2526, a 3
 	\>1.0.  This is relevant if one automagically generates timelapses and one
 	tries to start a new print after a longer print completed and a timelapse
 	is being built by the host.  Can you say Timer-Too-Close.?.
-
+4)	There are other things I continue to work or polish or refactor or break.
+5)	I got curious what the composite cfg looks like once it is loaded by Klipper
+	If you are curious and want to see a config that is nearly 13K LOC:
+	https://gist.github.com/TodWulff/a8c6e04c5518768006bb266694994f11
+6)	I commissioned Brody (yes, I've taken to naming my printers after sentient
+	AIs from my other passion in life - SciFi Audio Books) back in NOV21, was
+	TDY professionally for 9 consecutive months earlier that year (it was brutal
+	in Middle TN during the summer months - couldn't wait to come home.  Did so, 
+	and got hooked by the Voron bug.  Ordered the Kit in September and had it
+	completed sometime in November.  Then, in 2022, I got tasked with more travel
+	on an OCONUS gig (to the DR for a USG Program on an Aerial ISR Platform that
+	we modified and certified under a WPAFB administered SOUTHCOM FMS program).
+	That lasted from early JUL22 thru AUG22.  I came back from DR and was here for
+	a week+ when, on/about 01SEP, I was voluntold that I needed to go assist the  
+	MRO's Avionics division as they had a program larger than they were prepared for.
+	I drove from Upper MI to Middle TN on Labor Day 2022, and was able to get back
+	here (to my home orifice) just a few weeks ago.  Needless to say, it is good
+	to be back here and to be knee-deep in snow, printers, Klipper, Mainsail, Discord 
+	and all that is this wonderful hobby and community. 9+2+5 = 16+ months deployed
+	since JAN21. I hope I can be home for a while this time around. Am in the middle
+	of a v0.1 build (my 2nd, having gifted my first (Skippy) to my son's family).
+	I am printing parts to turn the kit into a Tri-Zero as I never got comfortable
+	with the cantilevered beds on the stock v0.1s.  Anyways, I've rambled on much
+	too long.  Please and Love Peeps.  I'm out for now.  ~MHz
 
 Useful Links:
 - https://jinja.palletsprojects.com/en/2.10.x/templates/
