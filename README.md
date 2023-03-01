@@ -32,7 +32,7 @@ Repo for the Klipper Config directory of my Voron V2.4 (not v2.4r2) SN 2526, a 3
 	on an OCONUS gig (to the DR for a USG Program on an Aerial ISR Platform that
 	we modified and certified under a WPAFB administered SOUTHCOM FMS program).
 	That lasted from early JUL22 thru AUG22.  I came back from DR and was here for
-	a week+ when, on/about 01SEP, I was voluntold that I needed to go assist the  
+	a week+ when, on/about 01SEP, I was voluntold that I needed to go assist the
 	MRO's Avionics division as they had a program larger than they were prepared for.
 	I drove from Upper MI to Middle TN on Labor Day 2022, and was able to get back
 	here (to my home orifice) just a few weeks ago.  Needless to say, it is good
@@ -42,7 +42,7 @@ Repo for the Klipper Config directory of my Voron V2.4 (not v2.4r2) SN 2526, a 3
 	of a v0.1 build (my 2nd, having gifted my first (Skippy) to my son's family).
 	I am printing parts to turn the kit into a Tri-Zero as I never got comfortable
 	with the cantilevered beds on the stock v0.1s.  Anyways, I've rambled on much
-	too long.  Please and Love Peeps.  I'm out for now.  ~MHz
+	too long.  Peace and Love Peeps.  I'm out for now.  ~MHz
 
 Useful Links:
 - https://jinja.palletsprojects.com/en/2.10.x/templates/
