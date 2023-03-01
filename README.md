@@ -2,7 +2,7 @@
 Repo for the Klipper Config directory of my Voron V2.4 (not v2.4r2) SN 2526, a 350^3 model built by ~MHz (myself) in 4Q21.
 
 01MAR23 Update Brief:
-1) 	Added delayed gcode macros every .crfg to validate load/sequencing.
+1) 	Added delayed gcode macros every .cfg to validate load/sequencing.
 	This can be disabled in the Printer_Vars variables (...cfgload: 0).
 	I was having an issue with sequencing the load and a silly syntax AND
 	logic error caused a module to load but not run a specific macro, I had
