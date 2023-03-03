@@ -7,17 +7,28 @@
 ## Regardless, the following works and, as a side benefit, from the linux shell you don't need to wrap the string in single or double quotes.
 ## prolly bad forum, but meh, it works and I taint going to fix it any more.
 
+# create a temp directory in user's home folder if it doesn't exist
+mkdir -p ~/temp
+
+# parse and assemble parameters as a single long parameter
+# 'side benefit': being able to pass a sentence for speech synthesis
+# without encapsulating it in string encapsulation characters
+# say This: is , a silly example! .
 params=""
 for element in "$@"
 do
 	params="$params $element"
 done
 
+# create a temp.way of the generated speech synthesis sans console delay/traffic
 pico2wave -l en-US -w ~/temp/temp.wav "$params" > /dev/null 2>&1 &
 
+# and play the converted speech over the audio system
 cvlc --gain 2 --quiet --play-and-exit ~/temp/temp.wav > /dev/null 2>&1 &
 # ^^^ optional if one favors vlc, or, if you're using aplay (raspbian) the following line works
 # aplay ~/temp/temp.wav > /dev/null 2>&1 &
+
+
 
 ### So this shell script will work stand alone from the linux shell. To make use of this from within Klipper Macros, the use of
 ### the shell command module (installable with th33xitus' kiauh script) is how I chose to pursue it.  The following is what I did
