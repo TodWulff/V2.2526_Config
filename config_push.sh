@@ -9,6 +9,6 @@ git add .
 git commit -m 'printer event - automated config backup'
 git push
 echo "Config backup complete."
-SAY  "Config backup complete."
+say  "Config backup complete."
 echo 'M118 Config backup complete.' > ~/printer_data/comms/klippy.serial
 # echo '{action_respond_info("Config backup complete.")}' > ~/printer_data/comms/klippy.serial
