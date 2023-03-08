@@ -5,3 +5,4 @@ v2.2526.twilio_guidance
 .twiliorc
 secrets.conf
 shell_command.cfg
+*.swp
