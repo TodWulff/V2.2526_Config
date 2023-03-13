@@ -88,4 +88,3 @@ locked_while_printing = True
 restart_klipper_when_powered = True
 restart_delay = 2
 address = 10.0.0.25
-
