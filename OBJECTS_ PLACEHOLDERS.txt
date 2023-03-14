@@ -1330,7 +1330,7 @@ SET_PIN PIN=_BEEPER_pin VALUE=0.0 cycle_time=0.024
 {% if printer["gcode_macro _printer_vars"].ptr_verb_codeflow %} _proc_end function=M300.1 {% endif %}
 printer.configfile.config['gcode_macro printer_config_restore'].gcode :
 {% if printer["gcode_macro _printer_vars"].ptr_verb_codeflow %} _proc_start function=printer_config_restore func_params='"{rawparams|string}"' {% endif %}
-RUN_SHELL_COMMAND CMD=restore_configs
+RUN_SHELL_CMD CMD=restore_configs
 {% if printer["gcode_macro _printer_vars"].ptr_verb_status %} M118 >>> Printer config updated from git repo <<< {% endif %}
 {% if printer["gcode_macro _printer_vars"].ptr_verb_codeflow %} _proc_end function=printer_config_restore {% endif %}
 printer.configfile.config['gcode_macro printer_config_restore'].description : Restore local configs from the git repo and restart klipper if updated
@@ -2063,7 +2063,7 @@ PROBE_ACCURACY PROBE_SPEED=10 SAMPLES=5 SAMPLE_RETRACT_DIST=2 LIFT_SPEED=15
 printer.configfile.config['gcode_macro Z_Probe_Accuracy'].description : Test and report Probe accuracy at current location, moving to 175,175 if outside of bed
 printer.configfile.config['gcode_macro printer_config_backup'].gcode :
 {% if printer["gcode_macro _printer_vars"].ptr_verb_codeflow %} _proc_start function=printer_config_backup func_params='"{rawparams|string}"' {% endif %}
-RUN_SHELL_COMMAND CMD=backup_configs
+RUN_SHELL_CMD CMD=backup_configs
 {% if printer["gcode_macro _printer_vars"].ptr_verb_status %} M118 >>> Printer config backed up to git repo <<< {% endif %}
 {% if printer["gcode_macro _printer_vars"].ptr_verb_codeflow %} _proc_end function=printer_config_backup {% endif %}
 printer.configfile.config['gcode_macro printer_config_backup'].description : performs backup of local configs to the git master
@@ -2207,7 +2207,7 @@ SET_LED LED=dash_lights RED=0 GREEN=0.5 BLUE=0
 {% if printer["gcode_macro _printer_vars"].ptr_verb_codeflow %} _proc_end function=DBLts_Green {% endif %}
 printer.configfile.config['gcode_macro HELLO_WORLD'].gcode :
 {% if printer["gcode_macro _printer_vars"].ptr_verb_codeflow %} _proc_start function=HELLO_WORLD {% endif %}
-RUN_SHELL_COMMAND CMD=hello_world
+RUN_SHELL_CMD CMD=hello_world
 {% if printer["gcode_macro _printer_vars"].ptr_verb_codeflow %} _proc_end function=HELLO_WORLD {% endif %}
 printer.configfile.config['gcode_macro sng_mch2'].gcode :
 {% if printer["gcode_macro _printer_vars"].ptr_verb_codeflow %} _proc_start function=sng_mch2 {% endif %}
@@ -3087,9 +3087,9 @@ printer.configfile.config['gcode_macro ERCF_MOTORS_OFF'].description : Turn off 
 printer.configfile.config['gcode_macro system_shutdown'].gcode :
 {% if printer["gcode_macro _printer_vars"].ptr_verb_codeflow %} _proc_start function=system_shutdown func_params='"{rawparams|string}"' {% endif %}
 {% if printer["gcode_macro _printer_vars"].ptr_verb_status %} M118 >>> system_shutdown <<< {% endif %}
-RUN_SHELL_COMMAND CMD=backup_configs
-RUN_SHELL_COMMAND CMD=power_off_printer
-RUN_SHELL_COMMAND CMD=system_shutdown
+RUN_SHELL_CMD CMD=backup_configs
+RUN_SHELL_CMD CMD=power_off_printer
+RUN_SHELL_CMD CMD=system_shutdown
 {% if printer["gcode_macro _printer_vars"].ptr_verb_codeflow %} _proc_end function=system_shutdown {% endif %}
 printer.configfile.config['gcode_macro system_shutdown'].description : Power off the entire system (printer AND host)
 printer.configfile.config['gcode_macro sng_cena'].gcode :
@@ -3255,7 +3255,7 @@ _PwrLED_Off
 {% if printer["gcode_macro set_startup_bedtemp"].heat_on_start %}
 set_startup_bedtemp
 {% endif %}
-RUN_SHELL_COMMAND CMD=set_cam_config
+RUN_SHELL_CMD CMD=set_cam_config
 {% if svv.module_ercf_loaded %} _ercf_ptr_startup {% endif %}
 {% if printer["gcode_macro _printer_vars"].ptr_verb_codeflow %} _proc_end function=printer_startup {% endif %}
 _start_bounds_checking
@@ -4415,15 +4415,15 @@ SET_LED LED=chamber_lights RED=0 GREEN=0.5 BLUE=0
 printer.configfile.config['gcode_macro wcnightmode'].gcode :
 {% if printer["gcode_macro _printer_vars"].ptr_verb_codeflow %} _proc_start function=wcnightmode func_params='"{rawparams|string}"' {% endif %}
 {% if printer["gcode_macro _printer_vars"].ptr_verb_status %} M118 >>> wcnightmode <<< {% endif %}
-RUN_SHELL_COMMAND CMD=wcv2_ircut_off
-RUN_SHELL_COMMAND CMD=wcv2_irled_on
+RUN_SHELL_CMD CMD=wcv2_ircut_off
+RUN_SHELL_CMD CMD=wcv2_irled_on
 {% if printer["gcode_macro _printer_vars"].ptr_verb_codeflow %} _proc_end function=wcnightmode {% endif %}
 printer.configfile.config['gcode_macro wcnightmode'].description : Enable IR LEDs/Stow IR Filter
 printer.configfile.config['gcode_macro wcdaymode'].gcode :
 {% if printer["gcode_macro _printer_vars"].ptr_verb_codeflow %} _proc_start function=wcdaymode func_params='"{rawparams|string}"' {% endif %}
 {% if printer["gcode_macro _printer_vars"].ptr_verb_status %} M118 >>> wcdaymode <<< {% endif %}
-RUN_SHELL_COMMAND CMD=wcv2_ircut_on
-RUN_SHELL_COMMAND CMD=wcv2_irled_off
+RUN_SHELL_CMD CMD=wcv2_ircut_on
+RUN_SHELL_CMD CMD=wcv2_irled_off
 {% if printer["gcode_macro _printer_vars"].ptr_verb_codeflow %} _proc_end function=wcdaymode {% endif %}
 printer.configfile.config['gcode_macro wcdaymode'].description : Kill IR LEDs/Deploy IR Filter
 printer.configfile.config.respond.default_type : command
@@ -4459,7 +4459,7 @@ _stop_bounds_alarm
 printer.configfile.config['gcode_macro _check_bounds'].description : runtime (during printing) proc to check various parameters and initiate a pause & bound_alarm on an exceedence
 printer.configfile.config['gcode_macro reset_noz_cam'].gcode :
 {% if printer["gcode_macro _printer_vars"].ptr_verb_codeflow %} _proc_start function=reset_noz_cam {% endif %}
-RUN_SHELL_COMMAND CMD=set_cam_config
+RUN_SHELL_CMD CMD=set_cam_config
 {% if printer["gcode_macro _printer_vars"].ptr_verb_codeflow %} _proc_end function=reset_noz_cam {% endif %}
 printer.configfile.config['gcode_macro sng_imperialmarch'].gcode :
 {% if printer["gcode_macro _printer_vars"].ptr_verb_codeflow %} _proc_start function=sng_imperialmarch {% endif %}
@@ -4647,8 +4647,8 @@ _clear_HE_heating_indication
 printer.configfile.config['gcode_macro _ercf_start_Cold_temp'].description : set he temp to 0 and carry on (no wait)
 printer.configfile.config['gcode_macro power_off_printer'].gcode :
 {% if printer["gcode_macro _printer_vars"].ptr_verb_codeflow %} _proc_start function=power_off_printer func_params='"{rawparams|string}"' {% endif %}
-{% if printer["gcode_macro _printer_vars"].ptr_verb_status %} M118 >>> RUN_SHELL_COMMAND CMD=power_off_printer <<< {% endif %}
-RUN_SHELL_COMMAND CMD=power_off_printer
+{% if printer["gcode_macro _printer_vars"].ptr_verb_status %} M118 >>> RUN_SHELL_CMD CMD=power_off_printer <<< {% endif %}
+RUN_SHELL_CMD CMD=power_off_printer
 {% if printer["gcode_macro _printer_vars"].ptr_verb_codeflow %} _proc_end function=power_off_printer {% endif %}
 printer.configfile.config['gcode_macro power_off_printer'].description : Power off the printer
 printer.configfile.config['gcode_macro _proc_end'].gcode :
@@ -5339,8 +5339,8 @@ printer.configfile.config['delayed_gcode delayed_printer_off'].gcode :
 {% if printer["gcode_macro _printer_vars"].ptr_verb_codeflow %} _proc_start function=delayed_printer_off func_params='"{rawparams|string}"' {% endif %}
 {% if printer["gcode_macro _printer_vars"].ptr_verb_status %} M118 >>> delayed_printer_off <<< {% endif %}
 {% if printer.idle_timeout.state == "Idle" %}
-RUN_SHELL_COMMAND CMD=backup_configs
-RUN_SHELL_COMMAND CMD=power_off_printer
+RUN_SHELL_CMD CMD=backup_configs
+RUN_SHELL_CMD CMD=power_off_printer
 {% endif %}
 {% if printer["gcode_macro _printer_vars"].ptr_verb_codeflow %} _proc_end function=delayed_printer_off {% endif %}
 printer.configfile.config['delayed_gcode delayed_printer_off'].initial_duration : 0.
@@ -5624,10 +5624,10 @@ _ERCF_GET_SELECTOR_POS_STOCK {rawparams}
 {% if printer["gcode_macro _printer_vars"].ptr_verb_codeflow %} _proc_end function=ERCF_GET_SELECTOR_POS {% endif %}
 printer.configfile.config['gcode_macro power_on_printer'].gcode :
 {% if printer["gcode_macro _printer_vars"].ptr_verb_codeflow %} _proc_start function=power_on_printer func_params='"{rawparams|string}"' {% endif %}
-{% if printer["gcode_macro _printer_vars"].ptr_verb_status %} M118 >>> RUN_SHELL_COMMAND CMD=power_on_printer <<< {% endif %}
-RUN_SHELL_COMMAND CMD=power_on_printer
-{% if printer["gcode_macro _printer_vars"].ptr_verb_status %} M118 >>> RUN_SHELL_COMMAND CMD=restore_configs <<< {% endif %}
-RUN_SHELL_COMMAND CMD=restore_configs
+{% if printer["gcode_macro _printer_vars"].ptr_verb_status %} M118 >>> RUN_SHELL_CMD CMD=power_on_printer <<< {% endif %}
+RUN_SHELL_CMD CMD=power_on_printer
+{% if printer["gcode_macro _printer_vars"].ptr_verb_status %} M118 >>> RUN_SHELL_CMD CMD=restore_configs <<< {% endif %}
+RUN_SHELL_CMD CMD=restore_configs
 {% if printer["gcode_macro _printer_vars"].ptr_verb_codeflow %} _proc_end function=power_on_printer {% endif %}
 printer.configfile.config['gcode_macro power_on_printer'].description : Power on the printer
 printer.configfile.config['gcode_macro ChLts_Orange'].gcode :
@@ -7762,7 +7762,7 @@ printer.configfile.settings['temperature_fan exhaust'].gcode_id : Exhaust
 printer.configfile.settings['temperature_fan exhaust'].max_power : 1.0
 printer.configfile.settings['gcode_macro printer_config_restore'].gcode :
 {% if printer["gcode_macro _printer_vars"].ptr_verb_codeflow %} _proc_start function=printer_config_restore func_params='"{rawparams|string}"' {% endif %}
-RUN_SHELL_COMMAND CMD=restore_configs
+RUN_SHELL_CMD CMD=restore_configs
 {% if printer["gcode_macro _printer_vars"].ptr_verb_status %} M118 >>> Printer config updated from git repo <<< {% endif %}
 {% if printer["gcode_macro _printer_vars"].ptr_verb_codeflow %} _proc_end function=printer_config_restore {% endif %}
 printer.configfile.settings['gcode_macro printer_config_restore'].description : Restore local configs from the git repo and restart klipper if updated
@@ -9893,14 +9893,14 @@ printer.configfile.settings['gcode_macro ercf_check_if_resume'].description : Sa
 printer.configfile.settings['gcode_macro system_shutdown'].gcode :
 {% if printer["gcode_macro _printer_vars"].ptr_verb_codeflow %} _proc_start function=system_shutdown func_params='"{rawparams|string}"' {% endif %}
 {% if printer["gcode_macro _printer_vars"].ptr_verb_status %} M118 >>> system_shutdown <<< {% endif %}
-RUN_SHELL_COMMAND CMD=backup_configs
-RUN_SHELL_COMMAND CMD=power_off_printer
-RUN_SHELL_COMMAND CMD=system_shutdown
+RUN_SHELL_CMD CMD=backup_configs
+RUN_SHELL_CMD CMD=power_off_printer
+RUN_SHELL_CMD CMD=system_shutdown
 {% if printer["gcode_macro _printer_vars"].ptr_verb_codeflow %} _proc_end function=system_shutdown {% endif %}
 printer.configfile.settings['gcode_macro system_shutdown'].description : Power off the entire system (printer AND host)
 printer.configfile.settings['gcode_macro hello_world'].gcode :
 {% if printer["gcode_macro _printer_vars"].ptr_verb_codeflow %} _proc_start function=HELLO_WORLD {% endif %}
-RUN_SHELL_COMMAND CMD=hello_world
+RUN_SHELL_CMD CMD=hello_world
 {% if printer["gcode_macro _printer_vars"].ptr_verb_codeflow %} _proc_end function=HELLO_WORLD {% endif %}
 printer.configfile.settings['gcode_macro hello_world'].description : G-Code macro
 printer.configfile.settings['gcode_macro sng_cena'].gcode :
@@ -10004,7 +10004,7 @@ _PwrLED_Off
 {% if printer["gcode_macro set_startup_bedtemp"].heat_on_start %}
 set_startup_bedtemp
 {% endif %}
-RUN_SHELL_COMMAND CMD=set_cam_config
+RUN_SHELL_CMD CMD=set_cam_config
 {% if svv.module_ercf_loaded %} _ercf_ptr_startup {% endif %}
 {% if printer["gcode_macro _printer_vars"].ptr_verb_codeflow %} _proc_end function=printer_startup {% endif %}
 _start_bounds_checking
@@ -11124,15 +11124,15 @@ printer.configfile.settings['gcode_macro z_endstop_accuracy'].description : Prob
 printer.configfile.settings['gcode_macro wcnightmode'].gcode :
 {% if printer["gcode_macro _printer_vars"].ptr_verb_codeflow %} _proc_start function=wcnightmode func_params='"{rawparams|string}"' {% endif %}
 {% if printer["gcode_macro _printer_vars"].ptr_verb_status %} M118 >>> wcnightmode <<< {% endif %}
-RUN_SHELL_COMMAND CMD=wcv2_ircut_off
-RUN_SHELL_COMMAND CMD=wcv2_irled_on
+RUN_SHELL_CMD CMD=wcv2_ircut_off
+RUN_SHELL_CMD CMD=wcv2_irled_on
 {% if printer["gcode_macro _printer_vars"].ptr_verb_codeflow %} _proc_end function=wcnightmode {% endif %}
 printer.configfile.settings['gcode_macro wcnightmode'].description : Enable IR LEDs/Stow IR Filter
 printer.configfile.settings['gcode_macro wcdaymode'].gcode :
 {% if printer["gcode_macro _printer_vars"].ptr_verb_codeflow %} _proc_start function=wcdaymode func_params='"{rawparams|string}"' {% endif %}
 {% if printer["gcode_macro _printer_vars"].ptr_verb_status %} M118 >>> wcdaymode <<< {% endif %}
-RUN_SHELL_COMMAND CMD=wcv2_ircut_on
-RUN_SHELL_COMMAND CMD=wcv2_irled_off
+RUN_SHELL_CMD CMD=wcv2_ircut_on
+RUN_SHELL_CMD CMD=wcv2_irled_off
 {% if printer["gcode_macro _printer_vars"].ptr_verb_codeflow %} _proc_end function=wcdaymode {% endif %}
 printer.configfile.settings['gcode_macro wcdaymode'].description : Kill IR LEDs/Deploy IR Filter
 printer.configfile.settings.respond.default_prefix : //
@@ -11174,7 +11174,7 @@ SET_GCODE_VARIABLE MACRO=_Probe_Variables VARIABLE=probe_lock VALUE={ False }
 printer.configfile.settings['gcode_macro _probe_unlock'].description : Unlocks Klicky Probe state
 printer.configfile.settings['gcode_macro reset_noz_cam'].gcode :
 {% if printer["gcode_macro _printer_vars"].ptr_verb_codeflow %} _proc_start function=reset_noz_cam {% endif %}
-RUN_SHELL_COMMAND CMD=set_cam_config
+RUN_SHELL_CMD CMD=set_cam_config
 {% if printer["gcode_macro _printer_vars"].ptr_verb_codeflow %} _proc_end function=reset_noz_cam {% endif %}
 printer.configfile.settings['gcode_macro reset_noz_cam'].description : G-Code macro
 printer.configfile.settings.z_calibration.samples_tolerance_retries : 3
@@ -11434,8 +11434,8 @@ SET_PIN PIN=_hourmeter VALUE=0
 printer.configfile.settings['gcode_macro _hourmeter_off'].description : Turn Hour Meter Off
 printer.configfile.settings['gcode_macro power_off_printer'].gcode :
 {% if printer["gcode_macro _printer_vars"].ptr_verb_codeflow %} _proc_start function=power_off_printer func_params='"{rawparams|string}"' {% endif %}
-{% if printer["gcode_macro _printer_vars"].ptr_verb_status %} M118 >>> RUN_SHELL_COMMAND CMD=power_off_printer <<< {% endif %}
-RUN_SHELL_COMMAND CMD=power_off_printer
+{% if printer["gcode_macro _printer_vars"].ptr_verb_status %} M118 >>> RUN_SHELL_CMD CMD=power_off_printer <<< {% endif %}
+RUN_SHELL_CMD CMD=power_off_printer
 {% if printer["gcode_macro _printer_vars"].ptr_verb_codeflow %} _proc_end function=power_off_printer {% endif %}
 printer.configfile.settings['gcode_macro power_off_printer'].description : Power off the printer
 printer.configfile.settings['gcode_macro _proc_end'].gcode :
@@ -12036,8 +12036,8 @@ printer.configfile.settings['delayed_gcode delayed_printer_off'].gcode :
 {% if printer["gcode_macro _printer_vars"].ptr_verb_codeflow %} _proc_start function=delayed_printer_off func_params='"{rawparams|string}"' {% endif %}
 {% if printer["gcode_macro _printer_vars"].ptr_verb_status %} M118 >>> delayed_printer_off <<< {% endif %}
 {% if printer.idle_timeout.state == "Idle" %}
-RUN_SHELL_COMMAND CMD=backup_configs
-RUN_SHELL_COMMAND CMD=power_off_printer
+RUN_SHELL_CMD CMD=backup_configs
+RUN_SHELL_CMD CMD=power_off_printer
 {% endif %}
 {% if printer["gcode_macro _printer_vars"].ptr_verb_codeflow %} _proc_end function=delayed_printer_off {% endif %}
 printer.configfile.settings['delayed_gcode delayed_printer_off'].initial_duration : 0.0
@@ -12328,10 +12328,10 @@ printer.configfile.settings['gcode_macro _bounds_vars'].variable_bounds_alarm_du
 printer.configfile.settings['gcode_macro _bounds_vars'].variable_h2o_radfan_rpm_max : 3000
 printer.configfile.settings['gcode_macro power_on_printer'].gcode :
 {% if printer["gcode_macro _printer_vars"].ptr_verb_codeflow %} _proc_start function=power_on_printer func_params='"{rawparams|string}"' {% endif %}
-{% if printer["gcode_macro _printer_vars"].ptr_verb_status %} M118 >>> RUN_SHELL_COMMAND CMD=power_on_printer <<< {% endif %}
-RUN_SHELL_COMMAND CMD=power_on_printer
-{% if printer["gcode_macro _printer_vars"].ptr_verb_status %} M118 >>> RUN_SHELL_COMMAND CMD=restore_configs <<< {% endif %}
-RUN_SHELL_COMMAND CMD=restore_configs
+{% if printer["gcode_macro _printer_vars"].ptr_verb_status %} M118 >>> RUN_SHELL_CMD CMD=power_on_printer <<< {% endif %}
+RUN_SHELL_CMD CMD=power_on_printer
+{% if printer["gcode_macro _printer_vars"].ptr_verb_status %} M118 >>> RUN_SHELL_CMD CMD=restore_configs <<< {% endif %}
+RUN_SHELL_CMD CMD=restore_configs
 {% if printer["gcode_macro _printer_vars"].ptr_verb_codeflow %} _proc_end function=power_on_printer {% endif %}
 printer.configfile.settings['gcode_macro power_on_printer'].description : Power on the printer
 printer.configfile.settings['gcode_macro snd_meshend'].gcode :
@@ -12641,7 +12641,7 @@ printer.configfile.settings['gcode_macro search_vars'].gcode :
 printer.configfile.settings['gcode_macro search_vars'].description : G-Code macro
 printer.configfile.settings['gcode_macro printer_config_backup'].gcode :
 {% if printer["gcode_macro _printer_vars"].ptr_verb_codeflow %} _proc_start function=printer_config_backup func_params='"{rawparams|string}"' {% endif %}
-RUN_SHELL_COMMAND CMD=backup_configs
+RUN_SHELL_CMD CMD=backup_configs
 {% if printer["gcode_macro _printer_vars"].ptr_verb_status %} M118 >>> Printer config backed up to git repo <<< {% endif %}
 {% if printer["gcode_macro _printer_vars"].ptr_verb_codeflow %} _proc_end function=printer_config_backup {% endif %}
 printer.configfile.settings['gcode_macro printer_config_backup'].description : performs backup of local configs to the git master
