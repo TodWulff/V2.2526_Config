@@ -3,7 +3,7 @@ Repo for the Klipper Config directory of my Voron V2.4 (not v2.4r2) SN 2526, a 3
 
 14MAR23:
 
--	Implimented framework for logging (Code/SVV/Gmove/State traces) to be
+-	Implemented framework for logging (Code/SVV/Gmove/State traces) to be
 	written to log files or the console - using a _printer_var to control
 -	Implemented colorization to user input prompts and console debug output
 	(this was a long time desire that I finally figured out how to implement)
