@@ -1,5 +1,26 @@
-# V2.2526_Config
-Repo for the Klipper Config directory of my Voron V2.4 (not v2.4r2) SN 2526, a 350^3 model built by ~MHz (myself) in 4Q21.
+# V2.2526_Config (I am Brody)
+Repo for the Klipper Config directory of my Voron V2.4 (not v2.4r2) SN 2526, a 350^3 model built by ~MHz (myself) in 4Q21. Name: 'Brody'
+
+14MAR23:
+
+-	Implimented framework for logging (Code/SVV/Gmove/State traces) to be
+	written to log files or the console - using a _printer_var to control
+-	Implemented colorization to user input prompts and console debug output
+	(this was a long time desire that I finally figured out how to implement)
+-	Have decided to create a single repository for all of my printers which
+	will make use of conditional includes (via jinja w/ home brew 'predicates')
+	This will be a drawn out WIP effort as I figure out how best to implement
+-	Started the Harmonization efforts between config repositories with white
+	space cleanup (horz, vertical, trailing, etc.)
+-	Went through and validated that EVERY gcode block was instrumented (except
+	where uncontrolled recursion would occcur), including non-macro blocks
+	I expect to have some of these efforts bite me in the backside, but as of
+	now, it all boots and non-exhaustive tests indicate that the stars aligned
+-	Nifty stats: 426 gcode macros, 523 gcode blocks (not all blocks are macros)
+	10,046 no-BS Lines of Config (no comments, no vertical whitespace) with over
+	380K characters (no excess horiz whitespace either) - I've probably stroked
+	the keys over a million times (no BS)- peeps can attest to the fact that I 
+	can get OVERLY verbose in my comments, guidance, and other 'elucidations' :)
 
 03MAR23 blurb:
 
