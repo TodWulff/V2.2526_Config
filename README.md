@@ -13,7 +13,7 @@ Repo for the Klipper Config directory of my Voron V2.4 (not v2.4r2) SN 2526, a 3
 -	Started the Harmonization efforts between config repositories with white
 	space cleanup (horz, vertical, trailing, etc.)
 -	Went through and validated that EVERY gcode block was instrumented (except
-	where uncontrolled recursion would occcur), including non-macro blocks
+	where uncontrolled recursion would occcur), including non-macro blocks - 
 	I expect to have some of these efforts bite me in the backside, but as of
 	now, it all boots and non-exhaustive tests indicate that the stars aligned
 -	Nifty stats: 426 gcode macros, 523 gcode blocks (not all blocks are macros)
@@ -21,6 +21,14 @@ Repo for the Klipper Config directory of my Voron V2.4 (not v2.4r2) SN 2526, a 3
 	380K characters (no excess horiz whitespace either) - I've probably stroked
 	the keys over a million times (no BS)- peeps can attest to the fact that I 
 	can get OVERLY verbose in my comments, guidance, and other 'elucidations' :)
+-	Oh, yeah, also have nix'd the useless commit messages that were automagically
+	used in the scripts when the configs automatically updated this repo (had been
+	triggering them on each successful print completion) - now the print_end proc
+	queries the user, after optional filament unload and heater setting retention
+	querys, if the configs are to be pushed up to the repo and, if so, enforces
+	input of a proper commit summary vs useless diatribe - ima work to honor the
+	spirit of documenting the pushes as they should have been to begin with -
+	future me, and anyone else who stumbles across this, will hopefully benefit...
 
 03MAR23 blurb:
 
