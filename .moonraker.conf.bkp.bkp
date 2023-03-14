@@ -11,8 +11,8 @@ config_path: ~/klipper_config
 log_path: ~/klipper_logs
 
 queue_gcode_uploads: True
-#   When set to True the file manager will add uploads to the job_queue when
-#   the `start_print` flag has been set.  The default if False.
+# When set to True the file manager will add uploads to the job_queue when
+# the `start_print` flag has been set. The default if False.
 
 [authorization]
 cors_domains:
@@ -43,18 +43,18 @@ trusted_clients:
 # this enables moonraker's update manager
 [update_manager]
 enable_auto_refresh: True
-#   When set to True Moonraker will attempt to fetch status about
-#   available updates roughly every 24 hours, between 12am-4am.
-#   When set to False Moonraker will only fetch update state on startup
-#   and clients will need to request that Moonraker updates state.  The
-#   default is False.
+# When set to True Moonraker will attempt to fetch status about
+# available updates roughly every 24 hours, between 12am-4am.
+# When set to False Moonraker will only fetch update state on startup
+# and clients will need to request that Moonraker updates state. The
+# default is False.
 
 #enable_auto_refresh: True
-#   When set to True moonraker will bypass repo validation and allow
-#   updates from unofficial remotes and/or branches.  Updates on
-#   detached repos are also allowed.  This option is intended for
-#   developers and should not be used on production machines.  The
-#   default is False
+# When set to True moonraker will bypass repo validation and allow
+# updates from unofficial remotes and/or branches. Updates on
+# detached repos are also allowed. This option is intended for
+# developers and should not be used on production machines. The
+# default is False
 
 [update_manager mainsail]
 # type: web
@@ -62,12 +62,12 @@ type: web_beta
 repo: mainsail-crew/mainsail
 path: ~/mainsail
 #persistent_files:
-#   A list of newline separated file names that should persist between
-#   updates.  This is useful for static configuration files, or perhaps
-#   themes.  The default is no persistent files.
+# A list of newline separated file names that should persist between
+# updates. This is useful for static configuration files, or perhaps
+# themes. The default is no persistent files.
 # refresh_interval:
-#   This overrides the refresh_interval set in the primary [update_manager]
-#   section.
+# This overrides the refresh_interval set in the primary [update_manager]
+# section.
 
 [update_manager led_effect]
 type: git_repo

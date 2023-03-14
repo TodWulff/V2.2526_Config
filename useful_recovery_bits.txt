@@ -67,6 +67,6 @@ G1 Z7.3 F3000	; move to restart z
 G11				; prime nozzle
 
 ;;; set exclude object name here too
-;  ... and carry on
+; ... and carry on
 ; ################################################
 

@@ -2,7 +2,7 @@ Make your Klipper host capable of speech synthesis
 
 This is just the way I ended up skinning this cat:
 
-*nix diehards will likely have comments on my decisions, and I welcome same.  I am a *nix hack.
+*nix diehards will likely have comments on my decisions, and I welcome same. I am a *nix hack.
 
 install pico2wave (sudo apt install libttspico-utils)
 Optional: install vlc (sudo apt install vlc) ifin you favor VLC

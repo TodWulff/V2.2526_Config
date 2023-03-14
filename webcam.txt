@@ -34,17 +34,17 @@
 # ID and remove the -f parameter from the options provided to mjpg_streamer.
 #
 # By default, this is done for the following devices:
-#   Logitech C170 (046d:082b)
-#   GEMBIRD (1908:2310)
-#   Genius F100 (0458:708c)
-#   Cubeternet GL-UPC822 UVC WebCam (1e4e:0102)
+# Logitech C170 (046d:082b)
+# GEMBIRD (1908:2310)
+# Genius F100 (0458:708c)
+# Cubeternet GL-UPC822 UVC WebCam (1e4e:0102)
 #
 # Using the following option it is possible to add additional devices. If
 # your webcam happens to show above symptoms, try determining your cam's
 # vendor and product id via lsusb, activating the line below by removing # and
 # adding it, e.g. for two broken cameras "aabb:ccdd" and "aabb:eeff"
 #
-#   additional_brokenfps_usb_devices=("aabb:ccdd" "aabb:eeff")
+# additional_brokenfps_usb_devices=("aabb:ccdd" "aabb:eeff")
 #
 #
 #additional_brokenfps_usb_devices=()
@@ -64,7 +64,7 @@
 #
 # Below settings are used in the mjpg-streamer call like this:
 #
-#   -o "output_http.so -w $camera_http_webroot $camera_http_options"
+# -o "output_http.so -w $camera_http_webroot $camera_http_options"
 #
 # Current working directory is the mjpg-streamer base directory.
 #
@@ -75,5 +75,5 @@
 # Support for different streamer types.
 #
 # Available options:
-#   mjpeg [default] - stable MJPG-streamer
+# mjpeg [default] - stable MJPG-streamer
 #camera_streamer=mjpeg

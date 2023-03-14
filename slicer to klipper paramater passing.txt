@@ -13,7 +13,7 @@ http://files.fieldofview.com/cura/Replacement_Patterns.html
 https://i.imgur.com/3FUoMQK.png
 https://csi.t6.fyi/
 
-A quick example:  My slicer automatically adds a print's max z height comment to each gcode file generated:
+A quick example: My slicer automatically adds a print's max z height comment to each gcode file generated:
 Line 10 here:
 https://i.imgur.com/7nf8AzS.png
 
