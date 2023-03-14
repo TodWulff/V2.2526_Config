@@ -6,14 +6,13 @@ If klipper didn't shut down and if the steppers weren't disabled (causing loss o
 raise head above the Z height
 fill in the blanks and then copy and paste into the console after addressing w/e
 
-
 ERCF_SELECT_TOOL TOOL=4
 ERCF_SERVO_UP
 go_absolute
 G92 E0
 G1 X87.171 Y277.541 F15000
 G1 Z0.887 F18000
-M26 S260436 
+M26 S260436
 SAVE_GCODE_STATE NAME=State_Save_Pause
 SAVE_GCODE_STATE NAME=ERCF_state
 SAVE_GCODE_STATE NAME=PAUSE_STATE
@@ -32,8 +31,6 @@ SAVE_GCODE_STATE NAME=State_Save_Pause
 SAVE_GCODE_STATE NAME=ERCF_state
 SAVE_GCODE_STATE NAME=PAUSE_STATE
 RESUME
-
-
 
 _stop_bounds_checking
 stop_pause_alarm

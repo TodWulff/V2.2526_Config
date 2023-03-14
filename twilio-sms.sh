@@ -57,7 +57,7 @@ if [ -n "$CONFIGFILE" -a ! -f "$CONFIGFILE" ]; then echo "Configfile not found: 
 
 # source configfile if given
 if [ -n "$CONFIGFILE" ]; then . "$CONFIGFILE";
-# source the default ~/.twiliorc if it exists - ~MHz edits to look for config in script's directory 
+# source the default ~/.twiliorc if it exists - ~MHz edits to look for config in script's directory
 elif [ -f $SCRIPTPATH/.twiliorc ]; then . $SCRIPTPATH/.twiliorc;
 elif [ -f ~/.twiliorc ]; then . ~/.twiliorc;
 fi
@@ -66,7 +66,7 @@ fi
 if [ -n "$ACCOUNTSID_ARG" ]; then ACCOUNTSID=$ACCOUNTSID_ARG; fi
 if [ -n "$AUTHTOKEN_ARG" ]; then AUTHTOKEN=$AUTHTOKEN_ARG; fi
 if [ -n "$CALLERID_ARG" ]; then CALLERID=$CALLERID_ARG; fi
-	
+
 # verify params
 if [ -z "$ACCOUNTSID" ]; then usage "AccountSid not set, it must be provided in the config file, or on the command line."; fi;
 if [ -z "$AUTHTOKEN" ]; then usage "AuthToken not set, it must be provided in the config file, or on the command line."; fi;

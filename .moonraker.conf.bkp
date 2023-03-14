@@ -11,14 +11,14 @@ enable_object_processing = True
 shutdown_action = halt
 
 [authorization]
-cors_domains = 
+cors_domains =
 	https://my.mainsail.xyz
 	http://my.mainsail.xyz
 	http://*.local
 	http://*.lan
 	*.amazonalexa.com
 	*.amazonaws.com
-trusted_clients = 
+trusted_clients =
 	10.0.0.0/8
 	127.0.0.0/8
 	169.254.0.0/16
@@ -32,7 +32,7 @@ trusted_clients =
 [history]
 
 [announcements]
-subscriptions = 
+subscriptions =
 	mainsail
 
 [update_manager]
@@ -88,4 +88,3 @@ locked_while_printing = True
 restart_klipper_when_powered = True
 restart_delay = 2
 address = 10.0.0.25
-

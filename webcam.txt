@@ -1,7 +1,7 @@
 ### Windows users: To edit this file use Notepad++, VSCode, Atom or SublimeText.
 ### Do not use Notepad or WordPad.
 
-### MacOSX users: If you use Textedit to edit this file make sure to use 
+### MacOSX users: If you use Textedit to edit this file make sure to use
 ### "plain text format" and "disable smart quotes" in "Textedit > Preferences"
 
 ### Configure which camera to use
@@ -25,9 +25,9 @@
 
 ### Additional webcam devices known to cause problems with -f
 #
-# Apparently there a some devices out there that with the current 
-# mjpg_streamer release do not support the -f parameter (for specifying 
-# the capturing framerate) and will just refuse to output an image if it 
+# Apparently there a some devices out there that with the current
+# mjpg_streamer release do not support the -f parameter (for specifying
+# the capturing framerate) and will just refuse to output an image if it
 # is supplied.
 #
 # The webcam daemon will detect those devices by their USB Vendor and Product
@@ -41,7 +41,7 @@
 #
 # Using the following option it is possible to add additional devices. If
 # your webcam happens to show above symptoms, try determining your cam's
-# vendor and product id via lsusb, activating the line below by removing # and 
+# vendor and product id via lsusb, activating the line below by removing # and
 # adding it, e.g. for two broken cameras "aabb:ccdd" and "aabb:eeff"
 #
 #   additional_brokenfps_usb_devices=("aabb:ccdd" "aabb:eeff")

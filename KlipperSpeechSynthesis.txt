@@ -15,7 +15,7 @@ create say.sh in ~/printer-data/config (or w/e - i put it there for ease of use 
 	# cvlc --gain 2 --quiet --play-and-exit ~/temp/temp.wav > /dev/null 2>&1
 	# ^^^ optional if one favors vlc, or, if you're using aplay (raspbian) the following line works
 	aplay ~/temp/temp.wav > /dev/null 2>&1
-	
+
 save it and chmod it to 755(? - worked for me)
 
 then make it executable program everywhere by linking it to /usr/bin:
@@ -31,29 +31,15 @@ Happy Printing/Tuning/Geeking! :)
 
 ~MHz
 
-
-
-
-
-
-
-
-
 cvlc --play-and-exit /home/pi/sounds/file_example_WAV_10MG.wav
 
 gtts-cli 'hello' | cvlc --play-and-exit -
 
-
-
-
-
-GD: 
+GD:
 
 cvlc --gain 2 --quiet --play-and-exit - > /dev/null 2>&1
-
 
 pico2wave -l en-GB -w /home/pi/sounds/temp.wav "This is a wicked good test"; cvlc --gain 2 --quiet --play-and-exit /home/pi/sounds/temp.wav > /dev/null 2>&1
 
 pico2wave -l en-US -w ~/temp/temp.wav "$(cat ~/temp/temp.txt)"; cvlc --gain 2 --quiet --play-and-exit ~/temp/temp.wav > /dev/null 2>&1
-
 

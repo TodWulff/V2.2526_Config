@@ -202,10 +202,7 @@
 19:58:29
 19:58:29
 
-
-
 good load_seq and cal:
-
 
 01:05:56 Klipper state: Ready
 01:06:12 Load move done, requested = 45.0, measured = 57.4
@@ -259,7 +256,6 @@ good load_seq and cal:
 01:41:28 ERCF_Calibrate Error: 0
 01:41:28 End of auto-cal - Restart firmware now.
 
-
 Good print on 29Apr22
 
 04:56:28 Klipper state: Ready
@@ -277,13 +273,13 @@ Good print on 29Apr22
 04:58:29 Swap 1 (Initial Load): T10 @ 3919 | 0.07%
 04:59:30 L:1/61|4243 | 0.07%: X:231.3 Y:349.0 Z:0.308
 05:13:01 _check_bounds REPORT=1
-05:13:03 
+05:13:03
 05:13:03 H2O Cooling Parameters:
 05:13:03 H2O_Flow_RPM: 375 <= 716 <= 1500
 05:13:03 H2O_Pump_RPM: 1500 <= 3008 <= 4500
 05:13:03 H2O_RadFan_RPM: 1000 <= 2008 <= 3000
 05:13:03 H2O_Temp: 10 <= 32 <= 100
-05:13:03 
+05:13:03
 05:15:42 L:2/61|48370 | 0.85%: X:147.016 Y:150.806 Z:0.413
 05:27:43 L:3/61|81027 | 1.43%: X:141.716 Y:88.495 Z:0.643
 05:28:38 Swap 2: T10 -> T1 @ 102013 | 1.79%
@@ -390,13 +386,13 @@ Good print on 29Apr22
 08:52:35 Swap 77: T11 -> T0 @ 2259156 | 39.75%
 08:54:41 Swap 78: T0 -> T1 @ 2273029 | 39.99%
 08:55:43 _check_bounds REPORT=1
-08:55:53 
+08:55:53
 08:55:53 H2O Cooling Parameters:
 08:55:53 H2O_Flow_RPM: 375 <= 689 <= 1500
 08:55:53 H2O_Pump_RPM: 1500 <= 2999 <= 4500
 08:55:54 H2O_RadFan_RPM: 1000 <= 2011 <= 3000
 08:55:54 H2O_Temp: 10 <= 31 <= 100
-08:55:54 
+08:55:54
 08:59:53 Swap 79: T1 -> T6 @ 2333847 | 41.06%
 09:01:57 Swap 80: T6 -> T7 @ 2340300 | 41.18%
 09:03:44 Swap 81: T7 -> T9 @ 2344571 | 41.25%

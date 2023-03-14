@@ -1,6 +1,6 @@
 Good day.
 I'm considering migrating away from KVP due to perceived quality issues on my recent orders.
-I've ~15 master spools (1KG size) that I have been refilling with their 1.75mm Filament Koils. I am writing to request dimensions of your 1.75mm master spool ABS filaments. Can you please email me a drawing, or otherwise advise salient details (ID,OD,Thickness)? Thank you, in advance. 
+I've ~15 master spools (1KG size) that I have been refilling with their 1.75mm Filament Koils. I am writing to request dimensions of your 1.75mm master spool ABS filaments. Can you please email me a drawing, or otherwise advise salient details (ID,OD,Thickness)? Thank you, in advance.
 -MHz
 
 Polymaker is a good afforable option for a lot of different materials
@@ -22,5 +22,5 @@ Filament-PM ASA
 Amazonbasics ABS
 3DJake ASA
 Fillamentum ABS
-3dfuel 
+3dfuel
 Jessie

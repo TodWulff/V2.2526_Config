@@ -6,7 +6,7 @@ say_wait Checking for updated kunfihgs.
 
 if git status | grep -q 'Your branch is behind'; then
 	git pull --ff-only
-	echo "Changes exist, pulled & restarting Klipper" 
+	echo "Changes exist, pulled & restarting Klipper"
 	echo 'M118 GIT Repo Pull RESTART' > ~/printer_data/comms/klippy.serial
 	say_wait Changes pulled.
 	echo RESTART > ~/printer_data/comms/klippy.serial

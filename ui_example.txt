@@ -1,13 +1,13 @@
-get_user_input 
-PROMPT="enter/click something:" 
-TYPE=string 
-BOUNDS_LO=1 
-BOUNDS_HI=12 
-RCVR_MACRO=_test_show_user_input 
-TO_PERIOD=30 
-RMDR_PERIOD=10 
-EXCPT_HDLR=_ui_exception_handler 
-TO_CYCL_DEF=1 
+get_user_input
+PROMPT="enter/click something:"
+TYPE=string
+BOUNDS_LO=1
+BOUNDS_HI=12
+RCVR_MACRO=_test_show_user_input
+TO_PERIOD=30
+RMDR_PERIOD=10
+EXCPT_HDLR=_ui_exception_handler
+TO_CYCL_DEF=1
 TO_RESP_DEF="YES"
 
 get_user_input PROMPT="Enter something (1-12 char) [YES]:" TYPE=string BOUNDS_LO=1 BOUNDS_HI=12 RCVR_MACRO=_test_show_user_input TO_PERIOD=30 RMDR_PERIOD=10 EXCPT_HDLR=_ui_exception_handler TO_CYCL_DEF=0 TO_RESP_DEF="YES"

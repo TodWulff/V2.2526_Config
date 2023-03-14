@@ -1,4 +1,4 @@
-echo "Pushing a config backup." 
+echo "Pushing a config backup."
 #say  "Pushing a config backup."
 
 # echo '{action_respond_info("Pushing a config backup.")}' > ~/printer_data/comms/klippy.serial
@@ -15,9 +15,9 @@ done
 cd ~/printer_data/config
 git fetch && git status
 git add .
-git commit -m "$params" 
+git commit -m "$params"
 git push
-echo "Config backup complete" 
+echo "Config backup complete"
 
 #say  "Config backup complete."
 echo 'M118 Config backup complete.' > ~/printer_data/comms/klippy.serial

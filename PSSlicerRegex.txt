@@ -11,7 +11,6 @@ replace
 comment
 notes
 
-
 -----------------------------------------------
 -- production regex follows
 -----------------------------------------------
@@ -36,7 +35,7 @@ note leading spaces.
 \n_SetSlicerVar VARIABLE='${2}${3}' VALUE='"${5}"'\n${1}${2}${3}${4}${5}
 add a set slicer var cmd for print param comments
 
-note: can't get the colon to be lazy.  it is always greedy regardless of 
+note: can't get the colon to be lazy.  it is always greedy regardless of
 lazy - tried (:?) (:+?) (:{1}?) - no joy - goal: https://i.imgur.com/TeVjDtM.png
 so doing the former and following as a WORKAROUND...
 -----------------------------------------------
