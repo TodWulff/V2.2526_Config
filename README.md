@@ -14,14 +14,14 @@ Repo for the Klipper Config directory of my Voron V2.4 (not v2.4r2) SN 2526, a 3
 -	split off separate cfgs for _userlogs, _host_control, _tts, _temp_capture, and fought
 	the OS for a while getting tts goin:
 
-# this worked well out of the gate with Raspiban hosts.  However, on Debian, it was not so
-# ended up with a bloody forehead before piping output to temp log and tailing that with
-# tail -f -n40 temp_gtts.log  and  tail -f -n40 temp_cvlc.log then discovered cvlc was squawking:
-#        ALSA lib pcm_dmix.c:1075:(snd_pcm_dmix_open) unable to open slave
-# giggled my way to success:
-# https://dev.to/setevoy/linux-alsa-lib-pcmdmixc1108sndpcmdmixopen-unable-to-open-slave-38on
-# missing modprobe.d conf file...  seriously, wtf - why work from cli but not when klipper called the same damn scripts.  ugh
-# anyways, it is fixed.
+this worked well out of the gate with Raspiban hosts.  However, on Debian, it was not so
+ended up with a bloody forehead before piping output to temp log and tailing that with
+tail -f -n40 temp_gtts.log  and  tail -f -n40 temp_cvlc.log then discovered cvlc was squawking:
+       ALSA lib pcm_dmix.c:1075:(snd_pcm_dmix_open) unable to open slave
+giggled my way to success:
+https://dev.to/setevoy/linux-alsa-lib-pcmdmixc1108sndpcmdmixopen-unable-to-open-slave-38on
+missing modprobe.d conf file...  seriously, wtf - why work from cli but not when klipper called the same damn scripts.  ugh
+anyways, it is fixed.
 
 The above drama is related to migrating back to my amd64 Chromebox.  I've simply too much shite 
 going on for a small sbc to keep up.  Decided to install a headless debian 11 os thereon (hadn't 
