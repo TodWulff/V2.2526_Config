@@ -1,6 +1,51 @@
 # V2.2526_Config (I am Brody)
 Repo for the Klipper Config directory of my Voron V2.4 (not v2.4r2) SN 2526, a 350^3 model built by ~MHz (myself) in 4Q21. Name: 'Brody'
 
+15MAR23:
+
+-	fixed recursion error due to latest 'instrumentation' efforts - 
+	the just a wee bit old me was smarter than the just now me.
+-	added module state stuff for shell_commands and tts
+-	added logic to macros say and say_wait to annunciate if shell_commands is mia - 
+	they emit stdout and error dialog to temp files
+-	tail and grep are my new friends, seriously. fukin besties.
+-	made it so that the tts scripts on the host emit back into klipper what is being said,
+	as a console message to the user (in event speakers off, deafness, being remote, etc.)
+-	split off separate cfgs for _userlogs, _host_control, _tts, _temp_capture, and fought
+	the OS for a while getting tts goin:
+
+# this worked well out of the gate with Raspiban hosts.  However, on Debian, it was not so
+# ended up with a bloody forehead before piping output to temp log and tailing that with
+# tail -f -n40 temp_gtts.log  and  tail -f -n40 temp_cvlc.log then discovered cvlc was squawking:
+#        ALSA lib pcm_dmix.c:1075:(snd_pcm_dmix_open) unable to open slave
+# giggled my way to success:
+# https://dev.to/setevoy/linux-alsa-lib-pcmdmixc1108sndpcmdmixopen-unable-to-open-slave-38on
+# missing modprobe.d conf file...  seriously, wtf - why work from cli but not when klipper called the same damn scripts.  ugh
+# anyways, it is fixed.
+
+The above drama is related to migrating back to my amd64 Chromebox.  I've simply too much shite 
+going on for a small sbc to keep up.  Decided to install a headless debian 11 os thereon (hadn't 
+done so before, so yeah, learnz) all was right with the effort, except tts. Wow, ignorance == PITA.
+
+Part of harmonization is the adoption of 4 macros common in every .cfg being loaded (still a WIP -
+i've a shitte tonne of modules...)
+-	[delayed_gcode _module_name_loaded] <-- this is a macro that is autorun at (4.501) seconds after 
+	loading, for startup annunciation, logging, etc.
+-	[gcode_macro _info_module_name] <-- a macro that is not intended to be used, but rather is a common 
+	place for module documentation
+-	[gcode_macro _module_name_vars] <-- module specific variables are to be plopped herein
+-	[delayed_gcode _module_name_start] <-- is to fire off at 0.5s after loading, to init module 
+	variables and globals (i.e. module loaded and module err flag)
+-	Then, further on in the module, will be klipper enablement sections, if needed, for contextually 
+	relevant modules that are to be loaded.
+-	Finally, contextually relevant gcode macros and shell commands, etc., are to exist therein. 
+
+-	moar useful bits
+tail -f -n40 temp_gtts.log
+tail -f -n40 temp_cvlc.log
+
+tail -f -n40 ~/printer_data/logs/klippy.log | grep -v -E "^status|^received|^mcu "
+
 14MAR23:
 
 -	Implemented framework for logging (Code/SVV/Gmove/State traces) to be
