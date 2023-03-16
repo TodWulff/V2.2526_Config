@@ -1,5 +1,7 @@
-say_wait Pushing a config backup	#echos to klipper console too
+#say_wait Pushing a config backup	#echos to klipper console too
 
+
+# parse commit message (possibly unquoted) into a single string
 params=""
 for element in "$@"
 do
@@ -12,5 +14,5 @@ git add .
 git commit -m "$params"
 git push
 
-say_wait Complete	#echos to klipper console too
+#say_wait Complete	#echos to klipper console too
 

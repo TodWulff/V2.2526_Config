@@ -11,7 +11,7 @@ do
 done
 
 #writes to klipper console
-echo "M118 <font color=gray>Brody: </font><font color=lime>$phrase</font>" > ~/printer_data/comms/klippy.serial
+echo "M118 <font color=gray>Brody🔊: </font><font color=lime>$phrase</font>" > ~/printer_data/comms/klippy.serial
 
 #generate tts audio file
 gtts-cli "$phrase" -o /home/pi/temp/temp.wav > ~/temp/temp_gtts.log 2>&1
