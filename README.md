@@ -44,7 +44,7 @@ i've a shitte tonne of modules...)
 tail -f ~/temp/temp_gtts.log  <-- after redirected from /dev/null to a temp file
 tail -f ~/temp/temp_cvlc.log  <-- after redirected from /dev/null to a temp file
 
-tail -f ~/printer_data/logs/klippy.log | grep -v -E "^status|^received|^mcu "  <-- to find the trees in the forest
+tail -f ~/printer_data/logs/klippy.log | grep -v -E "^Stats|^received|^mcu "  <-- to find the trees in the forest
 
 14MAR23:
 
