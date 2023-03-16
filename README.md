@@ -41,10 +41,10 @@ i've a shitte tonne of modules...)
 -	Finally, contextually relevant gcode macros and shell commands, etc., are to exist therein. 
 
 -	moar useful bits
-tail -f -n40 temp_gtts.log
-tail -f -n40 temp_cvlc.log
+tail -f ~/temp/temp_gtts.log  <-- after redirected from /dev/null to a temp file
+tail -f ~/temp/temp_cvlc.log  <-- after redirected from /dev/null to a temp file
 
-tail -f -n40 ~/printer_data/logs/klippy.log | grep -v -E "^status|^received|^mcu "
+tail -f ~/printer_data/logs/klippy.log | grep -v -E "^status|^received|^mcu "  <-- to find the trees in the forest
 
 14MAR23:
 
