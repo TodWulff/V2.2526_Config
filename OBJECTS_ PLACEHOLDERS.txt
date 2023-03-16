@@ -255,14 +255,14 @@ printer['firmware_retraction'].retract_speed = 45.0
 printer['firmware_retraction'].unretract_extra_length = 0.0
 printer['firmware_retraction'].unretract_speed = 22.5
 printer['gcode_macro _CheckProbe'].probe_state = 0
-printer['gcode_macro _debug_vars'].debug_verb_codeflow = 0
-printer['gcode_macro _debug_vars'].debug_verb_debug = 0
-printer['gcode_macro _debug_vars'].debug_verb_error = 1
-printer['gcode_macro _debug_vars'].debug_verb_info = 0
-printer['gcode_macro _debug_vars'].debug_verb_status = 0
-printer['gcode_macro _debug_vars'].gcode_state_debug = 0
-printer['gcode_macro _debug_vars'].gmove_debug = 0
-printer['gcode_macro _debug_vars'].save_var_debug = 0
+printer['gcode_macro _debug_tools_vars'].debug_verb_codeflow = 0
+printer['gcode_macro _debug_tools_vars'].debug_verb_debug = 0
+printer['gcode_macro _debug_tools_vars'].debug_verb_error = 1
+printer['gcode_macro _debug_tools_vars'].debug_verb_info = 0
+printer['gcode_macro _debug_tools_vars'].debug_verb_status = 0
+printer['gcode_macro _debug_tools_vars'].gcode_state_debug = 0
+printer['gcode_macro _debug_tools_vars'].gmove_debug = 0
+printer['gcode_macro _debug_tools_vars'].save_var_debug = 0
 printer['gcode_macro _ERCF_PAUSE'].extruder_temp = 0
 printer['gcode_macro _ERCF_PAUSE'].is_paused = 0
 printer['gcode_macro _ERCF_VAR'].clog_detection = 0
@@ -836,12 +836,12 @@ printer.configfile.config['gcode_macro print_start_purge'].description : purge a
 printer.configfile.config['gcode_macro G1'].rename_existing : G1.1
 printer.configfile.config['gcode_macro G1'].description : G1, with console echo if enabled
 printer.configfile.config['gcode_macro G1'].gcode :
-{% if printer["gcode_macro _debug_vars"].gmove_debug %} M118 G1 {rawparams|upper} {% endif %}
+{% if printer["gcode_macro _debug_tools_vars"].gmove_debug %} M118 G1 {rawparams|upper} {% endif %}
 G1.1 {rawparams}
 printer.configfile.config['gcode_macro G4'].rename_existing : G4.1
 printer.configfile.config['gcode_macro G4'].description : G4, with console echo if enabled
 printer.configfile.config['gcode_macro G4'].gcode :
-{% if printer["gcode_macro _debug_vars"].gmove_debug %} M118 G4 {rawparams|upper} {% endif %}
+{% if printer["gcode_macro _debug_tools_vars"].gmove_debug %} M118 G4 {rawparams|upper} {% endif %}
 G4.1 {rawparams}
 printer.configfile.config['gcode_macro DO_BED_MESH'].variable_bed_temp : 60
 printer.configfile.config['gcode_macro DO_BED_MESH'].gcode :
@@ -1186,8 +1186,8 @@ _alert_ercf_is_paused
 printer.configfile.config['gcode_macro ERCF_LOAD_FILAMENT_IN_EXTRUDER'].description : Load filament from the toolhead entrance to the nozzle
 printer.configfile.config['gcode_macro _disable_save_var_debug'].gcode :
 {% if printer["gcode_macro _printer_vars"].ptr_verb_codeflow %} _proc_start function=_disable_save_var_debug func_params='"{rawparams|string}"' {% endif %}
-{% if printer["gcode_macro _debug_vars"].debug_verb_status %} M118 >>>>> _disable_save_var_debug <<<<< {% endif %}
-SET_GCODE_VARIABLE MACRO=_debug_vars VARIABLE=save_var_debug VALUE=0
+{% if printer["gcode_macro _debug_tools_vars"].debug_verb_status %} M118 >>>>> _disable_save_var_debug <<<<< {% endif %}
+SET_GCODE_VARIABLE MACRO=_debug_tools_vars VARIABLE=save_var_debug VALUE=0
 {% if printer["gcode_macro _printer_vars"].ptr_verb_codeflow %} _proc_end function=_disable_save_var_debug {% endif %}
 printer.configfile.config['gcode_macro _disable_save_var_debug'].description : used to disable save_var debug
 printer.configfile.config['gcode_macro _start_bounds_checking'].gcode :
@@ -1297,16 +1297,16 @@ else params.P if params.P %}
 {action_respond_info("Nothing found for \"DUMP_PARAMETER %s\"" % rawparams)}
 {% endif %}
 printer.configfile.config['gcode_macro DUMP_PARAMETER'].description : Debug: Print entries of the printer object
-printer.configfile.config['gcode_macro _debug_vars'].variable_debug_verb_debug : 0
-printer.configfile.config['gcode_macro _debug_vars'].description : macro for debug variables
-printer.configfile.config['gcode_macro _debug_vars'].variable_save_var_debug : 0
-printer.configfile.config['gcode_macro _debug_vars'].gcode :
-printer.configfile.config['gcode_macro _debug_vars'].variable_gcode_state_debug : 0
-printer.configfile.config['gcode_macro _debug_vars'].variable_debug_verb_info : 0
-printer.configfile.config['gcode_macro _debug_vars'].variable_debug_verb_error : 1
-printer.configfile.config['gcode_macro _debug_vars'].variable_debug_verb_codeflow : 0
-printer.configfile.config['gcode_macro _debug_vars'].variable_gmove_debug : 0
-printer.configfile.config['gcode_macro _debug_vars'].variable_debug_verb_status : 0
+printer.configfile.config['gcode_macro _debug_tools_vars'].variable_debug_verb_debug : 0
+printer.configfile.config['gcode_macro _debug_tools_vars'].description : macro for debug variables
+printer.configfile.config['gcode_macro _debug_tools_vars'].variable_save_var_debug : 0
+printer.configfile.config['gcode_macro _debug_tools_vars'].gcode :
+printer.configfile.config['gcode_macro _debug_tools_vars'].variable_gcode_state_debug : 0
+printer.configfile.config['gcode_macro _debug_tools_vars'].variable_debug_verb_info : 0
+printer.configfile.config['gcode_macro _debug_tools_vars'].variable_debug_verb_error : 1
+printer.configfile.config['gcode_macro _debug_tools_vars'].variable_debug_verb_codeflow : 0
+printer.configfile.config['gcode_macro _debug_tools_vars'].variable_gmove_debug : 0
+printer.configfile.config['gcode_macro _debug_tools_vars'].variable_debug_verb_status : 0
 printer.configfile.config['gcode_macro M141'].gcode :
 {% if printer["gcode_macro _printer_vars"].ptr_verb_codeflow %} _proc_start function=M141 func_params='"{rawparams|string}"' {% endif %}
 {% set ch_tmp_tgt = params.S|default(0)|int %}
@@ -1467,7 +1467,7 @@ _SetProbeState action={ params.ACTION }
 printer.configfile.config['gcode_macro G0'].rename_existing : G0.1
 printer.configfile.config['gcode_macro G0'].description : G0, with console echo if enabled
 printer.configfile.config['gcode_macro G0'].gcode :
-{% if printer["gcode_macro _debug_vars"].gmove_debug %} M118 G0 {rawparams|upper} {% endif %}
+{% if printer["gcode_macro _debug_tools_vars"].gmove_debug %} M118 G0 {rawparams|upper} {% endif %}
 G0.1 {rawparams}
 printer.configfile.config['gcode_macro _printer_vars'].variable_ptr_verb_codeflow : 0
 printer.configfile.config['gcode_macro _printer_vars'].variable_ptr_verb_status : 0
@@ -1702,7 +1702,7 @@ M118
 {% endif %}
 _proc_start function=_enable_trace_debug func_params='"{rawparams|string}"'
 _SAVE_VARIABLE_STOCK VARIABLE=proc_depth VALUE=1
-{% if printer["gcode_macro _debug_vars"].debug_verb_status %} M118 >>>>> _enable_trace_debug <<<<< {% endif %}
+{% if printer["gcode_macro _debug_tools_vars"].debug_verb_status %} M118 >>>>> _enable_trace_debug <<<<< {% endif %}
 _proc_end function=_enable_trace_debug
 printer.configfile.config['gcode_macro _enable_trace_debug'].description : sets codeflow verbosity flag and inits depth counter
 printer.configfile.config['gcode_macro T5'].gcode :
@@ -1725,8 +1725,8 @@ ERCF_CHANGE_TOOL TOOL=7
 {% if printer["gcode_macro _printer_vars"].ptr_verb_codeflow %} _proc_end function=T7 {% endif %}
 printer.configfile.config['gcode_macro _disable_gcode_state_debug'].gcode :
 {% if printer["gcode_macro _printer_vars"].ptr_verb_codeflow %} _proc_start function=_disable_gcode_state_debug func_params='"{rawparams|string}"' {% endif %}
-{% if printer["gcode_macro _debug_vars"].debug_verb_status %} M118 >>>>> _disable_save_var_debug <<<<< {% endif %}
-SET_GCODE_VARIABLE MACRO=_debug_vars VARIABLE=gcode_state_debug VALUE=0
+{% if printer["gcode_macro _debug_tools_vars"].debug_verb_status %} M118 >>>>> _disable_save_var_debug <<<<< {% endif %}
+SET_GCODE_VARIABLE MACRO=_debug_tools_vars VARIABLE=gcode_state_debug VALUE=0
 {% if printer["gcode_macro _printer_vars"].ptr_verb_codeflow %} _proc_end function=_disable_gcode_state_debug {% endif %}
 printer.configfile.config['gcode_macro _disable_gcode_state_debug'].description : used to disable save_var debug
 printer.configfile.config['gcode_macro T1'].gcode :
@@ -1787,7 +1787,7 @@ printer.configfile.config['gcode_macro SAVE_GCODE_STATE'].rename_existing : _SAV
 printer.configfile.config['gcode_macro SAVE_GCODE_STATE'].description : for debug purposes, and to ease resume pains...
 printer.configfile.config['gcode_macro SAVE_GCODE_STATE'].gcode :
 {% if printer["gcode_macro _printer_vars"].ptr_verb_codeflow %} _proc_start function=SAVE_GCODE_STATE func_params='"{rawparams|string}"' {% endif %}
-{% if printer["gcode_macro _debug_vars"].gcode_state_debug %} M118 >>>>> SAVE_GCODE_STATE {rawparams} <<<<< {% endif %}
+{% if printer["gcode_macro _debug_tools_vars"].gcode_state_debug %} M118 >>>>> SAVE_GCODE_STATE {rawparams} <<<<< {% endif %}
 save_variable VARIABLE=last_saved_gcode_state VALUE='"{params.NAME}"'
 _SAVE_GCODE_STATE_STOCK {rawparams}
 {% if printer["gcode_macro _printer_vars"].ptr_verb_codeflow %} _proc_end function=SAVE_GCODE_STATE {% endif %}
@@ -2020,8 +2020,8 @@ M117
 {% if printer["gcode_macro _printer_vars"].ptr_verb_codeflow %} _proc_end function=sng_scom {% endif %}
 printer.configfile.config['gcode_macro _enable_gcode_state_debug'].gcode :
 {% if printer["gcode_macro _printer_vars"].ptr_verb_codeflow %} _proc_start function=_enable_gcode_state_debug func_params='"{rawparams|string}"' {% endif %}
-{% if printer["gcode_macro _debug_vars"].debug_verb_status %} M118 >>>>> _enable_save_var_debug <<<<< {% endif %}
-SET_GCODE_VARIABLE MACRO=_debug_vars VARIABLE=gcode_state_debug VALUE=1
+{% if printer["gcode_macro _debug_tools_vars"].debug_verb_status %} M118 >>>>> _enable_save_var_debug <<<<< {% endif %}
+SET_GCODE_VARIABLE MACRO=_debug_tools_vars VARIABLE=gcode_state_debug VALUE=1
 {% if printer["gcode_macro _printer_vars"].ptr_verb_codeflow %} _proc_end function=_enable_gcode_state_debug {% endif %}
 printer.configfile.config['gcode_macro _enable_gcode_state_debug'].description : used to enable save_var debug
 printer.configfile.config['gcode_macro _klicky_vars'].gcode :
@@ -3196,14 +3196,14 @@ _start_bounds_checking
 {% if printer["gcode_macro _printer_vars"].ptr_verb_codeflow %} _proc_end function=RESUME {% endif %}
 printer.configfile.config['gcode_macro _disable_gmove_debug'].gcode :
 {% if printer["gcode_macro _printer_vars"].ptr_verb_codeflow %} _proc_start function=_disable_gmove_debug func_params='"{rawparams|string}"' {% endif %}
-{% if printer["gcode_macro _debug_vars"].debug_verb_status %} M118 >>>>> _disable_gmove_debug <<<<< {% endif %}
-SET_GCODE_VARIABLE MACRO=_debug_vars VARIABLE=gmove_debug VALUE=0
+{% if printer["gcode_macro _debug_tools_vars"].debug_verb_status %} M118 >>>>> _disable_gmove_debug <<<<< {% endif %}
+SET_GCODE_VARIABLE MACRO=_debug_tools_vars VARIABLE=gmove_debug VALUE=0
 {% if printer["gcode_macro _printer_vars"].ptr_verb_codeflow %} _proc_end function=_disable_gmove_debug {% endif %}
 printer.configfile.config['gcode_macro _disable_gmove_debug'].description : used to disable gmove debug
 printer.configfile.config['gcode_macro _disable_trace_debug'].gcode :
 {% set entry_trace_enabled_flag = printer["gcode_macro _printer_vars"].ptr_verb_codeflow|default(1)|int %}
 {% if printer["gcode_macro _printer_vars"].ptr_verb_codeflow %} _proc_start function=_disable_trace_debug func_params='"{rawparams|string}"' {% endif %}
-{% if printer["gcode_macro _debug_vars"].debug_verb_status %} M118 >>>>> _disable_trace_debug <<<<< {% endif %}
+{% if printer["gcode_macro _debug_tools_vars"].debug_verb_status %} M118 >>>>> _disable_trace_debug <<<<< {% endif %}
 SET_GCODE_VARIABLE MACRO=_printer_vars VARIABLE=ptr_verb_codeflow VALUE=0
 _SAVE_VARIABLE_STOCK VARIABLE=proc_depth VALUE=0
 {% if printer["gcode_macro _printer_vars"].ptr_verb_codeflow %} _proc_end function=_disable_trace_debug {% endif %}
@@ -3385,8 +3385,8 @@ _HOURMETER_ON
 printer.configfile.config['gcode_macro HOURMETER_TOGGLE'].description : Toggle Hour Meter
 printer.configfile.config['gcode_macro _enable_save_var_debug'].gcode :
 {% if printer["gcode_macro _printer_vars"].ptr_verb_codeflow %} _proc_start function=_enable_save_var_debug func_params='"{rawparams|string}"' {% endif %}
-{% if printer["gcode_macro _debug_vars"].debug_verb_status %} M118 >>>>> _enable_save_var_debug <<<<< {% endif %}
-SET_GCODE_VARIABLE MACRO=_debug_vars VARIABLE=save_var_debug VALUE=1
+{% if printer["gcode_macro _debug_tools_vars"].debug_verb_status %} M118 >>>>> _enable_save_var_debug <<<<< {% endif %}
+SET_GCODE_VARIABLE MACRO=_debug_tools_vars VARIABLE=save_var_debug VALUE=1
 {% if printer["gcode_macro _printer_vars"].ptr_verb_codeflow %} _proc_end function=_enable_save_var_debug {% endif %}
 printer.configfile.config['gcode_macro _enable_save_var_debug'].description : used to enable save_var debug
 printer.configfile.config['gcode_macro M122'].gcode :
@@ -3575,7 +3575,7 @@ printer.configfile.config['gcode_macro SAVE_VARIABLE'].rename_existing : _SAVE_V
 printer.configfile.config['gcode_macro SAVE_VARIABLE'].description : SAVE_VARIABLE, with console echo if so enabled
 printer.configfile.config['gcode_macro SAVE_VARIABLE'].gcode :
 {% if printer["gcode_macro _printer_vars"].ptr_verb_codeflow %} _proc_start function=SAVE_VARIABLE func_params='"{rawparams|string}"' {% endif %}
-{% if printer["gcode_macro _debug_vars"].save_var_debug %} M118 ___SAVE_VARIABLE {rawparams}___ {% endif %}
+{% if printer["gcode_macro _debug_tools_vars"].save_var_debug %} M118 ___SAVE_VARIABLE {rawparams}___ {% endif %}
 _SAVE_VARIABLE_STOCK {rawparams}
 {% if printer["gcode_macro _printer_vars"].ptr_verb_codeflow %} _proc_end function=SAVE_VARIABLE {% endif %}
 printer.configfile.config['mcu ercf'].restart_method : command
@@ -4728,8 +4728,8 @@ SET_LED LED=ercf_lights RED=0 GREEN=0 BLUE=0
 {% if printer["gcode_macro _printer_vars"].ptr_verb_codeflow %} _proc_end function=ERCFLts_Off {% endif %}
 printer.configfile.config['gcode_macro _enable_gmove_debug'].gcode :
 {% if printer["gcode_macro _printer_vars"].ptr_verb_codeflow %} _proc_start function=_enable_gmove_debug func_params='"{rawparams|string}"' {% endif %}
-{% if printer["gcode_macro _debug_vars"].debug_verb_status %} M118 >>>>> _enable_gmove_debug <<<<< {% endif %}
-SET_GCODE_VARIABLE MACRO=_debug_vars VARIABLE=gmove_debug VALUE=1
+{% if printer["gcode_macro _debug_tools_vars"].debug_verb_status %} M118 >>>>> _enable_gmove_debug <<<<< {% endif %}
+SET_GCODE_VARIABLE MACRO=_debug_tools_vars VARIABLE=gmove_debug VALUE=1
 {% if printer["gcode_macro _printer_vars"].ptr_verb_codeflow %} _proc_end function=_enable_gmove_debug {% endif %}
 printer.configfile.config['gcode_macro _enable_gmove_debug'].description : used to enable gmove debug
 printer.configfile.config['delayed_gcode _klicky_module_start'].gcode :
@@ -7226,12 +7226,12 @@ printer.configfile.config['gcode_macro RESTORE_GCODE_STATE'].rename_existing : _
 printer.configfile.config['gcode_macro RESTORE_GCODE_STATE'].description : for debug purposes
 printer.configfile.config['gcode_macro RESTORE_GCODE_STATE'].gcode :
 {% if printer["gcode_macro _printer_vars"].ptr_verb_codeflow %} _proc_start function=RESTORE_GCODE_STATE func_params='"{rawparams|string}"' {% endif %}
-{% if printer["gcode_macro _debug_vars"].gcode_state_debug %} M118 >>>>> RESTORE_GCODE_STATE {rawparams} <<<<< {% endif %}
+{% if printer["gcode_macro _debug_tools_vars"].gcode_state_debug %} M118 >>>>> RESTORE_GCODE_STATE {rawparams} <<<<< {% endif %}
 save_variable VARIABLE=last_restored_gcode_state VALUE='"{params.NAME}"'
 {% if params.NAME != "PAUSE_STATE" %}
 _RESTORE_GCODE_STATE_STOCK {rawparams}
 {% else %}
-{% if printer["gcode_macro _debug_vars"].debug_verb_status %} M118 _RESTORE_GCODE_STATE_STOCK SKIPPED {% endif %}
+{% if printer["gcode_macro _debug_tools_vars"].debug_verb_status %} M118 _RESTORE_GCODE_STATE_STOCK SKIPPED {% endif %}
 {% endif %}
 {% if printer["gcode_macro _printer_vars"].ptr_verb_codeflow %} _proc_end function=RESTORE_GCODE_STATE {% endif %}
 printer.configfile.config['gcode_macro ERCF_TEST_LOAD_SEQ'].gcode :
@@ -7510,7 +7510,7 @@ printer.configfile.settings.stepper_z1.enable_pin : !PA0
 printer.configfile.settings['gcode_macro g4'].rename_existing : G4.1
 printer.configfile.settings['gcode_macro g4'].description : G4, with console echo if enabled
 printer.configfile.settings['gcode_macro g4'].gcode :
-{% if printer["gcode_macro _debug_vars"].gmove_debug %} M118 G4 {rawparams|upper} {% endif %}
+{% if printer["gcode_macro _debug_tools_vars"].gmove_debug %} M118 G4 {rawparams|upper} {% endif %}
 G4.1 {rawparams}
 printer.configfile.settings['gcode_macro ercflts_blue'].gcode :
 {% if printer["gcode_macro _printer_vars"].ptr_verb_codeflow %} _proc_start function=ERCFLts_Blue {% endif %}
@@ -7723,16 +7723,16 @@ M118 H2O cooling automatic parameter check Enabled
 UPDATE_DELAYED_GCODE ID=check_bounds DURATION=0.1
 {% if printer["gcode_macro _printer_vars"].ptr_verb_codeflow %} _proc_end function=_start_bounds_checking {% endif %}
 printer.configfile.settings['gcode_macro _start_bounds_checking'].description : G-Code macro
-printer.configfile.settings['gcode_macro _debug_vars'].variable_save_var_debug : 0
-printer.configfile.settings['gcode_macro _debug_vars'].description : macro for debug variables
-printer.configfile.settings['gcode_macro _debug_vars'].variable_debug_verb_debug : 0
-printer.configfile.settings['gcode_macro _debug_vars'].gcode :
-printer.configfile.settings['gcode_macro _debug_vars'].variable_gcode_state_debug : 0
-printer.configfile.settings['gcode_macro _debug_vars'].variable_debug_verb_info : 0
-printer.configfile.settings['gcode_macro _debug_vars'].variable_debug_verb_error : 1
-printer.configfile.settings['gcode_macro _debug_vars'].variable_debug_verb_codeflow : 0
-printer.configfile.settings['gcode_macro _debug_vars'].variable_gmove_debug : 0
-printer.configfile.settings['gcode_macro _debug_vars'].variable_debug_verb_status : 0
+printer.configfile.settings['gcode_macro _debug_tools_vars'].variable_save_var_debug : 0
+printer.configfile.settings['gcode_macro _debug_tools_vars'].description : macro for debug variables
+printer.configfile.settings['gcode_macro _debug_tools_vars'].variable_debug_verb_debug : 0
+printer.configfile.settings['gcode_macro _debug_tools_vars'].gcode :
+printer.configfile.settings['gcode_macro _debug_tools_vars'].variable_gcode_state_debug : 0
+printer.configfile.settings['gcode_macro _debug_tools_vars'].variable_debug_verb_info : 0
+printer.configfile.settings['gcode_macro _debug_tools_vars'].variable_debug_verb_error : 1
+printer.configfile.settings['gcode_macro _debug_tools_vars'].variable_debug_verb_codeflow : 0
+printer.configfile.settings['gcode_macro _debug_tools_vars'].variable_gmove_debug : 0
+printer.configfile.settings['gcode_macro _debug_tools_vars'].variable_debug_verb_status : 0
 printer.configfile.settings['gcode_macro set_pressure_advance'].gcode :
 {% if printer["gcode_macro _printer_vars"].ptr_verb_codeflow %} _proc_start function=SET_PRESSURE_ADVANCE func_params='"{rawparams|string}"' {% endif %}
 {% if printer["gcode_macro _linadv_vars"].linadv_verb_codeflow %} M118 >>> SET_PRESSURE_ADVANCE Start ... {% endif %}
@@ -8225,13 +8225,13 @@ M118
 {% endif %}
 _proc_start function=_enable_trace_debug func_params='"{rawparams|string}"'
 _SAVE_VARIABLE_STOCK VARIABLE=proc_depth VALUE=1
-{% if printer["gcode_macro _debug_vars"].debug_verb_status %} M118 >>>>> _enable_trace_debug <<<<< {% endif %}
+{% if printer["gcode_macro _debug_tools_vars"].debug_verb_status %} M118 >>>>> _enable_trace_debug <<<<< {% endif %}
 _proc_end function=_enable_trace_debug
 printer.configfile.settings['gcode_macro _enable_trace_debug'].description : sets codeflow verbosity flag and inits depth counter
 printer.configfile.settings['gcode_macro _disable_gcode_state_debug'].gcode :
 {% if printer["gcode_macro _printer_vars"].ptr_verb_codeflow %} _proc_start function=_disable_gcode_state_debug func_params='"{rawparams|string}"' {% endif %}
-{% if printer["gcode_macro _debug_vars"].debug_verb_status %} M118 >>>>> _disable_save_var_debug <<<<< {% endif %}
-SET_GCODE_VARIABLE MACRO=_debug_vars VARIABLE=gcode_state_debug VALUE=0
+{% if printer["gcode_macro _debug_tools_vars"].debug_verb_status %} M118 >>>>> _disable_save_var_debug <<<<< {% endif %}
+SET_GCODE_VARIABLE MACRO=_debug_tools_vars VARIABLE=gcode_state_debug VALUE=0
 {% if printer["gcode_macro _printer_vars"].ptr_verb_codeflow %} _proc_end function=_disable_gcode_state_debug {% endif %}
 printer.configfile.settings['gcode_macro _disable_gcode_state_debug'].description : used to disable save_var debug
 printer.configfile.settings['delayed_gcode disable_heater'].gcode :
@@ -8548,8 +8548,8 @@ M117
 printer.configfile.settings['gcode_macro sng_scom'].description : G-Code macro
 printer.configfile.settings['gcode_macro _enable_gcode_state_debug'].gcode :
 {% if printer["gcode_macro _printer_vars"].ptr_verb_codeflow %} _proc_start function=_enable_gcode_state_debug func_params='"{rawparams|string}"' {% endif %}
-{% if printer["gcode_macro _debug_vars"].debug_verb_status %} M118 >>>>> _enable_save_var_debug <<<<< {% endif %}
-SET_GCODE_VARIABLE MACRO=_debug_vars VARIABLE=gcode_state_debug VALUE=1
+{% if printer["gcode_macro _debug_tools_vars"].debug_verb_status %} M118 >>>>> _enable_save_var_debug <<<<< {% endif %}
+SET_GCODE_VARIABLE MACRO=_debug_tools_vars VARIABLE=gcode_state_debug VALUE=1
 {% if printer["gcode_macro _printer_vars"].ptr_verb_codeflow %} _proc_end function=_enable_gcode_state_debug {% endif %}
 printer.configfile.settings['gcode_macro _enable_gcode_state_debug'].description : used to enable save_var debug
 printer.configfile.settings['gcode_macro _klicky_vars'].description : G-Code macro
@@ -9789,12 +9789,12 @@ printer.configfile.settings['gcode_macro restore_gcode_state'].rename_existing :
 printer.configfile.settings['gcode_macro restore_gcode_state'].description : for debug purposes
 printer.configfile.settings['gcode_macro restore_gcode_state'].gcode :
 {% if printer["gcode_macro _printer_vars"].ptr_verb_codeflow %} _proc_start function=RESTORE_GCODE_STATE func_params='"{rawparams|string}"' {% endif %}
-{% if printer["gcode_macro _debug_vars"].gcode_state_debug %} M118 >>>>> RESTORE_GCODE_STATE {rawparams} <<<<< {% endif %}
+{% if printer["gcode_macro _debug_tools_vars"].gcode_state_debug %} M118 >>>>> RESTORE_GCODE_STATE {rawparams} <<<<< {% endif %}
 save_variable VARIABLE=last_restored_gcode_state VALUE='"{params.NAME}"'
 {% if params.NAME != "PAUSE_STATE" %}
 _RESTORE_GCODE_STATE_STOCK {rawparams}
 {% else %}
-{% if printer["gcode_macro _debug_vars"].debug_verb_status %} M118 _RESTORE_GCODE_STATE_STOCK SKIPPED {% endif %}
+{% if printer["gcode_macro _debug_tools_vars"].debug_verb_status %} M118 _RESTORE_GCODE_STATE_STOCK SKIPPED {% endif %}
 {% endif %}
 {% if printer["gcode_macro _printer_vars"].ptr_verb_codeflow %} _proc_end function=RESTORE_GCODE_STATE {% endif %}
 printer.configfile.settings['gcode_macro z_probe_accuracy'].gcode :
@@ -9957,7 +9957,7 @@ printer.configfile.settings['thermistor ps'].temperature1 : 25.0
 printer.configfile.settings['gcode_macro _disable_trace_debug'].gcode :
 {% set entry_trace_enabled_flag = printer["gcode_macro _printer_vars"].ptr_verb_codeflow|default(1)|int %}
 {% if printer["gcode_macro _printer_vars"].ptr_verb_codeflow %} _proc_start function=_disable_trace_debug func_params='"{rawparams|string}"' {% endif %}
-{% if printer["gcode_macro _debug_vars"].debug_verb_status %} M118 >>>>> _disable_trace_debug <<<<< {% endif %}
+{% if printer["gcode_macro _debug_tools_vars"].debug_verb_status %} M118 >>>>> _disable_trace_debug <<<<< {% endif %}
 SET_GCODE_VARIABLE MACRO=_printer_vars VARIABLE=ptr_verb_codeflow VALUE=0
 _SAVE_VARIABLE_STOCK VARIABLE=proc_depth VALUE=0
 {% if printer["gcode_macro _printer_vars"].ptr_verb_codeflow %} _proc_end function=_disable_trace_debug {% endif %}
@@ -10157,8 +10157,8 @@ ERCF_CLOG_OR_RUNOUT
 printer.configfile.settings['gcode_macro ercf_encoder_motion_issue'].description : Perform a test when the encoder sense an issue (check for clog then assumes a runout)
 printer.configfile.settings['gcode_macro _enable_save_var_debug'].gcode :
 {% if printer["gcode_macro _printer_vars"].ptr_verb_codeflow %} _proc_start function=_enable_save_var_debug func_params='"{rawparams|string}"' {% endif %}
-{% if printer["gcode_macro _debug_vars"].debug_verb_status %} M118 >>>>> _enable_save_var_debug <<<<< {% endif %}
-SET_GCODE_VARIABLE MACRO=_debug_vars VARIABLE=save_var_debug VALUE=1
+{% if printer["gcode_macro _debug_tools_vars"].debug_verb_status %} M118 >>>>> _enable_save_var_debug <<<<< {% endif %}
+SET_GCODE_VARIABLE MACRO=_debug_tools_vars VARIABLE=save_var_debug VALUE=1
 {% if printer["gcode_macro _printer_vars"].ptr_verb_codeflow %} _proc_end function=_enable_save_var_debug {% endif %}
 printer.configfile.settings['gcode_macro _enable_save_var_debug'].description : used to enable save_var debug
 printer.configfile.settings['gcode_macro m1181'].gcode :
@@ -10843,8 +10843,8 @@ _PrintLED_Off
 printer.configfile.settings['gcode_macro printled_off'].description : G-Code macro
 printer.configfile.settings['gcode_macro _disable_gmove_debug'].gcode :
 {% if printer["gcode_macro _printer_vars"].ptr_verb_codeflow %} _proc_start function=_disable_gmove_debug func_params='"{rawparams|string}"' {% endif %}
-{% if printer["gcode_macro _debug_vars"].debug_verb_status %} M118 >>>>> _disable_gmove_debug <<<<< {% endif %}
-SET_GCODE_VARIABLE MACRO=_debug_vars VARIABLE=gmove_debug VALUE=0
+{% if printer["gcode_macro _debug_tools_vars"].debug_verb_status %} M118 >>>>> _disable_gmove_debug <<<<< {% endif %}
+SET_GCODE_VARIABLE MACRO=_debug_tools_vars VARIABLE=gmove_debug VALUE=0
 {% if printer["gcode_macro _printer_vars"].ptr_verb_codeflow %} _proc_end function=_disable_gmove_debug {% endif %}
 printer.configfile.settings['gcode_macro _disable_gmove_debug'].description : used to disable gmove debug
 printer.configfile.settings['gcode_macro go_relative'].gcode :
@@ -11263,7 +11263,7 @@ printer.configfile.settings['heater_fan h2o_flow'].tachometer_ppr : 1
 printer.configfile.settings['heater_fan h2o_flow'].hardware_pwm : False
 printer.configfile.settings['gcode_macro save_variable'].gcode :
 {% if printer["gcode_macro _printer_vars"].ptr_verb_codeflow %} _proc_start function=SAVE_VARIABLE func_params='"{rawparams|string}"' {% endif %}
-{% if printer["gcode_macro _debug_vars"].save_var_debug %} M118 ___SAVE_VARIABLE {rawparams}___ {% endif %}
+{% if printer["gcode_macro _debug_tools_vars"].save_var_debug %} M118 ___SAVE_VARIABLE {rawparams}___ {% endif %}
 _SAVE_VARIABLE_STOCK {rawparams}
 {% if printer["gcode_macro _printer_vars"].ptr_verb_codeflow %} _proc_end function=SAVE_VARIABLE {% endif %}
 printer.configfile.settings['gcode_macro save_variable'].description : SAVE_VARIABLE, with console echo if so enabled
@@ -11386,7 +11386,7 @@ printer.configfile.settings['gcode_macro M300.1'].description : G-Code macro
 printer.configfile.settings['gcode_macro g1'].rename_existing : G1.1
 printer.configfile.settings['gcode_macro g1'].description : G1, with console echo if enabled
 printer.configfile.settings['gcode_macro g1'].gcode :
-{% if printer["gcode_macro _debug_vars"].gmove_debug %} M118 G1 {rawparams|upper} {% endif %}
+{% if printer["gcode_macro _debug_tools_vars"].gmove_debug %} M118 G1 {rawparams|upper} {% endif %}
 G1.1 {rawparams}
 printer.configfile.settings['gcode_macro _umbilical_path'].gcode :
 {% if printer["gcode_macro _printer_vars"].ptr_verb_codeflow %} _proc_start function=_Umbilical_Path func_params='"{rawparams|string}"' {% endif %}
@@ -11483,8 +11483,8 @@ SET_LED LED=dash_lights RED=1 GREEN=1 BLUE=1
 printer.configfile.settings['gcode_macro dblts_full'].description : G-Code macro
 printer.configfile.settings['gcode_macro _enable_gmove_debug'].gcode :
 {% if printer["gcode_macro _printer_vars"].ptr_verb_codeflow %} _proc_start function=_enable_gmove_debug func_params='"{rawparams|string}"' {% endif %}
-{% if printer["gcode_macro _debug_vars"].debug_verb_status %} M118 >>>>> _enable_gmove_debug <<<<< {% endif %}
-SET_GCODE_VARIABLE MACRO=_debug_vars VARIABLE=gmove_debug VALUE=1
+{% if printer["gcode_macro _debug_tools_vars"].debug_verb_status %} M118 >>>>> _enable_gmove_debug <<<<< {% endif %}
+SET_GCODE_VARIABLE MACRO=_debug_tools_vars VARIABLE=gmove_debug VALUE=1
 {% if printer["gcode_macro _printer_vars"].ptr_verb_codeflow %} _proc_end function=_enable_gmove_debug {% endif %}
 printer.configfile.settings['gcode_macro _enable_gmove_debug'].description : used to enable gmove debug
 printer.configfile.settings['gcode_macro _user_variables'].variable_ztravel_speed : 50
@@ -11940,8 +11940,8 @@ printer.configfile.settings['bed_mesh hot_klicky'].max_x : 330.0
 printer.configfile.settings['bed_mesh hot_klicky'].max_y : 330.0
 printer.configfile.settings['gcode_macro _disable_save_var_debug'].gcode :
 {% if printer["gcode_macro _printer_vars"].ptr_verb_codeflow %} _proc_start function=_disable_save_var_debug func_params='"{rawparams|string}"' {% endif %}
-{% if printer["gcode_macro _debug_vars"].debug_verb_status %} M118 >>>>> _disable_save_var_debug <<<<< {% endif %}
-SET_GCODE_VARIABLE MACRO=_debug_vars VARIABLE=save_var_debug VALUE=0
+{% if printer["gcode_macro _debug_tools_vars"].debug_verb_status %} M118 >>>>> _disable_save_var_debug <<<<< {% endif %}
+SET_GCODE_VARIABLE MACRO=_debug_tools_vars VARIABLE=save_var_debug VALUE=0
 {% if printer["gcode_macro _printer_vars"].ptr_verb_codeflow %} _proc_end function=_disable_save_var_debug {% endif %}
 printer.configfile.settings['gcode_macro _disable_save_var_debug'].description : used to disable save_var debug
 printer.configfile.settings['gcode_macro snd_printfail'].gcode :
@@ -12497,7 +12497,7 @@ _ercf_wait_he_temp TEMP={printer["gcode_macro _ERCF_VAR"].extruder_eject_temp}
 {% if printer["gcode_macro _printer_vars"].ptr_verb_codeflow %} _proc_end function=_ercf_set_eject_temp {% endif %}
 printer.configfile.settings['gcode_macro _ercf_set_eject_temp'].description : set extruder to eject temp before load/unload
 printer.configfile.settings['gcode_macro g0'].gcode :
-{% if printer["gcode_macro _debug_vars"].gmove_debug %} M118 G0 {rawparams|upper} {% endif %}
+{% if printer["gcode_macro _debug_tools_vars"].gmove_debug %} M118 G0 {rawparams|upper} {% endif %}
 G0.1 {rawparams}
 printer.configfile.settings['gcode_macro g0'].description : G0, with console echo if enabled
 printer.configfile.settings['gcode_macro g0'].rename_existing : G0.1
@@ -13961,7 +13961,7 @@ _IdleLED_On
 printer.configfile.settings['gcode_macro idleled_on'].description : G-Code macro
 printer.configfile.settings['gcode_macro save_gcode_state'].gcode :
 {% if printer["gcode_macro _printer_vars"].ptr_verb_codeflow %} _proc_start function=SAVE_GCODE_STATE func_params='"{rawparams|string}"' {% endif %}
-{% if printer["gcode_macro _debug_vars"].gcode_state_debug %} M118 >>>>> SAVE_GCODE_STATE {rawparams} <<<<< {% endif %}
+{% if printer["gcode_macro _debug_tools_vars"].gcode_state_debug %} M118 >>>>> SAVE_GCODE_STATE {rawparams} <<<<< {% endif %}
 save_variable VARIABLE=last_saved_gcode_state VALUE='"{params.NAME}"'
 _SAVE_GCODE_STATE_STOCK {rawparams}
 {% if printer["gcode_macro _printer_vars"].ptr_verb_codeflow %} _proc_end function=SAVE_GCODE_STATE {% endif %}
@@ -14269,15 +14269,15 @@ printer['output_pin _sw_grn_led']
 printer['output_pin _sw_grn_led'].value : 1.0
 printer['output_pin _sw_blu_led']
 printer['output_pin _sw_blu_led'].value : 0.0
-printer['gcode_macro _debug_vars']
-printer['gcode_macro _debug_vars'].debug_verb_debug : 0
-printer['gcode_macro _debug_vars'].debug_verb_info : 0
-printer['gcode_macro _debug_vars'].save_var_debug : 0
-printer['gcode_macro _debug_vars'].debug_verb_error : 1
-printer['gcode_macro _debug_vars'].gcode_state_debug : 0
-printer['gcode_macro _debug_vars'].debug_verb_status : 0
-printer['gcode_macro _debug_vars'].debug_verb_codeflow : 0
-printer['gcode_macro _debug_vars'].gmove_debug : 0
+printer['gcode_macro _debug_tools_vars']
+printer['gcode_macro _debug_tools_vars'].debug_verb_debug : 0
+printer['gcode_macro _debug_tools_vars'].debug_verb_info : 0
+printer['gcode_macro _debug_tools_vars'].save_var_debug : 0
+printer['gcode_macro _debug_tools_vars'].debug_verb_error : 1
+printer['gcode_macro _debug_tools_vars'].gcode_state_debug : 0
+printer['gcode_macro _debug_tools_vars'].debug_verb_status : 0
+printer['gcode_macro _debug_tools_vars'].debug_verb_codeflow : 0
+printer['gcode_macro _debug_tools_vars'].gmove_debug : 0
 printer['gcode_macro DUMP_PARAMETER']
 printer['gcode_macro SEARCH_VARS']
 printer['gcode_macro DUMP_PRINT_AREA_LIMITS']
