@@ -12,6 +12,7 @@ done
 
 #generate tts audio file
 gtts-cli "$phrase" -o /home/pi/temp/temp.wav > ~/temp/temp_gtts.log 2>&1
+#pico2wave -l en-US -w ~/temp/temp.wav "$phrase" > /dev/null 2>&1 &
 
 #play the tts audio, returning immediately
-cvlc --gain 1 --quiet --rate 1.25 --play-and-exit ~/temp/temp.wav > ~/temp/temp_cvlc.log 2>&1
+cvlc --gain 1.5 --quiet --rate 1.25 --play-and-exit ~/temp/temp.wav > ~/temp/temp_cvlc.log 2>&1 

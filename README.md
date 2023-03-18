@@ -58,7 +58,7 @@ tail -f ~/printer_data/logs/klippy.log | grep -v -E "^Stats|^received|^mcu "  <-
 -	Started the Harmonization efforts between config repositories with white
 	space cleanup (horz, vertical, trailing, etc.)
 -	Went through and validated that EVERY gcode block was instrumented (except
-	where uncontrolled recursion would occcur), including non-macro blocks - 
+	where uncontrolled recursion would occur), including non-macro blocks - 
 	I expect to have some of these efforts bite me in the backside, but as of
 	now, it all boots and non-exhaustive tests indicate that the stars aligned
 -	Nifty stats: 426 gcode macros, 523 gcode blocks (not all blocks are macros)
