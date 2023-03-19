@@ -8,3 +8,4 @@ secrets.conf
 *.swp
 *rotate_klipper_userlogs*
 _cameras.cfg
+
