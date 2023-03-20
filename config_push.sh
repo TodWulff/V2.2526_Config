@@ -1,7 +1,5 @@
-#say_wait Pushing a config backup	#echos to klipper console too
+echo 'klipper_dialog S="Pushing a config backup"' > ~/printer_data/comms/klippy.serial
 
-
-# parse commit message (possibly unquoted) into a single string
 params=""
 for element in "$@"
 do
@@ -14,5 +12,4 @@ git add .
 git commit -m "$params"
 git push
 
-#say_wait Complete	#echos to klipper console too
-
+echo 'klipper_dialog S="Config backup complete"' > ~/printer_data/comms/klippy.serial
