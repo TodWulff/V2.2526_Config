@@ -1,7 +1,7 @@
 ^([0-9][0-9]:[0-9][0-9]:[0-9][0-9])\r\n(.*)$ <-- npp regex to fix console pastes... replacement: \1 \2
 
-19:58:00 ` _ENABLE_TRACE_DEBUG
-19:58:00 ` [_enable_trace_debug] done
+19:58:00 ` _ENABLE_debug_trace
+19:58:00 ` [_enable_debug_trace] done
 19:58:00 ` M109 S240
 19:58:00 `` SAVE_VARIABLE VARIABLE=EXTRUDER_TEMP_SETTING VALUE=240
 19:58:00 `` [save_variable] done
@@ -196,9 +196,9 @@
 19:58:24 `` SAVE_VARIABLE VARIABLE=WIDTH VALUE=0.9
 19:58:24 `` [save_variable] done
 19:58:24 ` [_setslicervar] done
-19:58:26 _disable_trace_debug
-19:58:29 ` _DISABLE_TRACE_DEBUG
-19:58:29 ` [_disable_trace_debug] done
+19:58:26 _disable_debug_trace
+19:58:29 ` _DISABLE_debug_trace
+19:58:29 ` [_disable_debug_trace] done
 19:58:29
 19:58:29
 

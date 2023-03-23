@@ -11,7 +11,7 @@ Repo for the Klipper Config directory of my Voron V2.4 (not v2.4r2) SN 2526, a 3
 -	tail and grep are my new friends, seriously. fukin besties.
 -	made it so that the tts scripts on the host emit back into klipper what is being said,
 	as a console message to the user (in event speakers off, deafness, being remote, etc.)
--	split off separate cfgs for _userlogs, _host_control, _tts, _temp_capture, and fought
+-	split off separate cfgs for _debug_userlogs, _host_control, _tts, _temp_capture, and fought
 	the OS for a while getting tts goin:
 
 this worked well out of the gate with Raspiban hosts.  However, on Debian, it was not so
