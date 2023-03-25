@@ -6,6 +6,5 @@ imgs/
 secrets.conf
 *shell_command*
 *.swp
-*rotate_klipper_userlogs*
 _cameras.cfg
 
