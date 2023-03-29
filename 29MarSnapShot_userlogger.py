@@ -1,6 +1,6 @@
 
 #########################################################################
-# Logrotate is employed outside of this module. Made use of kiauh shell_
+# Logrotate is employed outside of this module. Made use of Kiauh shell_
 # commands to kick off a script on the host to rotate the logs and urge
 # restart of klipper thereafter so it lets go of old file handles and
 # picks up the new file handles after logrotate does it's thing.
