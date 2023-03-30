@@ -24,7 +24,6 @@ gmove_color = ''
 cmpst_color = ''
 reset_color = ''
 
-
 class UserLogger:
     def __init__(self, config):
         global trace_color, savar_color, state_color, \
@@ -257,7 +256,6 @@ class UserLogger:
 
     def get_status(self, eventtime):
         return {'status': 'userLogger module instantiated'}
-
 
 def load_config(config):
     return UserLogger(config)
