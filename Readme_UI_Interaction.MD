@@ -21,6 +21,12 @@ Here is another example of a real world use case - optionally rebooting after an
 ![https://i.imgur.com/Tn1ANaH.png](https://i.imgur.com/Tn1ANaH.png)
 
 Other cases in which I employ this module in my daily printing workflow:
+
+- During an Idle Timeout event, give user ability to cancel the shutdown, to proceed, and to upload configs and then proceed,
+  with null-input timeout to default to proceed with the shutdown.
+
+![https://i.imgur.com/mZ7V0rl.png](https://i.imgur.com/mZ7V0rl.png)
+
 - At print start, if extrusion factor or speed factor is not 100%, go interactive to give user option to reset each to 100% before commencing the print:
 
 ![https://i.imgur.com/v5AvWXp.png](https://i.imgur.com/v5AvWXp.png)
@@ -192,7 +198,7 @@ Hints on both Input Prompt and when an exception is raised:  https://i.imgur.com
 
 ## Closing comments:
 This was/is a quite deep rabbit hole.  Author `MegaHurtz 🇺🇸#6544` can be reached on a number of different Discord servers:
-- Voron Kit Feedback
+- DIY 3D Printer Kit Feedback
 - Voron Design
 - Klipper
 - Mainsail
