@@ -1,6 +1,8 @@
 # Klipper_UserInteraction
 A set of macros to enable print-time user interaction with Klipper via Console and UI buttons (macros).
 
+04APR23 Update: Added example of using UI Interaction during an Idle Timeout Event.
+
 19MAR23 Update: Added Text Decoration to the queries.  Updated code herein with the latest from my
 production printer environment.  Added verbal hinting/reminding with TTS macro calls: say & say_wait.
 
@@ -23,7 +25,7 @@ Here is another example of a real world use case - optionally rebooting after an
 Other cases in which I employ this module in my daily printing workflow:
 
 - During an Idle Timeout event, give user ability to cancel the shutdown, to proceed, and to upload configs and then proceed,
-  with null-input timeout to default to proceed with the shutdown.
+  with null-input timeout to default to proceed with the shutdown (as imaged).
 
 ![https://i.imgur.com/mZ7V0rl.png](https://i.imgur.com/mZ7V0rl.png)
 
