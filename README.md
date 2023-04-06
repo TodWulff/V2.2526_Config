@@ -3,48 +3,90 @@ Repo for the Klipper Config directory of my Voron V2.4 (not v2.4r2) SN 2526, a 3
 
 05APR23:
 
-Took a break from getting smarter with python:
-- implemented a cpu_load check at print start as, historically, when transcoding/encoding a time lapse, host saturates and could definitely 
+Took a break from getting smarter with Python:
+- Implemented a cpu_load check at print start as, historically, when transcoding/encoding a time lapse, host saturates which could definitely 
 affect any quick follow-on prints, until the transcode/encode is completed.
-- Finally implemented a much needed fix for a long time nag with PS (first layer infill over extruded, while perimeters good)
-- And, implemented a more robust Idle Timeout approach
-	- on Idle Timeout set a 2 min timer and give user opportunities:
-	- user has option to
-		- allow the shutdown, 
-		- to push a config & shutdown, or 
-		- to reset the idle timeout (temps retained, motors stay engaged)
-	- defaults to allowing the shutdown in case user is away
-	- FIXME: still desire to implement a HE cool down with PCF running, to help prevent duct warp-age at printer shutdown.  Easy enough to do,
-I am just procrastinating
+- Finally implemented a much needed fix for a long time nag with PS (first layer infill is over extruded, while perimeters are good), and
+- Implemented a more robust Idle Timeout approach:
+	- On Idle Timeout set a 2 min timer and give user an ability to decide what to do.
+	- User has option to
+		- Allow the shutdown, 
+		- Can elect to push a config & shutdown, or 
+		- Choose to reset the idle timeout (temps retained, motors stay engaged, ITO period reset to a 'default' (set in vars))
+		- Defaults to doing the shutdown in case user is away
+	- FIXME: I still desire to implement a HE cool down with PCF running, to help prevent duct warp-age at printer shutdown when hot.
+Easy enough to do, I am just procrastinating...
 
 Still cogitating on best way to suppress specific commands from being logged.  Started with adding a NOLOG=1 detection to any passed 
-parameters that are included with the potential log entry.  Issue with this is that on proc exist params haven't been sent, so no means
-to squelch those and the proc depth gets AFU too.
+parameters that are included with the potential log entry.  Issue with this is that, on proc exits, params haven't been sent, so no means
+to squelch those.  The now me is kicking my old self's shins for not considering this then.
 
-Also, this whole proc depth thing is pretty fragile, and I've been mulling on how best to track/display same robustly.  Without hooks 
-into proper klipper, I fear that this might be the best means to an end, but will continue mull on it..
+Also, this whole proc depth thing feels like it's pretty fragile, and I've been mulling on how best to track/display same robustly.  However,
+without macro callback hooks within klipper, I fear that this might be the best means to an end, but will continue mull on it.
+
+Logging...  I am mulling on the threading/queue approach still, and also how best to consider adding additional logs without hard-coding for
+them.  Klipper has a one to many capability with a module import, and sub-instantiations (ugh on the terms) of module elements.  It would be
+uber nice to be able to spin up n logs from a user's config by just adding a [userlog blah] section after the [userlogging] module is asserted.
+One might reasonably ask: "Seriously?  What for?  You've already got 4+1 logs going.?."  'ERCF!' is my knee-jerk response - that whole thing
+is a large set of macros, hardware, and configs, in and of itself and, I posit, that merits an ability to have dedicated log(s) for same.  
+It would have been uber nice when I was cutting my teeth and fighting things when building, configuring, and tuning it...
+
+~MHz
 
 
 29MAR23:
 
-A lot has transpired these last couple of weeks.  Most notably is that I drafted the initial pass as a Klipper Extras Module entitled userlogger.py.  The userLogger module enables logging to files rather than by way of the console (or a hugely failed attempt to write to files via shell_commands [100ms blocks on each message entry - way painful to watch]).  The goal here was to instantiate a means to have logging on at restart, capturing everything printer/Klipper 'boot' related, to log files, and to do so in a manner that yields no effect on the printer or Klipper.  This endeavor is partially successful in that I got the logging module instantiated and functional as designed.  I have a snap-shot of it here in, in the root config folder (needs to be moved to the Klipper/Klipper/extras ifin a user wishes to muck around with it).
+A lot has transpired these last couple of weeks.  Most notably is that I drafted the initial pass as a Klipper Extras Module entitled 
+userlogger.py.  The userLogger module enables logging to files rather than by way of the console (or a hugely failed attempt to write to 
+files via shell_commands [100ms blocks on each message entry - way painful to watch]).  The goal here was to instantiate a means to have 
+logging on at restart, capturing everything printer/Klipper 'boot' related, to log files, and to do so in a manner that yields no effect 
+on the printer or Klipper.  This endeavor is partially successful in that I got the logging module instantiated and functional as designed.  
+I have a snap-shot of it here in, in the root config folder (needs to be moved to the Klipper/Klipper/extras ifin a user wishes to muck 
+around with it).
 
-There were a lot of shiny things that reared their heads that I played whack-a-mole with (I mean, Mutable Focus Systems is muh d/b/a for a reason - lol).  Anyways, in no certain order:
+There were a lot of shiny things that reared their heads that I played whack-a-mole with (I mean, Mutable Focus Systems is muh d/b/a for a 
+reason - lol).  Anyways, in no certain order:
 
--	Created a macro that, when it's button in the Mainsail UI is clicked on, emits to the console a set of 5 URLs that enable workflow efficient access to the logs.  The links are possible by my trapping FW M118, and imputing use of action_respond_info vs. FW's implementation (supports numeric/special char starts/inclusion and, I've discovered, a much more expressive use of the console in that this approach allows writing console emissions from macros that contain HTML that is actually rendered in Mainsail's console) - see _gcode_macros.cfg for that specific (painfully simple) M118 implementation.  I don't know if that was ultimately unintended or not, but Meteyou seemed surprised and, I perceive, to be nodding in acknowledgement that doing so wasn't objectionable.  So I hope that this ability doesn't get quashed by Kevin, Arksine, or the Mainsail crew...
+-	Created a macro that, when it's button in the Mainsail UI is clicked on, emits to the console a set of 5 URLs that enable work-flow 
+efficient access to the logs.  The links are possible by my trapping FW M118, and imputing use of action_respond_info vs. FW's implementation
+(supports numeric/special char starts/inclusion and, I've discovered, a much more expressive use of the console in that this approach allows 
+writing console emissions from macros that contain HTML that is actually rendered in Mainsail's console) - see _gcode_macros.cfg for that 
+specific (painfully simple) M118 implementation.  I don't know if that was ultimately unintended or not, but Meteyou seemed surprised and, 
+I perceive, to be nodding in acknowledgement that doing so wasn't objectionable.  So I hope that this ability doesn't get quashed by Kevin, 
+Arksine, or the Mainsail crew...
 -	The links to the logs are just a piece of the overall puzzle, however.
-	-	Those links are instantiated by way of custom URL Protocol handlers.  See the Mainsail_Linking_To_UserLogs.zip archive for additional details and copies of the .reg files that inject these handlers into one's registry, so that the various schemes will be honored (sorry linux clients, I don't know how to do so on a linux box - if it gets figured out, I'd like to know, however).
-	-	I had initially worked this solution up with windows putty, but that proved to have an undocumented 'feature' (or windows does?) where the loading and display of the logs via an ssh session hung hard.  I migrated over to using MobaXterm (MXT hereinafter) as the SSH client that, while a bit of a sledgehammer vs. flyswatter I posit, seems to be working well and reliably.  Time will tell.
-	-	I created sessions in MXT that enables connection to the Klipper host via stored key generated by putty's Pageant tool.  I was using the pageant tool's generated keys during the putty efforts and when I adopted the use of MXT, pointing the MXT ssh client to the pageant generated keys, it just worked <shrugg>.
-	-	Once the sessions were created, I configured them with starting commands that, ultimately, instantiate a tail -f -n100 logfile session, which has a pipe redirection to grcat to affect regex driven log colorization of the logs, on a log by log basis. Those terminal commands are also included in the aforementioned archive.
--	Colorization of messages, by log filename (employed use of grcat on the host) - where each has a separate /home/user/pi/.grc/grcat_blah.conf file to apply color decorations to each log file's messages when rendered.  Most are pretty benign (muting date/time visually, and applying a consistent color for the messages).  However, the one for the trace log is a bit more dynamic in that the coloring is applied based on proc depth (denoted therein by way of backticks).  The regex is, regardless, pretty easily understood.  These grc_blah.conf files are too in the aforementioned archive.
--	Lastly, I, being the strange man behind the curtain, decided that this wasn't enough automation and, as a fall back into bed with a long time lover, employed use of an AHK script to detect the MXT ssh sessions opening, netting automagic positioning and resizing of those terminal session on my desktop in a consistent eye-pleasing/intuitive manner:  https://i.imgur.com/FOgMqCW.png
--	A related item I wish to implement on this front is the automatic detection and clicking of the chrome prompt to run an external executable (MXT in this case), but that is a battle for another time.  What has my immediate focus is
--	Morphing the userlogger.py extra module to make use of threading.threads and queue.queue modules and have the messages-to-queue and queue-to-log be running on a background thread such that, even when Klipper is task saturated (i.e. at printer startup/klipper restart/etc.) that the logging takes a backseat to whatever else is transpiring in Klipper's world.
+	-	Those links are instantiated by way of custom URL Protocol handlers.  See the Mainsail_Linking_To_UserLogs.zip archive for additional 
+details and copies of the .reg files that inject these handlers into one's registry, so that the various schemes will be honored (sorry linux 
+clients, I don't know how to do so on a linux box - if it gets figured out, I'd like to know, however).
+	-	I had initially worked this solution up with windows putty, but that proved to have an undocumented 'feature' (or windows does?) where 
+the loading and display of the logs via an ssh session hung hard.  I migrated over to using MobaXterm (MXT hereinafter) as the SSH client that, 
+while a bit of a sledgehammer vs. flyswatter I posit, seems to be working well and reliably.  Time will tell.
+	-	I created sessions in MXT that enables connection to the Klipper host via stored key generated by putty's Pageant tool.  I was using 
+the pageant tool's generated keys during the putty efforts and when I adopted the use of MXT, pointing the MXT ssh client to the pageant 
+generated keys, it just worked <shrugg>.
+	-	Once the sessions were created, I configured them with starting commands that, ultimately, instantiate a tail -f -n100 log file session,
+which has a pipe redirection to grcat to affect regex driven log colorization of the logs, on a log by log basis. Those terminal commands are 
+also included in the aforementioned archive.
+-	Colorization of messages, by log filename (employed use of grcat on the host) - where each has a separate /home/user/pi/.grc/grcat_blah.conf 
+file to apply color decorations to each log file's messages when rendered.  Most are pretty benign (muting date/time visually, and applying a 
+consistent color for the messages).  However, the one for the trace log is a bit more dynamic in that the coloring is applied based on proc 
+depth (denoted therein by way of backticks).  The regex is, regardless, pretty easily understood.  These grc_blah.conf files are too in the 
+aforementioned archive.
+-	Lastly, I, being the strange man behind the curtain, decided that this wasn't enough automation and, as a fall back into bed with a long 
+time lover, employed use of an AHK script to detect the MXT ssh sessions opening, netting automagic positioning and resizing of those terminal 
+session on my desktop in a consistent eye-pleasing/intuitive manner:  https://i.imgur.com/FOgMqCW.png
+-	A related item I wish to implement on this front is the automatic detection and clicking of the chrome prompt to run an external executable 
+(MXT in this case), but that is a battle for another time.  What has my immediate focus is
+-	Morphing the userlogger.py extra module to make use of threading.threads and queue.queue modules and have the messages-to-queue and 
+queue-to-log be running on a background thread such that, even when Klipper is task saturated (i.e. at printer startup/klipper restart/etc.) 
+that the logging takes a backseat to whatever else is transpiring in Klipper's world.
 
 SO...
 
-I have just purchased and enrolled into an online training course via udemy - Complete Python Developer in 2023: Zero to Mastery.  My stumbling through getting the current instantiation of userlogger.py running bore a lot of forehead banging and scarring.  I need to be smarter in the python realm and am taking the steps to do so, at least to get through enough of the course to allow me to leverage python's concurrency capabilities on the userlogger extras module.  That will have my focus for the near term.  Wish me luck.
+I have just purchased and enrolled into an on-line training course via udemy - Complete Python Developer in 2023: Zero to Mastery.  
+My stumbling through getting the current instantiation of userlogger.py running bore a lot of forehead banging and scarring.  
+I need to be smarter in the python realm and am taking the steps to do so, at least to get through enough of the course to allow me to 
+leverage python's concurrency capabilities on the userlogger extras module.  That will have my focus for the near term.  Wish me luck.
 
 ~MHz
 
@@ -68,16 +110,21 @@ tail -f -n40 temp_gtts.log  and  tail -f -n40 temp_cvlc.log then discovered cvlc
        ALSA lib pcm_dmix.c:1075:(snd_pcm_dmix_open) unable to open slave
 giggled my way to success:
 https://dev.to/setevoy/linux-alsa-lib-pcmdmixc1108sndpcmdmixopen-unable-to-open-slave-38on
-missing modprobe.d conf file...  seriously, wtf - why work from cli but not when klipper called the same damn scripts.  ugh.  anyways, it is fixed.
+missing modprobe.d conf file...  seriously, wtf - why work from cli but not when klipper called the same damn scripts.  ugh.  anyways, it is
+fixed.
 
-The above drama is related to migrating back to my amd64 Chromebox.  I've simply too much shite going on for a small sbc to keep up.  Decided to install a headless debian 11 os thereon (hadn't done so before, so yeah, learnz) all was right with the effort, except tts. Wow, ignorance == PITA.
+The above drama is related to migrating back to my amd64 Chromebox.  I've simply too much shite going on for a small sbc to keep up.  Decided
+to install a headless debian 11 os thereon (hadn't done so before, so yeah, learnz) all was right with the effort, except tts. 
+Wow, ignorance == PITA.
 
 Part of harmonization is the adoption of 4 macros common in every .cfg being loaded (still a WIP -
 i've a shitte tonne of modules...)
--	[delayed_gcode _module_name_loaded] <-- this is a macro that is autorun at (4.501) seconds after loading, for startup annunciation, logging, etc.  (the three digit is for simple find and replace purposes)
+-	[delayed_gcode _module_name_loaded] <-- this is a macro that is autorun at (4.501) seconds after loading, for startup annunciation, 
+logging, etc.  (the three digit is for simple find and replace purposes)
 -	[gcode_macro _info_module_name] <-- a macro that is not intended to be used, but rather is a common place for module documentation
 -	[gcode_macro _module_name_vars] <-- module specific variables are to be plopped herein
--	[delayed_gcode _module_name_start] <-- is to fire off at 0.5s after loading, to init module variables and globals (i.e. module loaded and module err flag)
+-	[delayed_gcode _module_name_start] <-- is to fire off at 0.5s after loading, to init module variables and globals (i.e. module loaded 
+and module err flag)
 -	Then, further on in the module, will be klipper enablement sections, if needed, for contextually relevant modules that are to be loaded.
 -	Finally, contextually relevant gcode macros and shell commands, etc., are to exist therein. 
 
@@ -217,7 +264,9 @@ Printer Details, for those who may be interested:
 	Orbiter v1.5 adapter
 - 7OW/PT1000 AB Print Head housing a Phaetus Dragon HF HE with an Orbiter Extruder fitted thereto.
 - An accelerometerized AB Toolhead PCB was designed, built and installed, oriented to clear stuffs
-- The thermistor that is normally on the TH PCB has been removed, with wires affixed thereto to allow for the placement of the PCB Chamber Temp Sens=0805 10K 1% B=3950K(25/50C) in the AB duct by way of a JST connector pair - have fan set to default to 10% to keep air flowing over the sensor
+- The thermistor that is normally on the TH PCB has been removed, with wires affixed thereto to allow for the placement of the PCB 
+Chamber Temp Sens=0805 10K 1% B=3950K(25/50C) in the AB duct by way of a JST connector pair - have fan set to default to 10% to keep 
+air flowing over the sensor
 - HE0=HE_HTR, HE3=HOUR_METER
 - M0=B, M1=A, M2.1=Z0, M3=Z1, M4=Z2, M5=Z3, M6=E
 - F0=PCF, F1=HEF, F2=Aft Chassis (MCU), F3=Fore Chassis (PS), F4=Exhaust, F5=Filter/Stir, F6=5VDC PS (12V), F6=StepperDriver (12V)
@@ -226,14 +275,18 @@ Printer Details, for those who may be interested:
 - RGB LED IO (PB0) used for 'dashboard' neopixels
 - TB=BED, T0=HE, T1=AB_PCB(CHAMBER), T2=3950 bead @ top of chamber ivo exhaust, T3=3950 bead @ unswitched 5VDC PS
 - Display Aural Xdcr on uC IO PE8
-- RP2040 installed as MCU2: ADXL I/F, I/F for 228ea DotStar LEDs for chamber lighting, data for ERCF Neopixels, and Power Switch's RGB Halo Light Control
+- RP2040 installed as MCU2: ADXL I/F, I/F for 228ea DotStar LEDs for chamber lighting, data for ERCF Neopixels, and Power Switch's RGB 
+Halo Light Control
 
 See the /V2.2526_Hardware/ folder for further details.
 
->>> LOOK >>> Also, be advised that this set of configs requires manual installation of some components on top of a fresh install of the host OS and Klipper/Moonraker/Mainsail:
+>>> LOOK >>> Also, be advised that this set of configs requires manual installation of some components on top of a fresh install of the 
+host OS and Klipper/Moonraker/Mainsail:
 
 A) Kiauh's 'shell_commands' [an unofficial extension],
-	- Shell_Commands is used herein to facilitate execution of config_blah.sh scripts which enables the automagic push and pull of these config files, as well as my nozzle cam v4l2 settings, and some other UI goodness such as macro buttons to kick off curl commands to control external devices such as my Wyze Cam day/night modes and smart outlets for the printer and the external enclosure I have.
+	- Shell_Commands is used herein to facilitate execution of config_blah.sh scripts which enables the automagic push and pull of these 
+config files, as well as my nozzle cam v4l2 settings, and some other UI goodness such as macro buttons to kick off curl commands to control 
+external devices such as my Wyze Cam day/night modes and smart outlets for the printer and the external enclosure I have.
 
 B) Klicky & the related 'z_calibration',
 
@@ -252,12 +305,15 @@ Also, with Alex's help (Discord @ALEX#8260, THANK YOU!), I was able to get an au
 
 3) Macro buttons on Mainsail enables manual initiation of either a push or pull from Klipper's Mainsail UI.
 
-These activities are codified in those scripts and the associated backups of the various .cfgs they impute a backup of, as evidenced in the contents herein.
+These activities are codified in those scripts and the associated backups of the various .cfgs they impute a backup of, as evidenced in the 
+contents herein.
 
-Of note, there is one .cfg I have overtly nix'd from herein - Moonraker's Telegram Bot's .conf. If an example is desired to look at, take a peek at the initial commit's history and you'll see it therein. The token has since been revoked, so don't spin yer wheels. ;)
+Of note, there is one .cfg I have overtly nix'd from herein - Moonraker's Telegram Bot's .conf. If an example is desired to look at, take 
+a peek at the initial commit's history and you'll see it therein. The token has since been revoked, so don't spin yer wheels. ;)
 https://github.com/TodWulff/V2.2526_Config/commit/8ac0f96c20a67e028ace10987d7467840370a18f#diff-2f205e9c312fdeaf31e98c2e4242087f788b99c51a2f2b692e8175073f6e4cf8
 
-I've also elected to ignore the save_variables file that houses configuration data for the ERCF, etc. so that old config data doesn't overwrite current data.
+I've also elected to ignore the save_variables file that houses configuration data for the ERCF, etc. so that old config data doesn't overwrite
+current data.
 
 Enjoy and Happy Printing!
 
