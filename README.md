@@ -3,6 +3,13 @@ Repo for the Klipper Config directory of my Voron V2.4 (not v2.4r2) SN 2526, a 3
 
 05APR23:
 
+(Because I am always looking for these:)
+Unicode Symbols recommended for use in string variables w/in klipper configs:
+
+- Ellipse use	…	instead of	...		(gTTS actually verbalizes 'dot dot dot' with the latter... lol!)
+- LB/Hash use	♯	instead of	 #		(klipper parsers ignore everything after a # (comment symbol, ofc))
+- Percent use	％	instead of	 %		(save_variables(/jinja?) chokes on use of % w/in strings)
+
 Took a break from getting smarter with Python:
 - Implemented a cpu_load check at print start as, historically, when transcoding/encoding a time lapse, host saturates which could definitely 
 affect any quick follow-on prints, until the transcode/encode is completed.
