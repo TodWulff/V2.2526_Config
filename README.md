@@ -1,6 +1,30 @@
 # V2.2526_Config (I am Brody)
 Repo for the Klipper Config directory of my Voron V2.4 (not v2.4r2) SN 2526, a 350^3 model built by ~MHz (myself) in 4Q21. Name: 'Brody'
 
+05APR23:
+
+Took a break from getting smarter with python:
+- implemented a cpu_load check at print start as, historically, when transcoding/encoding a time lapse, host saturates and could definitely 
+affect any quick follow-on prints, until the transcode/encode is completed.
+- Finally implemented a much needed fix for a long time nag with PS (first layer infill over extruded, while perimeters good)
+- And, implemented a more robust Idle Timeout approach
+	- on Idle Timeout set a 2 min timer and give user opportunities:
+	- user has option to
+		- allow the shutdown, 
+		- to push a config & shutdown, or 
+		- to reset the idle timeout (temps retained, motors stay engaged)
+	- defaults to allowing the shutdown in case user is away
+	- FIXME: still desire to implement a HE cool down with PCF running, to help prevent duct warp-age at printer shutdown.  Easy enough to do,
+I am just procrastinating
+
+Still cogitating on best way to suppress specific commands from being logged.  Started with adding a NOLOG=1 detection to any passed 
+parameters that are included with the potential log entry.  Issue with this is that on proc exist params haven't been sent, so no means
+to squelch those and the proc depth gets AFU too.
+
+Also, this whole proc depth thing is pretty fragile, and I've been mulling on how best to track/display same robustly.  Without hooks 
+into proper klipper, I fear that this might be the best means to an end, but will continue mull on it..
+
+
 29MAR23:
 
 A lot has transpired these last couple of weeks.  Most notably is that I drafted the initial pass as a Klipper Extras Module entitled userlogger.py.  The userLogger module enables logging to files rather than by way of the console (or a hugely failed attempt to write to files via shell_commands [100ms blocks on each message entry - way painful to watch]).  The goal here was to instantiate a means to have logging on at restart, capturing everything printer/Klipper 'boot' related, to log files, and to do so in a manner that yields no effect on the printer or Klipper.  This endeavor is partially successful in that I got the logging module instantiated and functional as designed.  I have a snap-shot of it here in, in the root config folder (needs to be moved to the Klipper/Klipper/extras ifin a user wishes to muck around with it).
