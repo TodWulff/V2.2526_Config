@@ -22,12 +22,12 @@ parameters that are included with the potential log entry.  Issue with this is t
 to squelch those.  The now me is kicking my old self's shins for not considering this then.
 
 Also, this whole proc depth thing feels like it's pretty fragile, and I've been mulling on how best to track/display same robustly.  However,
-without macro callback hooks within klipper, I fear that this might be the best means to an end, but will continue mull on it.
+without macro entry/exit callback hooks within klipper, I fear that this might be the best means to an end, but will continue mull on it.
 
 Logging...  I am mulling on the threading/queue approach still, and also how best to consider adding additional logs without hard-coding for
 them.  Klipper has a one to many capability with a module import, and sub-instantiations (ugh on the terms) of module elements.  It would be
 uber nice to be able to spin up n logs from a user's config by just adding a [userlog blah] section after the [userlogging] module is asserted.
-One might reasonably ask: "Seriously?  What for?  You've already got 4+1 logs going.?."  'ERCF!' is my knee-jerk response - that whole thing
+One might reasonably ask: "Seriously?  What for?  You've already got 4+1 logs going.?."  'ERCF.' is my knee-jerk response - that whole thing
 is a large set of macros, hardware, and configs, in and of itself and, I posit, that merits an ability to have dedicated log(s) for same.  
 It would have been uber nice when I was cutting my teeth and fighting things when building, configuring, and tuning it...
 
@@ -52,12 +52,12 @@ efficient access to the logs.  The links are possible by my trapping FW M118, an
 (supports numeric/special char starts/inclusion and, I've discovered, a much more expressive use of the console in that this approach allows 
 writing console emissions from macros that contain HTML that is actually rendered in Mainsail's console) - see _gcode_macros.cfg for that 
 specific (painfully simple) M118 implementation.  I don't know if that was ultimately unintended or not, but Meteyou seemed surprised and, 
-I perceive, to be nodding in acknowledgement that doing so wasn't objectionable.  So I hope that this ability doesn't get quashed by Kevin, 
+I perceive, to be nodding in acknowledgment that doing so wasn't objectionable.  So I hope that this ability doesn't get quashed by Kevin, 
 Arksine, or the Mainsail crew...
 -	The links to the logs are just a piece of the overall puzzle, however.
 	-	Those links are instantiated by way of custom URL Protocol handlers.  See the Mainsail_Linking_To_UserLogs.zip archive for additional 
-details and copies of the .reg files that inject these handlers into one's registry, so that the various schemes will be honored (sorry linux 
-clients, I don't know how to do so on a linux box - if it gets figured out, I'd like to know, however).
+details and copies of the .reg files that inject these handlers into one's registry, so that the various schemes will be honored (sorry Linux 
+clients, I don't know how to do so on a Linux box - if it gets figured out, I'd like to know, however).
 	-	I had initially worked this solution up with windows putty, but that proved to have an undocumented 'feature' (or windows does?) where 
 the loading and display of the logs via an ssh session hung hard.  I migrated over to using MobaXterm (MXT hereinafter) as the SSH client that, 
 while a bit of a sledgehammer vs. flyswatter I posit, seems to be working well and reliably.  Time will tell.
@@ -70,7 +70,7 @@ also included in the aforementioned archive.
 -	Colorization of messages, by log filename (employed use of grcat on the host) - where each has a separate /home/user/pi/.grc/grcat_blah.conf 
 file to apply color decorations to each log file's messages when rendered.  Most are pretty benign (muting date/time visually, and applying a 
 consistent color for the messages).  However, the one for the trace log is a bit more dynamic in that the coloring is applied based on proc 
-depth (denoted therein by way of backticks).  The regex is, regardless, pretty easily understood.  These grc_blah.conf files are too in the 
+depth (denoted therein by way of back-ticks).  The regex is, regardless, pretty easily understood.  These grc_blah.conf files are too in the 
 aforementioned archive.
 -	Lastly, I, being the strange man behind the curtain, decided that this wasn't enough automation and, as a fall back into bed with a long 
 time lover, employed use of an AHK script to detect the MXT ssh sessions opening, netting automagic positioning and resizing of those terminal 
@@ -95,18 +95,18 @@ leverage python's concurrency capabilities on the userlogger extras module.  Tha
 
 -	fixed recursion error due to latest 'instrumentation' efforts - 
 	the just a wee bit old me was smarter than the just now me.
--	added module state stuff for shell_commands and tts
--	added logic to macros say and say_wait to annunciate if shell_commands is mia - 
+-	added module state stuff for shell_commands and TTS
+-	added logic to macros say and say_wait to annunciate if shell_commands is MIA - 
 	they emit stdout and error dialog to temp files
--	tail and grep are my new friends, seriously. **fukin besties**.
--	made it so that the tts scripts on the host emit back into klipper what is being said,
+-	tail and GREP are my new friends, seriously. **fukin besties**.
+-	made it so that the TTS scripts on the host emit back into klipper what is being said,
 	as a console message to the user (in event speakers off, deafness, being remote, etc.)
 -	split off separate cfgs for _debug_userlogs, _host_control, _tts, _temp_capture, and fought
-	the OS for a while getting tts goin:
+	the OS for a while getting TTS goin:
 
 this worked well out of the gate with Raspiban hosts.  However, on Debian, it was not so
 ended up with a bloody forehead before piping output to temp log and tailing that with
-tail -f -n40 temp_gtts.log  and  tail -f -n40 temp_cvlc.log then discovered cvlc was squawking:
+tail -f -n40 temp_gtts.log  and  tail -f -n40 temp_cvlc.log then discovered CVLC was squawking:
        ALSA lib pcm_dmix.c:1075:(snd_pcm_dmix_open) unable to open slave
 giggled my way to success:
 https://dev.to/setevoy/linux-alsa-lib-pcmdmixc1108sndpcmdmixopen-unable-to-open-slave-38on
