@@ -1,4 +1,4 @@
-echo 'klipper_dialog S="Pushing a config backup …"' > ~/printer_data/comms/klippy.serial
+echo 'klipper_dialog S="Pushing a config backup"' > ~/printer_data/comms/klippy.serial
 
 params=""
 for element in "$@"
@@ -12,4 +12,4 @@ git add .
 git commit -m "$params"
 git push
 
-echo 'klipper_dialog S="… Config backup complete"' > ~/printer_data/comms/klippy.serial
+echo 'klipper_dialog S="Config backup complete"' > ~/printer_data/comms/klippy.serial
