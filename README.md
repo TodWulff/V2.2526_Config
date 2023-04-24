@@ -1,6 +1,20 @@
 # V2.2526_Config (I am Brody)
 Repo for the Klipper Config directory of my Voron V2.4 (not v2.4r2) SN 2526, a 350^3 model built by ~MHz (myself) in 4Q21. Name: 'Brody'
 
+24Apr23:
+
+Ground through the klipper source and created wrappers for every identifiable organic klipper commands callable from user macros.  Ended up having to roll back some due to logging recursion.  Moved all previously wrapped firmware commands to their respective userWrap_blah.cfg.
+
+Refactored all config gcode such that G0 is employed for non-extruding move and G1 is employed for moves that include extrusion.
+
+Refactored _proc_start parameter passing to ensure that issue-imputing ', ", \", and \' were removed prior to calling _proc_start.
+
+Changed manner in which instantaneous and fast cpu_idle information was collected (using top) to enable calculating cpu utilization in a seemingly robust manner - tested across three different class hosts (Raspberry Pi 3B+ (Raspbian), Acer CXI/CXI2 (Debian 11), and an HP EliteDesk 800 G3 (Debian 11)).
+
+Employed use of a extra module I stumbled across when reading reddit posts when looking for something that would do exactly this.  This: https://github.com/JeremyRuhland/klipper_network_status enables: https://i.imgur.com/ChF3R1p.png.  With my having multiple printers emitting to a single telegram channel or sending alerts to a common sms recipient (my mobile device) then it help muh gray matter to know which printer is bitchin and how to connect to it moar quiker via vpn.  Yes, I use static ips internally on my lan, but this will be useful, I posit.
+
+These configs are being structured to work on all of the hosts I have at my disposal.  Next will be to ensure these work on Libre Computer's SBCs.  But that will have to wait as I am departing this afternoon for a week long professional TDY.
+
 05APR23:
 
 (Because I am always looking for these:)
