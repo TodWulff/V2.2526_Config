@@ -9,9 +9,9 @@ Refactored all config gcode such that G0 is employed for non-extruding move and 
 
 Refactored _proc_start parameter passing to ensure that issue-imputing ', ", \\", and \\' were removed prior to calling _proc_start.
 
-Changed manner in which instantaneous and fast cpu_idle information was collected (using top) to enable calculating cpu utilization in a seemingly robust manner - tested across three different class hosts (Raspberry Pi 3B+ (Raspbian), Acer CXI/CXI2 (Debian 11), and an HP EliteDesk 800 G3 (Debian 11)).
+Changed manner in which instantaneous and fast cpu_idle information was collected (using top) to enable calculating CPU utilization in a seemingly robust manner - tested across three different class hosts (Raspberry Pi 3B+ (Raspbian), Acer CXI/CXI2 (Debian 11), and an HP EliteDesk 800 G3 (Debian 11)).
 
-Employed use of a extra module I stumbled across when reading reddit posts when looking for something that would do exactly this.  This: https://github.com/JeremyRuhland/klipper_network_status enables: https://i.imgur.com/ChF3R1p.png.  With my having multiple printers emitting to a single telegram channel or sending alerts to a common sms recipient (my mobile device) then it help muh gray matter to know which printer is bitchin and how to connect to it moar quiker via vpn.  Yes, I use static ips internally on my lan, but this will be useful, I posit.
+Employed use of a extra module I stumbled across when reading Reddit posts when looking for something that would do exactly this.  This: https://github.com/JeremyRuhland/klipper_network_status enables: https://i.imgur.com/ChF3R1p.png.  With my having multiple printers emitting to a single telegram channel or sending alerts to a common SMS recipient (my mobile device) then it help muh gray matter to know which printer is bitchin and how to connect to it moar quiker via VPN.  Yes, I use static IPs internally on my LAN, but this will be useful, I posit.
 
 These configs are being structured to work on all of the hosts I have at my disposal.  Next will be to ensure these work on Libre Computer's SBCs.  But that will have to wait as I am departing this afternoon for a week long professional TDY.
 
@@ -22,7 +22,7 @@ Unicode Symbols recommended for use in string variables w/in klipper configs:
 
 - Ellipse use	…	instead of	...		(gTTS actually verbalizes 'dot dot dot' with the latter... lol!)
 - LB/Hash use	♯	instead of	 #		(klipper parsers ignore everything after a # (comment symbol, ofc))
-- Percent use	％	instead of	 %		(save_variables(/jinja?) chokes on use of % w/in strings)
+- Percent use	％	instead of	 %		(save_variables(/Jinja?) chokes on use of % w/in strings)
 
 Took a break from getting smarter with Python:
 - Implemented a cpu_load check at print start as, historically, when transcoding/encoding a time lapse, host saturates which could definitely 
@@ -104,7 +104,7 @@ that the logging takes a backseat to whatever else is transpiring in Klipper's w
 
 SO...
 
-I have just purchased and enrolled into an on-line training course via udemy - Complete Python Developer in 2023: Zero to Mastery.  
+I have just purchased and enrolled into an on-line training course via Udemy - Complete Python Developer in 2023: Zero to Mastery.  
 My stumbling through getting the current instantiation of userlogger.py running bore a lot of forehead banging and scarring.  
 I need to be smarter in the python realm and am taking the steps to do so, at least to get through enough of the course to allow me to 
 leverage python's concurrency capabilities on the userlogger extras module.  That will have my focus for the near term.  Wish me luck.
@@ -131,16 +131,16 @@ tail -f -n40 temp_gtts.log  and  tail -f -n40 temp_cvlc.log then discovered CVLC
        ALSA lib pcm_dmix.c:1075:(snd_pcm_dmix_open) unable to open slave
 giggled my way to success:
 https://dev.to/setevoy/linux-alsa-lib-pcmdmixc1108sndpcmdmixopen-unable-to-open-slave-38on
-missing modprobe.d conf file...  seriously, wtf - why work from cli but not when klipper called the same damn scripts.  ugh.  anyways, it is
+missing modprobe.d conf file...  seriously, WTF - why work from CLI but not when klipper called the same damn scripts.  ugh.  anyways, it is
 fixed.
 
-The above drama is related to migrating back to my amd64 Chromebox.  I've simply too much shite going on for a small sbc to keep up.  Decided
-to install a headless debian 11 os thereon (hadn't done so before, so yeah, learnz) all was right with the effort, except tts. 
+The above drama is related to migrating back to my amd64 Chromebox.  I've simply too much shite going on for a small SBC to keep up.  Decided
+to install a headless Debian 11 OS thereon (hadn't done so before, so yeah, learnz) all was right with the effort, except TTS. 
 Wow, ignorance == PITA.
 
 Part of harmonization is the adoption of 4 macros common in every .cfg being loaded (still a WIP -
-i've a shitte tonne of modules...)
--	[delayed_gcode _module_name_loaded] <-- this is a macro that is autorun at (4.501) seconds after loading, for startup annunciation, 
+I've a shitte tonne of modules...)
+-	[delayed_gcode _module_name_loaded] <-- this is a macro that is auto-run at (4.501) seconds after loading, for startup annunciation, 
 logging, etc.  (the three digit is for simple find and replace purposes)
 -	[gcode_macro _info_module_name] <-- a macro that is not intended to be used, but rather is a common place for module documentation
 -	[gcode_macro _module_name_vars] <-- module specific variables are to be plopped herein
@@ -162,7 +162,7 @@ tail -f ~/printer_data/logs/klippy.log | grep -v -E "^Stats|^received|^mcu "  <-
 -	Implemented colorization to user input prompts and console debug output
 	(this was a long time desire that I finally figured out how to implement)
 -	Have decided to create a single repository for all of my printers which
-	will make use of conditional includes (via jinja w/ home brew 'predicates')
+	will make use of conditional includes (via Jinja w/ home brew 'predicates')
 	This will be a drawn out WIP effort as I figure out how best to implement
 -	Started the Harmonization efforts between config repositories with white
 	space cleanup (horiz, vertical, trailing, etc.)
@@ -172,7 +172,7 @@ tail -f ~/printer_data/logs/klippy.log | grep -v -E "^Stats|^received|^mcu "  <-
 	now, it all boots and non-exhaustive tests indicate that the stars aligned
 -	Nifty stats: 426 gcode macros, 523 gcode blocks (not all blocks are macros)
 	10,046 no-BS Lines of Config (no comments, no vertical whitespace) with over
-	380K characters (no excess horiz whitespace either) - I've probably stroked
+	380K characters (no excess horizontal whitespace either) - I've probably stroked
 	the keys over a million times (no BS)- peeps can attest to the fact that I 
 	can get OVERLY verbose in my comments, guidance, and other 'elucidations' :)
 -	Oh, yeah, also have nix'd the useless commit messages that were automagically
@@ -186,7 +186,7 @@ tail -f ~/printer_data/logs/klippy.log | grep -v -E "^Stats|^received|^mcu "  <-
 
 03MAR23 blurb:
 
--	refactored the code trace instrumenting approach - instead of a jinja
+-	Refactored the code trace instrumenting approach - instead of a Jinja
 	conditional wrapping a call to the _start_proc (and _end_proc macros)
 	in. every. macro., I decided to nix all those conditional and have a
 	single conditional in _start_proc/_end_proc. While it makes for prettier code,
@@ -207,10 +207,10 @@ tail -f ~/printer_data/logs/klippy.log | grep -v -E "^Stats|^received|^mcu "  <-
 	host. I'll make a separate readme for those who might be interested. As
 	a result of this capability, I threaded speech synthesis commands into a
 	lot of the macros. I've been missing TTS since I switch to Klipper from
-	Octoprint (Jneliii has the M117VoiceSynthesis plugin that I loved and got
+	Octoprint (Jneliii has the M117VoiceSynthesis plug-in that I loved and got
 	used to hearing as the machine did it's thing). Beeping just doesn't cut
 	it after one gets used to the verbal emissions (at least for me...).
-3)	Working to add code to stall a print starting if host cpu utilization is
+3)	Working to add code to stall a print starting if host CPU utilization is
 	\>1.0. This is relevant if one automagically generates timelapses and one
 	tries to start a new print after a longer print completed and a timelapse
 	is being built by the host. Can you say Timer-Too-Close.?.
@@ -240,7 +240,7 @@ tail -f ~/printer_data/logs/klippy.log | grep -v -E "^Stats|^received|^mcu "  <-
 	too long. Peace and Love Peeps. I'm out for now. ~MHz
 
 Useful Links:
-- https://jinja.palletsprojects.com/en/2.10.x/templates/
+- https://Jinja.palletsprojects.com/en/2.10.x/templates/
 - https://www.klipper3d.org/Overview.html
 - https://github.com/Klipper3d/klipper
 - https://github.com/VoronDesign/Voron-2/raw/Voron2.4/Manual/Assembly_Manual_2.4r2.pdf
@@ -267,7 +267,7 @@ My ERCF DFH Kit feedback ch: https://discord.com/channels/877549316913365083/928
 FYSA (24Feb2022): Be advised that these configs are a big Work In Process (WIP). The printer is a new
 build in Nov 2021. Further, I recently added a 12-cart ERCF with ERCPs. And, commensurate with the ERCF,
 I have migrated over to Prusa Slicer from Cura Slicer (which I have used for years), so I am working to
-massage these config files to conform to the workflow that I had initially established with Cura. Just
+massage these config files to conform to the work-flow that I had initially established with Cura. Just
 so y'all know about same... Usual disclaimers apply. YMMV. blah blah blah.
 
 DISCLAIMER: I am not at fault if your use of these info/data/code/macros/configs result in injury/damage/issues/etc.
@@ -275,7 +275,7 @@ Your use of these info/data/code/macros/configs acknowledges these risks and ind
 of myself from any potential outcomes of your decision to use the info/data/code/macros/configs presented herein.
 
 Printer Details, for those who may be interested:
-- Watercooled Phaetus WHF High Flow Hot End, with Phaetus WaterCooler Pump/Radiator/Fan Kit
+- Water-cooled Phaetus WHF High Flow Hot End, with Phaetus WaterCooler Pump/Radiator/Fan Kit
 	- I supplemented the latter with a stand-alone temp sensor/indicator ()
 	- And I've added sensors to enable programmatic indication of the 'H2O' cooling system in Klipper
 	- Further, I changed the kit wiring to enable PWM of the pump and to provide pump tach feedback to Klipper
@@ -294,7 +294,7 @@ air flowing over the sensor
 - DIAG0=XES, DIAG1=YES, DIAG2=ZES, DIAG3=PL-08 Bed Sens (blocking diode on AB PCB)
 - DIAG4=SFS
 - RGB LED IO (PB0) used for 'dashboard' neopixels
-- TB=BED, T0=HE, T1=AB_PCB(CHAMBER), T2=3950 bead @ top of chamber ivo exhaust, T3=3950 bead @ unswitched 5VDC PS
+- TB=BED, T0=HE, T1=AB_PCB(CHAMBER), T2=3950 bead @ top of chamber IVO exhaust, T3=3950 bead @ unswitched 5VDC PS
 - Display Aural Xdcr on uC IO PE8
 - RP2040 installed as MCU2: ADXL I/F, I/F for 228ea DotStar LEDs for chamber lighting, data for ERCF Neopixels, and Power Switch's RGB 
 Halo Light Control
