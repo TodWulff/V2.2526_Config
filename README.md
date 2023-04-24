@@ -3,11 +3,11 @@ Repo for the Klipper Config directory of my Voron V2.4 (not v2.4r2) SN 2526, a 3
 
 24Apr23:
 
-Ground through the klipper source and created wrappers for every identifiable organic klipper commands callable from user macros.  Ended up having to roll back some due to logging recursion.  Moved all previously wrapped firmware commands to their respective userWrap_blah.cfg.
+Ground through the klipper source and created wrappers for every identifiable organic klipper core, kinematic, and klippy extra command callable from user macros.  Ended up having to roll back some due to logging recursion.  Moved all previously wrapped firmware commands to their respective userWrap_blah.cfg.
 
 Refactored all config gcode such that G0 is employed for non-extruding move and G1 is employed for moves that include extrusion.
 
-Refactored _proc_start parameter passing to ensure that issue-imputing ', ", \", and \' were removed prior to calling _proc_start.
+Refactored _proc_start parameter passing to ensure that issue-imputing ', ", \\", and \\' were removed prior to calling _proc_start.
 
 Changed manner in which instantaneous and fast cpu_idle information was collected (using top) to enable calculating cpu utilization in a seemingly robust manner - tested across three different class hosts (Raspberry Pi 3B+ (Raspbian), Acer CXI/CXI2 (Debian 11), and an HP EliteDesk 800 G3 (Debian 11)).
 
