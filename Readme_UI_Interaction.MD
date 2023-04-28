@@ -1,5 +1,21 @@
 # Klipper_UserInteraction
 A set of macros to enable print-time user interaction with Klipper via Console and UI buttons (macros).
+Copyright (C) 2022-2023  Tod A. Wulff
+
+This program is free software: you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
+
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+Should you have a need to receive a copy of the GNU General Public License,
+see <https://www.gnu.org/licenses/>.
+
+27Apr23 - Adopted GNU GPLv3 for these works.
 
 04APR23 Update: Added example of using UI Interaction during an Idle Timeout Event.
 
@@ -19,7 +35,7 @@ Here is an example of a real world use case - optionally keeping heaters on & un
 ![https://i.imgur.com/jfVYFZx.png](https://i.imgur.com/jfVYFZx.png)
 
 Here is another example of a real world use case - optionally rebooting after an ERCF calibration event:
-![ https://i.imgur.com/PvLhUWd.png](https://i.imgur.com/PvLhUWd.png)
+![https://i.imgur.com/PvLhUWd.png](https://i.imgur.com/PvLhUWd.png)
 ![https://i.imgur.com/Tn1ANaH.png](https://i.imgur.com/Tn1ANaH.png)
 
 Other cases in which I employ this module in my daily printing workflow:
@@ -28,6 +44,10 @@ Other cases in which I employ this module in my daily printing workflow:
   with null-input timeout to default to proceed with the shutdown (as imaged).
 
 ![https://i.imgur.com/mZ7V0rl.png](https://i.imgur.com/mZ7V0rl.png)
+
+- At print start, if system cpu utilization exceeds a threshold, go interactive to give user an opportunity to resolve the issue (wait for the host to settle down (i.e. if transcoding a timelapse from a prior print), or to change the threshold value via the console).
+
+![https://i.imgur.com/RYv5SMl.png](https://i.imgur.com/RYv5SMl.png)
 
 - At print start, if extrusion factor or speed factor is not 100%, go interactive to give user option to reset each to 100% before commencing the print:
 
@@ -47,6 +67,7 @@ Other cases in which I employ this module in my daily printing workflow:
 - During calibration of ERCF Filament Encoder, for each color/cart, give user ability to restart the calibration or to accept same and continue
 - Used UI module during testing of various hardware items (i.e. servo throw angle determinations for v0.1 nozzle scrubber and side swipe klicky/euclid bed probes)
 - ... more that I cannot recall right now
+
 
 ## USER-SUBMITTED USE CASES:
 
