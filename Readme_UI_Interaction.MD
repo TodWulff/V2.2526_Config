@@ -16,6 +16,8 @@ Should you have a need to receive a copy of the GNU General Public License,
 see <https://www.gnu.org/licenses/>.
 
 27Apr23 - Adopted GNU GPLv3 for these works.
+Added example of using UI to go interactive with user when host system cpu utilization exceeds some
+programmatic value at print start.
 
 04APR23 Update: Added example of using UI Interaction during an Idle Timeout Event.
 
