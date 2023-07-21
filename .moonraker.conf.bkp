@@ -35,6 +35,14 @@ trusted_clients =
 subscriptions = 
 	mainsail
 
+[power Printer]
+type = tasmota
+off_when_shutdown = False
+locked_while_printing = True
+restart_klipper_when_powered = True
+restart_delay = 2
+address = 10.0.0.25
+
 [update_manager]
 refresh_interval = 168
 enable_auto_refresh = True
@@ -55,7 +63,7 @@ managed_services = klipper
 [update_manager client klipper_network_status]
 type = git_repo
 path = /home/pi/klipper_network_status
-origin = https://github.com/JeremyRuhland/klipper_network_status
+origin = https://github.com/TodWulff/klipper_network_status.git
 install_script = install.sh
 
 [update_manager sonar]
@@ -86,12 +94,4 @@ origin = https://github.com/nlef/moonraker-telegram-bot.git
 env = ~/moonraker-telegram-bot-env/bin/python
 requirements = scripts/requirements.txt
 install_script = scripts/install.sh
-
-[power Printer]
-type = tasmota
-off_when_shutdown = False
-locked_while_printing = True
-restart_klipper_when_powered = True
-restart_delay = 2
-address = 10.0.0.25
 
